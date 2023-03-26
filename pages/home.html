@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FONT FAMILY -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    
+    <!-- FONT ICON -->
+    <link rel="stylesheet" href="../assets/font/themify-icons-font/themify-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/home.css">
+    <title>Document</title>
+</head>
+<body>
+    <div w3-include-html="./header.html"></div>
+
+    <div id="slider">
+        <div class="slider-imgs slider-img-first">
+            <div class="slider-text-wrapper slider-text-wrapper-first">
+                <h3 class="slider-text slider-text-first">Style Destination</h3>
+                <h3 class="slider-text slider-text-second">Basic Collection</h3>
+                <h3 class="slider-text slider-text-third"> Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. <br>
+                    Sunt qui esse pariatur duis deserunt
+                </h3>
+                <button class="btn slider-btn">SHOP NOW</button>
+            </div>
+        </div>
+        <div class="dots">
+            <i class="fa-solid fa-circle icon icon-dot icon-dot-first"></i>
+            <i class="fa-regular fa-circle icon icon-dot icon-dot-second"></i>
+        </div>
+        <div class="slider-imgs slider-img-second">
+            <div class="slider-text-wrapper slider-text-wrapper-second">
+                <h3 class="slider-text slider-text-first">Style Destination</h3>
+                <h3 class="slider-text slider-text-second">New Collection</h3>
+                <h3 class="slider-text slider-text-third"> Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. <br>
+                    Sunt qui esse pariatur duis deserunt
+                </h3>
+                <button class="btn slider-btn">SHOP NOW</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/load_page.js"></script>
+
+    <script>
+        const $ = document.querySelector.bind(document);
+        const $$ = document.querySelectorAll.bind(document);
+
+        function handleDot(element1, element2) {
+            element1.className = element1.className.replace("regular", "solid");
+            element2.className = element2.className.replace("solid", "regular");
+
+        }
+        $('.icon-dot-first').onclick = function() {
+            handleDot(this, $('.icon-dot-second'));
+        }
+        $('.icon-dot-second').onclick = function() {
+            handleDot(this, $('.icon-dot-first'));
+        }
+    </script>
+</body>
+</html>
