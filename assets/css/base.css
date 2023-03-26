@@ -10,9 +10,11 @@ html {
 }
 :root {
     --height_header: 85px;
+    --primary_color: #be9c79;
+    --bg_tooltip: rgba(0, 0, 0, 0.5);
 }
 .max_width {
-    width: 1400px;
+    width: 1450px;
     margin: auto;
 }
 .icon {
@@ -22,16 +24,31 @@ html {
 .btn {
     cursor: pointer;
 }
-.flex_center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.remove_style_link {
+    text-decoration: none;
+    color: black;
+    transition: .2s;
 }
-.flex_center-hor {
-    display: flex;
-    justify-content: center;
+.transition {
+    transition: all ease-in 0.3s;
 }
-.flex_center-ver {
-    display: flex;
-    align-items: center;
+@keyframes grow {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+@keyframes drop {
+    from {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+    to {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+    }
 }

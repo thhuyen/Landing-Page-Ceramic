@@ -2,7 +2,6 @@
 header {
     height: var(--height_header);
     background: white;
-    /* border: 1px solid black; */
 }
 /* if < 1200px height -20px */
 .wrapper-header {
@@ -17,8 +16,29 @@ header {
 }
 .nav-item {
     display: inline-block;
-    font-size: 1.5rem;
-    padding: 0 10px;
+    position: relative;
+    min-width: 95px;
+    text-align: center;
+    height: var(--height_header);
+    line-height: var(--height_header);
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 0 15px;
+    cursor: pointer;
+    /* background: yellow; */
+}
+.nav-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background: black;
+    transition: linear 0.3s;
+}
+.nav-item:hover:before {
+    width: 100%;
 }
 .icon-header {
     font-size: 2rem;
