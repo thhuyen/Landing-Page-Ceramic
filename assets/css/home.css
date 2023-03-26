@@ -1,0 +1,71 @@
+/* --------------- slider ------------- */
+#slider {
+    position: relative;
+    height: 90vh;
+}
+.slider-imgs {
+    max-width: 100%;
+    height: inherit;
+    background-position: center;
+    background-size:cover;
+    overflow-x: hidden;
+}
+.slider-img-first {
+    background-image: url('//cdn.shopify.com/s/files/1/0660/1985/2535/files/s3.jpg?v=1662349994') ;
+}
+.slider-img-second {
+    background-image: url('//cdn.shopify.com/s/files/1/0660/1985/2535/files/s4.jpg?v=1662349994');
+}
+.slider-text-wrapper {
+    position: relative;
+    top: 40%;
+    transform: translateY(-40%);
+}
+.slider-text-wrapper-first {
+    left: 10%;
+}
+.slider-text-wrapper-second {
+    left: 50%;
+}
+.slider-text {
+    margin: 15px 0;
+    line-height: 1.5;
+}
+.slider-text-first {
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+}
+.slider-text-second {
+    letter-spacing: 2px;
+    font-size: 7rem;
+}
+.slider-text-third {
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+}
+.slider-btn {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    padding: 15px 40px;
+    margin-top: 55px;
+    border: 1px solid black;
+    background: transparent;
+    transition: all ease 0.2s;
+    cursor: pointer;
+}
+.slider-btn:hover {
+    background: black;
+    color: white;
+}
+/* -- dot -- */
+.dots {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    z-index: 10;
+}
+.icon-dot {
+    padding: 2px;
+    font-size: 1.5rem;
+}

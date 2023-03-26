@@ -1,0 +1,25 @@
+/* --------------- header ---------------- */
+header {
+    height: var(--height_header);
+    background: white;
+    /* border: 1px solid black; */
+}
+/* if < 1200px height -20px */
+.wrapper-header {
+    height: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#logo {
+    width: 170px;
+    transform: translateX(-70px);
+}
+.nav-item {
+    display: inline-block;
+    font-size: 1.5rem;
+    padding: 0 10px;
+}
+.icon-header {
+    font-size: 2rem;
+}
