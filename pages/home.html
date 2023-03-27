@@ -17,6 +17,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/home.css">
+    <link rel="stylesheet" href="../assets/css/product.css">
     <title>Document</title>
 </head>
 <body>
@@ -28,21 +29,21 @@
     </div>
 
     <!-- sample product -->
-    <section id="section-sample" class="max_width">
-        <div class="product_sample product_sample-left">
-            <img class="img-sample" src="//cdn.shopify.com/s/files/1/0660/1985/2535/files/ba13.jpg?v=1662349069" alt="product">
-            <div class="sample_text-wrapper">
-                <p class="sample_text-first">NEW ARRIVAL</p>
-                <a href="" class="sample_text-link sample_text-second remove_style_link">
+    <section id="section-intro" class="max_width">
+        <div class="intro intro-left">
+            <img class="img-intro" src="//cdn.shopify.com/s/files/1/0660/1985/2535/files/ba13.jpg?v=1662349069" alt="image-introduction">
+            <div class="intro_text-wrapper">
+                <p class="intro_text-first">NEW ARRIVAL</p>
+                <a href="" class="intro_text-link intro_text-second remove_style_link">
                     Feel The Difference
                 </a>
             </div>
         </div>
-        <div class="product_sample product_sample-left">
-            <img class="img-sample" src="//cdn.shopify.com/s/files/1/0660/1985/2535/files/ba12.jpg?v=1662349069" alt="product">
-            <div class="sample_text-wrapper">
-                <p class="sample_text-first">NEW ARRIVAL</p>
-                <a href="" class="sample_text-link sample_text-second remove_style_link">Ceramic Collection</a>
+        <div class="intro intro-right">
+            <img class="img-intro" src="//cdn.shopify.com/s/files/1/0660/1985/2535/files/ba12.jpg?v=1662349069" alt="image-introduction">
+            <div class="intro_text-wrapper">
+                <p class="intro_text-first">NEW ARRIVAL</p>
+                <a href="" class="intro_text-link intro_text-second remove_style_link">Ceramic Collection</a>
             </div>
         </div>
     </section>
@@ -51,15 +52,59 @@
     <section id="best_seller" class="max_width">
         <p class="title">OUR BEST SELLER</p>
         <div class="btns_bestsl">
-            <button class="btn btn-bestsl transition">NEW ARRIVALS</button>
-            <button class="btn btn-bestsl transition">BEST SELLERS</button>
-            <button class="btn btn-bestsl transition">TOP RATES</button>
+            <button class="btn btn-bestsl btn-bestsl-0 transition active_color" onclick="handleChangeTabs(this)">NEW ARRIVALS</button>
+            <button class="btn btn-bestsl btn-bestsl-1 transition" onclick="handleChangeTabs(this)">BEST SELLERS</button>
+            <button class="btn btn-bestsl btn-bestsl-2 transition" onclick="handleChangeTabs(this)">TOP RATES</button>
         </div>
 
-        <div class="products_bestsl"></div>
+        <div>
+            <div id="new_arrivals" class= "products products-main active_grid"></div>
+            <div id="best_sellers" class="products products-main"></div>
+            <div id="top_rates" class="products products-main"></div>
+        </div>
     </section>
 
-    <script src="../assets/js/load_page.js"></script>
+    <!-- banner -->
+    <section id="banner">
+        <img class="img-banner" src="//cdn.shopify.com/s/files/1/0660/1985/2535/files/ba10.jpg?v=1662347741" alt="banner">
+        <div class="brands max_width">
+            <div class="brands-item">
+                <img class="img-brand" src="//cdn.shopify.com/s/files/1/0660/1985/2535/files/brand3.png?v=1662345766" alt="brand">
+            </div>
+            <div class="brands-item">
+                <img class="img-brand" src="//cdn.shopify.com/s/files/1/0660/1985/2535/files/brand4.png?v=1662345766" alt="brand">
+            </div>
+            <div class="brands-item">
+                <img class="img-brand" src="//cdn.shopify.com/s/files/1/0660/1985/2535/files/brand1.png?v=1662345766" alt="brand">
+            </div>
+            <div class="brands-item">
+                <img class="img-brand" src="//cdn.shopify.com/s/files/1/0660/1985/2535/files/brand2.png?v=1662345766" alt="brand">
+            </div>
+            <div class="brands-item">
+                <img class="img-brand" src="//cdn.shopify.com/s/files/1/0660/1985/2535/files/brand3.png?v=1662345766" alt="brand">
+            </div>
+            <div class="brands-item">
+                <img class="img-brand" src="//cdn.shopify.com/s/files/1/0660/1985/2535/files/brand4.png?v=1662345766" alt="brand">
+            </div>
+        </div>
+        <div class="banner-text_wrapper">
+            <h3 class="banner-text banner-text-first">How To Become A Ceramicist</h3>
+            <h3 class="banner-text banner-text-second">
+                Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. <br>
+                Sunt qui esse pariatur duis deserunt</h3>
+            <button class="btn btn-slider btn-banner transition">SHOP NOW</button>
+        </div>
+    </section>
+
+    <!-- hot deals -->
+    <section id="hot_deal" class="max_width">
+        <p class="title">HOT DEAL</p>
+        <p class="reminder">Don't Miss Today's Featured Deals</p>
+        <div class= "products products-hotdeal"></div>
+            
+    </section>
+
+    <script src="../assets/js/loadPage.js"></script>
     <script src="../assets/js/home/render.js"></script>
     <script src="../assets/js/home/eventHandler.js"></script>
     <script>
