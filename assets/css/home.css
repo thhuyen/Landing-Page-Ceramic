@@ -13,9 +13,7 @@
     overflow-x: hidden;
     transition: all ease-in-out 1s;
 }
-.active_block {
-    display: block;
-}
+
 .slider-text-wrapper {
     position: relative;
     top: 40%;
@@ -120,6 +118,7 @@
 }
 
 /* ------------------ best seller ---------------- */
+#carousel-insta,
 #hot_deal,
 #best_seller {
     margin-top: 75px;
@@ -136,7 +135,7 @@
     content: "";
     position: absolute;
     width: 50%;
-    height: 3px;
+    height: 2px;
     left: 30%;
     bottom: -15px;
     background: var(--primary_color);
@@ -223,4 +222,141 @@
 }
 div.products-hotdeal {
     margin-top: 30px;
+}
+
+/* ------------------ leave email ------------------- */
+#leave_in4 {
+    height: 400px;
+    padding: 0 15px;
+    margin-top: 100px;
+}
+.img-in4 {
+    width: 50%;
+    height: inherit;
+}
+.in4 {
+    display: flex;
+    width: 50%;
+    height: inherit;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    line-height: 2;
+    padding: 0 60px;
+    background: #f0f8f6;
+    float: right;
+}
+.icon-envelop {
+    font-size: 3rem
+}
+.in4_text-first {
+    font-size: 3rem;
+    font-weight: 500;
+}
+.in4_text-second {
+    font-size: 1.3rem;
+    color: #979797;
+}
+.action_getemail {
+    margin-top: 20px;
+    display: flex;
+}
+.input-email {
+    flex-grow: 10;
+    font-size: 1.3rem;
+    padding: 20px 20px;
+    background: transparent;
+    border: 1px solid #979797;
+}
+.btn-subscribe {
+    flex-grow: 1;
+    color: white;
+    font-size: 1.3rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 10px 20px;
+    border: none;
+    background: var(--primary_color);
+}
+
+/* -------------------- carousel instagram ------------- */
+#carousel-insta {
+    margin-bottom: 20px;
+}
+.hashtag {
+    color: var(--primary_color);
+    font-size: 2rem;
+    margin: 30px 0;
+    transform: translateX(13px);
+}
+.carousel {
+    display: grid;
+    width: 100%;
+    height: max-content;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    position: relative;
+}
+
+.carousel-item {
+    display: none;
+    position: relative;
+    overflow: hidden;
+}
+.carousel-item:hover .img-carousel {
+    transform: scale(1.1);
+}
+.carousel-item:hover .btns-transfer {
+    display: flex;
+}
+.carousel-item:hover .overlay-carousel {
+    opacity: 1;
+}
+.img-carousel {
+    width: 100%;
+    transition: all linear 1s;
+}
+.btns-transfer {
+    display: flex;
+    width: 100%;
+    height: max-content;
+    position: absolute;
+    top: 40%;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+.icon-transfer {
+    font-size: 2rem;
+    padding: 15px 20px;
+    border-radius: 50%;
+    background: white;
+    z-index: 2;
+}
+.icon-transfer:hover {
+    color: white;
+    background: var(--primary_color);
+}
+.overlay-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+.icon-insta {
+    font-size: 5rem;
+    color: white;
+}
+.icon-insta:hover {
+    color: var(--primary_color);
+}
+.active_block {
+    display: block;
 }
