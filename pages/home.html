@@ -116,8 +116,35 @@
         <p class="title">HOT DEAL</p>
         <p class="reminder">Don't Miss Today's Featured Deals</p>
         <div class= "products products-hotdeal"></div>
-            
     </section>
+
+    <!-- leave customer information -->
+    <section id="leave_in4" class="max_width">
+        <img class="img-in4" src="//cdn.shopify.com/s/files/1/0660/1985/2535/files/ba9.jpg?v=1662347289" alt="image">
+        <div class="in4">
+            <i class="fa-regular fa-envelope-open icon icon-envelop"></i>
+            <h3 class="in4_text-first">Newsletter Signup</h3>
+            <p class="in4_text-second">Join our list and get 15% off your first purchase!</p>
+            <div class="action_getemail">
+                <input class="input-email" type="text" placeholder="Your email address...">
+                <button class="btn btn-subscribe">SUBSCRIBE</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="carousel-insta" class="max_width">
+        <p class="title">CERAMI ON INSTAGRAM</p>
+        <p class="hashtag">#cerami</p>
+
+        <div class="carousel">            
+            <div class="btns-transfer">
+                <i class="fa-solid fa-angle-left icon icon-transfer icon-transfer-left" onclick="handleToPrev(this)"></i>
+                <i class="fa-solid fa-angle-right icon icon-transfer icon-transfer-right" onclick="handleToNext(this)"></i>
+            </div>
+        </div>
+    </section>
+
+    <footer w3-include-html="./footer.html"></footer>
 
     <script src="../assets/js/loadPage.js"></script>
     <script src="../assets/js/home/render.js"></script>

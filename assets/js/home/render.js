@@ -165,6 +165,16 @@ const topRateProducts = [
         img: '//cdn.shopify.com/s/files/1/0660/1985/2535/products/14.1.jpg?v=1662000993'
     }
 ]
+const carousel = [
+    '//cdn.shopify.com/s/files/1/0660/1985/2535/files/instagram1.jpg?v=8226694471082303038',
+    '//cdn.shopify.com/s/files/1/0660/1985/2535/files/instagram3.jpg?v=9285988590578980231',
+    '//cdn.shopify.com/s/files/1/0660/1985/2535/files/instagram2.jpg?v=5951172637672660509',
+    '//cdn.shopify.com/s/files/1/0660/1985/2535/files/instagram4.jpg?v=6820916875668538020',
+    '//cdn.shopify.com/s/files/1/0660/1985/2535/files/instagram5.jpg?v=16229168583522440006',
+    '//cdn.shopify.com/s/files/1/0660/1985/2535/files/instagram6.jpg?v=13170386306182762289',
+    '//cdn.shopify.com/s/files/1/0660/1985/2535/files/instagram3.jpg?v=9285988590578980231',
+    
+]
 
 function render (parent, typeTag, className, id,  HTML, attribute, css) {
     const element = document.createElement(typeTag);
@@ -253,3 +263,28 @@ topRateProducts.map((element) => {
 for(let i = 0 ; i < 4; i++) {
     render($('.products-hotdeal'), 'div', 'product_bestsl', null, setHTMLProduct(bestSellerProduct[i]), null, null)
 }
+
+// append carousels 
+carousel.map((element) => {
+        let HTML =  `<img class="img-carousel" src="${element}">
+                        <div class="overlay-carousel">
+                            <a href=""><i class="fa-brands fa-instagram icon icon-insta transition"></i></a>
+                        </div>`
+        render($('.carousel'), 'div', 'carousel-item', null, HTML, null, null)});
+
+// render carousel
+function renderCarouselItem(arr, start, end) {
+    arr.map((element, index) => {
+        if(index >= start && index <= end)
+            element.classList.add('active_block');
+        else {
+            element.classList.remove('active_block')
+        }
+        localStorage.setItem("leftItem", start.toString());
+        localStorage.setItem("rightItem", end.toString());
+    })
+}
+// default render at first time
+renderCarouselItem([...$$('.carousel-item')], 0, 4);
+
+    

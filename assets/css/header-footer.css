@@ -1,5 +1,5 @@
 /* --------------- header ---------------- */
-
+header {
     height: var(--height_header);
     position: fixed;
     top: 0;
@@ -138,12 +138,12 @@ img.footer-logo {
   gap: 2rem;
 }
 
-i.fa-brands {
+.icon-media {
   font-size: 1.5rem;
   color: #212529;
 }
 
-i.fa-brands:hover {
+.icon-media:hover {
   color: #be9c79;
 }
 
