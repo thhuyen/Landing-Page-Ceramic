@@ -2,6 +2,7 @@
 #slider {
     position: relative;
     height: 90vh;
+    margin-top: var(--height_header);
 }
 .slider-imgs {
     display: none;
@@ -12,7 +13,7 @@
     overflow-x: hidden;
     transition: all ease-in-out 1s;
 }
-.active {
+.active_block {
     display: block;
 }
 .slider-text-wrapper {
@@ -29,20 +30,21 @@
 .slider-text {
     margin: 15px 0;
     line-height: 1.5;
+    letter-spacing: 2px;
 }
 .slider-text-first {
-    font-size: 1.2rem;
     letter-spacing: 4px;
+    font-size: 1.2rem;
 }
 .slider-text-second {
-    letter-spacing: 2px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 7rem;
 }
 .slider-text-third {
-    letter-spacing: 2px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.5rem;
 }
-.slider-btn {
+.btn-slider {
     font-size: 1.2rem;
     font-weight: 600;
     letter-spacing: 3px;
@@ -53,7 +55,7 @@
     transition: all ease 0.2s;
     cursor: pointer;
 }
-.slider-btn:hover {
+.btn-slider:hover {
     background: black;
     color: white;
 }
@@ -70,13 +72,13 @@
 }
 
 /* --------------- sample product -------------- */
-#section-sample {
+#section-intro {
     display: flex;
     justify-content: space-between;
     overflow: hidden;
     margin-top: 70px;
 }
-.product_sample {
+.intro {
     width: 100%;
     background-position: center;
     background-size: cover;
@@ -84,44 +86,44 @@
     position: relative;
     padding: 0 15px;
 }
-.product_sample-left {
+.intro-left {
     margin-right: 15px
 }
-.product_sample-right {
+.intro-right {
     margin-left: 15px;
 } 
-.img-sample {
+.img-intro {
     width: inherit;
     transition: 1s;
 }
-.img-sample:hover {
+.img-intro:hover {
     transform: scale(1.03);
 }
-.sample_text-wrapper {
+.intro_text-wrapper {
     position: absolute;
     left: 10%;
     bottom: 7%;
     line-height: 2;
 }
 .product_name:hover,
-.sample_text-link:hover {
+.intro_text-link:hover {
     color: var(--primary_color);
 }
-.sample_text-first {
+.intro_text-first {
     font-size: 1.4rem;
     font-weight: 400;
     letter-spacing: 4px;
 }
-.sample_text-second {
+.intro_text-second {
     font-size: 3rem;
     font-weight: 600;
 }
 
 /* ------------------ best seller ---------------- */
+#hot_deal,
 #best_seller {
     margin-top: 75px;
     text-align: center;
-    height: 500px;
     padding: 0 15px;
 }
 .title {
@@ -134,7 +136,7 @@
     content: "";
     position: absolute;
     width: 50%;
-    height: 2px;
+    height: 3px;
     left: 30%;
     bottom: -15px;
     background: var(--primary_color);
@@ -142,114 +144,83 @@
 .btns_bestsl {
     margin: 50px 0;
 }
-.icon-action:hover,
-.btn-bestsl:hover,
-.btn-bestsl:first-child {
-    color: white;
-    background: var(--primary_color);
-}
 .btn-bestsl {
     min-width: 124px;
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--primary-color);
+    color: var(--primary_color);
     padding: 15px;
     margin: 0 10px;
-    border: 1px solid var(--primary-color);
+    border: 1px solid var(--primary_color);
     background: white;
 }
-.products_bestsl {
-    margin: auto;
-    display: grid; 
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr 1fr;
-    gap: 20px;
-}
-.product_bestsl {
-    position: relative;
-    line-height: 2;
-    overflow: hidden;
-}
-.product_bestsl:hover .actions {
-    display: block;
-}
-.actions{
-    display: none;
-    width: 100%;
-    position: absolute;
-    left: 50%;
-    bottom: 30%;
-    transform: translateX(-50%);  
-}
-.action {
-    position: relative;
-    display: inline-block;
-}
-.icon-action {
-    font-size: 2rem;
-    padding: 15px;
-    margin: 0 10px;
-    background: white;
-    border-radius: 50%;
-}
-.icon-action:hover .tooltip {
-    display: block;
-}
-.tooltip {
-    display: none;
-    visibility: visible;
-    width: 112px;
-    position: absolute;
+.active_color,
+.icon-action:hover,
+.btn-bestsl:hover {
     color: white;
-    font-size: 1.2rem;
-    padding: 0 10px;
-    top: -70%;
-    left: -22%;
-    background: var(--bg_tooltip);
-    border-radius: 5px;
+    background: var(--primary_color);
 }
-.tooltip::after {
+
+/* --------------------- banner -------------------- */
+#banner {
+    position: relative;
+    margin-top: 110px;
+    background: #9db97b;
+}
+.img-banner {
+    width: 100%;
+}
+.brands {
+    display: flex;
+    height: 160px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+}
+.brands-item {
+    text-align: center;
+}
+.img-brand {
+    max-width: 50%;
+    height: auto;
+}
+.banner-text_wrapper {
     position: absolute;
-    top: 100%;
-    left: 40%;
-    content: "";
-    border-width: 8px;
-    border-style: solid;
-    border-color: var(--bg_tooltip) transparent transparent transparent;
+    top: 40%;
+    left: 10%;
+    transform: translateY(-40%);
+    z-index: 20;
 }
-.img-product {
-    max-width: 100%;
-    margin-bottom: 20px;
+.banner-text {
+    color: white;
+    line-height: 1.8;
 }
-.product_name {
-    font-size: 1.4rem;
+.banner-text-first {
+    font-size: 4rem;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 2px;
+}
+.banner-text-second {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.btn-banner {
+    color: black;
+    background: white;
+    border: none;
+}
+.btn-banner:hover {
+    color: white;
+    background: var(--primary_color);
+}
+
+/* ------------------- hot deals ------------------- */
+.reminder {
+    font-size: 1.3rem;
     font-weight: 600;
+    color: #666;
+    margin: 30px 0;
 }
-.price {
-    font-size: 1.4rem;
-    font-weight: 800;
-}
-.origin_price {
-    color: var(--primary_color);
-    margin-right: 10px;
-}
-.discount {
-    text-decoration: line-through;
-    color: #aaa;
-}
-.discount_price {
-    color: var(--primary_color);
-}
-.discount_percent {  
-    position: absolute;
-    top: 10px;
-    right: -30px;
-    color: #fff;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    padding: 5px 12px;
-    background: #e12c43;
-    transform: rotate(45deg);
-    width: 110px;
+div.products-hotdeal {
+    margin-top: 30px;
 }

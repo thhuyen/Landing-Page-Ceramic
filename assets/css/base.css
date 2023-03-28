@@ -30,7 +30,7 @@ html {
     transition: .2s;
 }
 .transition {
-    transition: all ease-in 0.3s;
+    transition: all ease-in 0.2s;
 }
 @keyframes grow {
     from {

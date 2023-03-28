@@ -1,7 +1,14 @@
 /* --------------- header ---------------- */
-header {
-  height: var(--height_header);
-  background: white;
+
+    height: var(--height_header);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    z-index: 50;
+    box-shadow: 0 0 10px #ccc;
+
 }
 /* if < 1200px height -20px */
 .wrapper-header {
