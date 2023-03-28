@@ -1,5 +1,5 @@
 /* --------------- header ---------------- */
-header {
+
     height: var(--height_header);
     position: fixed;
     top: 0;
@@ -8,44 +8,168 @@ header {
     background: white;
     z-index: 50;
     box-shadow: 0 0 10px #ccc;
+
 }
 /* if < 1200px height -20px */
 .wrapper-header {
-    height: inherit;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  height: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 #logo {
-    width: 170px;
-    transform: translateX(-70px);
+  width: 170px;
+  transform: translateX(-70px);
 }
 .nav-item {
-    display: inline-block;
-    position: relative;
-    min-width: 95px;
-    text-align: center;
-    height: var(--height_header);
-    line-height: var(--height_header);
-    font-size: 1.4rem;
-    font-weight: 600;
-    padding: 0 15px;
-    cursor: pointer;
-    /* background: yellow; */
+  display: inline-block;
+  position: relative;
+  min-width: 95px;
+  text-align: center;
+  height: var(--height_header);
+  line-height: var(--height_header);
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 0 15px;
+  cursor: pointer;
+  /* background: yellow; */
 }
 .nav-item::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 3px;
-    background: black;
-    transition: linear 0.3s;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background: black;
+  transition: linear 0.3s;
 }
 .nav-item:hover:before {
-    width: 100%;
+  width: 100%;
 }
 .icon-header {
-    font-size: 2rem;
+  font-size: 2rem;
+}
+
+/* --------------footer------------- */
+footer {
+  height: var(--height_footer);
+  position: absolute;
+}
+
+.wrapper-footer {
+  background-color: #f9f9f9;
+  border: 1px solid #dddddd6e;
+}
+
+.footer-container {
+  width: 100vw;
+  height: inherit;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  align-items: center;
+}
+
+#subcribe,
+#customer-care,
+#quick-shop {
+  height: 100%;
+  padding: 5rem 5rem 0 3rem;
+  border: 1px solid #dddddd6e;
+}
+
+.copyright {
+  display: flex;
+  width: 100vw;
+  justify-content: space-between;
+  padding: 1.8rem 1rem;
+}
+
+.copyright p {
+  font-size: 1.2rem;
+  align-self: center;
+}
+/* Subcribe Section */
+
+#subcribe p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-top: 2rem;
+  color: #212529;
+}
+img.footer-logo {
+  width: 160px;
+}
+.input-container {
+  margin-top: 2rem;
+  display: flex;
+}
+
+.input-container input {
+  padding: 0 2rem;
+  font-size: 1.2rem;
+  line-height: 3rem;
+  height: 3rem;
+  width: 65%;
+  background: #f4f4f4;
+  border: 0;
+}
+
+.input-container button {
+  height: 3rem;
+  width: 3rem;
+  border: 0;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  color: #fff;
+  background: #111;
+  border-radius: 0;
+  transition: 0.3s;
+}
+
+.input-container button:hover {
+  background: #be9c79;
+}
+
+.media-group {
+  margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
+}
+
+i.fa-brands {
+  font-size: 1.5rem;
+  color: #212529;
+}
+
+i.fa-brands:hover {
+  color: #be9c79;
+}
+
+h3.sub-head::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 3rem;
+  margin: 20px 0;
+  background-color: #212529;
+}
+
+/* Customer Care & Quick Shop section */
+#customer-care > a,
+#quick-shop > a {
+  display: block;
+  text-decoration: none;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  padding: 0.5rem 0;
+  color: #212529;
+}
+
+#customer-care > h3,
+#quick-shop > h3 {
+  display: inline-block;
+  font-size: 1.8rem;
+  color: #212529;
 }
