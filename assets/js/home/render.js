@@ -287,4 +287,5 @@ function renderCarouselItem(arr, start, end) {
 // default render at first time
 renderCarouselItem([...$$('.carousel-item')], 0, 4);
 
+
     
