@@ -1,6 +1,3 @@
-const $ = document.querySelector.bind(document);
-const $$ = document.querySelectorAll.bind(document);
-
 const sliders = [
     {
         text1: 'Style Destination',
@@ -175,47 +172,6 @@ const carousel = [
     '//cdn.shopify.com/s/files/1/0660/1985/2535/files/instagram3.jpg?v=9285988590578980231',
     
 ]
-
-function render (parent, typeTag, className, id,  HTML, attribute, css) {
-    const element = document.createElement(typeTag);
-    if (className)
-        element.className = className;
-    if (id)
-        element.id = id;
-    if (css)
-        element.style.cssText = css;
-    if (attribute) 
-        element.setAttribute(attribute.event, attribute.name);
-    if (HTML)
-        element.innerHTML = HTML;
-    parent.append(element);
-}
-
-function setHTMLProduct(element) {
-    const HTML = `<a href="">
-        <img src="${element.img}" alt="product" class="img-product">
-    </a>
-    <a href="" class="product_name remove_style_link">${element.name}</a> <br>
-    <span class="price origin_price ${element.discount_percent ? 'discount' : ''}">$${element.price}.00</span>
-    ${element.discount_percent ? 
-        `<span class="price discount_price">$${Math.round(element.price*((100 - element.discount_percent)/100))}.00</span>
-        <div class="discount_percent">-${element.discount_percent}%</div>` : ''}
-    <div class="actions">
-        <div class="action">
-            <i class="fa-solid fa-bag-shopping icon icon-action"></i>
-            <div class="tooltip">Add to Cart</div>
-        </div>
-        <div class="action">
-            <i class="fa-solid fa-magnifying-glass transition icon icon-action"></i>
-            <div class="tooltip">Quickiew</div>
-        </div>
-        <div class="action">
-            <i class="fa-regular fa-heart transition icon icon-action"></i>
-            <div class="tooltip">Add to Wishlist</div>
-        </div>
-    </div>`
-    return HTML;
-}
 
 // render slider
 sliders.map((element, index) => {
