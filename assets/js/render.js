@@ -21,6 +21,7 @@ function setHTMLProduct(element) {
         <img src="${element.img}" alt="product" class="img-product">
     </a>
     <a href="./detail.html" target="_blank" class="product_name remove_style_link" onclick="saveInfor(this)">${element.name}</a> <br>
+
     <span class="price origin_price ${element.discount_percent ? 'discount' : ''}">$${element.price}.00</span>
     ${element.discount_percent ? 
         `<span class="price discount_price">$${Math.round(element.price*((100 - element.discount_percent)/100))}.00</span>
