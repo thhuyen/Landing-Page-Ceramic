@@ -17,10 +17,11 @@ function render (parent, typeTag, className, id,  HTML, attribute, css) {
 }
 
 function setHTMLProduct(element) {
-    const HTML = `<a href="">
+    const HTML = `<a href="./detail.html" target="_blank">
         <img src="${element.img}" alt="product" class="img-product">
     </a>
-    <a href="" class="product_name remove_style_link">${element.name}</a> <br>
+    <a href="./detail.html" target="_blank" class="product_name remove_style_link" onclick="saveInfor(this)">${element.name}</a> <br>
+
     <span class="price origin_price ${element.discount_percent ? 'discount' : ''}">$${element.price}.00</span>
     ${element.discount_percent ? 
         `<span class="price discount_price">$${Math.round(element.price*((100 - element.discount_percent)/100))}.00</span>
