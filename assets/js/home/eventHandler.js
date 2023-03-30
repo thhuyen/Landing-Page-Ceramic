@@ -40,3 +40,9 @@ const handleToPrev = (icon_prev) => {
     if(leftItem >= 0)
         renderCarouselItem([...$$('.carousel-item')], leftItem, rightItem);
 }
+const saveInfor1 = (product) => {
+    storage(product.previousElementSibling.childNodes[1].src, product.innerText, product.nextElementSibling.nextElementSibling)
+}
+const saveInfor = (product) => {
+    storage(product.childNodes[1].src, product.nextElementSibling.innerText, product.nextElementSibling.nextElementSibling.nextElementSibling)
+}
