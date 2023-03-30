@@ -31,7 +31,7 @@
     font-weight: 600;
     font-size: 1.8rem;
 }
-.origin_price {
+span.origin_price {
     text-decoration: line-through;
     color: #aaa;
 }
