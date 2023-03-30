@@ -217,13 +217,6 @@ sliders.map((element, index) => {
         <button class="btn btn-slider">SHOP NOW</button>
     </div>`;
 
-    render($('.dots'), 
-            'i', 
-            index == 0 ? 'fa-solid fa-circle icon icon-dot' : 'fa-regular fa-circle icon icon-dot',
-            `dot-${index}`,
-            null,
-            {event: 'onclick', name: 'handleChangeSlide(this)'},
-            null);
 
     render($('#slider'),
             'div',

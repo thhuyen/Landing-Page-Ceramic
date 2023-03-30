@@ -1,0 +1,424 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost&display=swap");
+
+body {
+  font-family: Jost;
+}
+/* ABOUT US SECTION */
+.wrapper {
+  max-width: 1280px;
+  margin: auto;
+}
+
+#banner {
+  background-image: url("https://cdn.shopify.com/s/files/1/0660/1985/2535/files/collection.jpg?v=1662008268");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: var(--height_about);
+  width: 100%;
+}
+
+h1.about {
+  position: relative;
+  top: 30%;
+  left: 40%;
+  font-family: Jost;
+  font-size: 4.5rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+#banner > p {
+  position: relative;
+  top: 32%;
+  left: 42%;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #fff;
+}
+
+.home > a {
+  top: 32%;
+  left: 30%;
+  text-decoration: none;
+  font-family: Jost;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #fff;
+}
+
+.home > a:hover {
+  cursor: pointer;
+  color: #be9c79;
+}
+
+.layout {
+  margin: 4rem 4rem;
+}
+
+/* About- Intro */
+#about-section {
+  margin: 6rem 0;
+}
+
+.intro {
+  margin-bottom: 6rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  gap: 6rem;
+}
+
+.text {
+  margin: 6rem 0 6rem 2rem;
+}
+
+.title {
+  font-size: 4rem;
+  color: #000000;
+  font-weight: 500;
+  line-height: 4.5rem;
+  margin-bottom: 2rem;
+}
+
+.sub-title {
+  font-size: 1.5rem;
+  color: #969696;
+  letter-spacing: 3.2px;
+  margin-bottom: 4rem;
+}
+
+.sub-title::before {
+  display: inline-block;
+  content: "";
+  width: 5rem;
+  height: 2px;
+  background: #be9c79;
+  margin-right: 2rem;
+  position: relative;
+  top: -0.5rem;
+}
+
+img.intro-img {
+  aspect-ratio: 1/1;
+  width: 95%;
+  margin-left: 2rem;
+}
+
+img.intro-img:hover {
+  aspect-ratio: 1/1;
+  width: 90%;
+  vertical-align: middle;
+  border-style: none;
+  margin: 1rem 0 0 1rem;
+
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  transition-property: all;
+}
+
+p.content {
+  line-height: 1.6;
+  font-size: 1.4rem;
+  color: #969696;
+  text-align: justify;
+}
+
+/* About- Core Values */
+#core-value {
+  background-image: url("https://cdn.shopify.com/s/files/1/0660/1985/2535/files/about3.jpg?v=1662008268");
+  height: 48rem;
+  max-height: 50rem;
+  background-size: cover;
+  background-position: right;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  padding: 8rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5rem;
+}
+
+.value {
+  padding: 1rem 2rem;
+  text-align: center;
+}
+i.fa-value {
+  font-size: 9rem;
+  height: 9rem;
+  color: #fff;
+  margin-bottom: 3rem;
+}
+
+h3.value-title {
+  margin-bottom: 1.5rem;
+  color: #fff;
+  font-size: 2.5rem;
+  letter-spacing: 3px;
+  font-weight: 300;
+}
+
+hr {
+  width: 4rem;
+  position: relative;
+  left: calc(50% - 2rem);
+  margin-bottom: 3rem;
+}
+
+p.value-content {
+  color: #fff;
+  font-size: 1.5rem;
+  letter-spacing: 1.5px;
+  font-weight: 200;
+}
+
+/* About - Core Members */
+#core-members {
+  margin: 6rem;
+}
+
+.team {
+  padding: 0 10rem;
+  text-align: center;
+}
+
+.team-title,
+.form-title {
+  text-align: center;
+  font-size: 4.5rem;
+  margin-bottom: 1.5rem;
+}
+.team-intro {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 3rem;
+}
+
+/* About - Core Mems - Profile slider */
+.slider-wrapper {
+  position: relative;
+}
+
+#profile-slider {
+  display: flex;
+  max-width: 85%;
+  margin: 2rem 6rem 2rem 8rem;
+  justify-content: initial;
+  gap: 2rem;
+  overflow: hidden;
+}
+
+.mem-profile {
+  margin-left: 6rem;
+  overflow: hidden;
+  height: 50rem;
+  max-height: 60rem;
+}
+
+.mem-img {
+  position: relative;
+  background-position: center;
+  max-height: 40rem;
+  background-size: cover;
+}
+
+.mem-img > img {
+  max-height: 45rem;
+  width: 30rem;
+  height: 40rem;
+}
+
+.mem-profile:hover {
+  filter: brightness(80%);
+}
+
+.mem-profile:hover .mem-contacts {
+  visibility: visible;
+}
+
+.mem-contacts {
+  visibility: hidden;
+  display: flex;
+  background-color: transparent;
+  position: absolute;
+  top: calc(50% - 2rem);
+  transform: translateX(42%);
+  gap: 3rem;
+}
+
+.mem-contacts > i {
+  font-size: 2.5rem;
+  color: #fff;
+}
+.mem-contacts > i:hover {
+  font-size: 3.5rem;
+  cursor: pointer;
+}
+
+.mem-info {
+  text-align: center;
+  padding: 1rem 2rem 0 0;
+}
+.mem-name {
+  font-size: 2rem;
+}
+.mem-name:hover {
+  color: #be9c79;
+}
+.mem-title {
+  font-size: 1rem;
+}
+
+/* <!-- SECTION 2: CONTACT US --> */
+
+/* Contact us */
+.contact-us {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* margin: 0 8rem 8rem 8rem; */
+  margin: 0 18rem;
+  background-color: #f7f7f7;
+}
+
+/* <!-- Left section --> */
+.contact-intro {
+  padding: 4rem 4rem;
+}
+
+.contact-title,
+.follow {
+  margin-top: 2rem;
+  font-size: 2.2rem;
+  letter-spacing: 3px;
+}
+.contact-intro > hr {
+  margin-top: 1.5rem;
+  left: 0;
+}
+
+p.contact-text {
+  font-size: 1.5rem;
+  color: #969696;
+  margin-bottom: 2rem;
+}
+
+a.email-us {
+  color: #000;
+  font-size: 1.5rem;
+}
+
+a.email-us:hover {
+  color: #be9c79;
+}
+
+/* social media links */
+.group-of-social-media {
+  display: flex;
+  gap: 3rem;
+}
+.social-link {
+  height: 3.5rem;
+  position: relative;
+  padding: 0.8rem;
+  aspect-ratio: 1/1;
+  border: solid 1px #be9c79;
+  border-radius: 3rem;
+  text-align: center;
+  top: calc(50%-5rem);
+}
+.fa-brands {
+  font-size: 2rem;
+  color: #969696;
+}
+
+.fa-brands:hover {
+  color: #be9c79;
+}
+
+/* <!-- Right section --> */
+.company-address > img {
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+
+/* Contact form  */
+.contact-form {
+  margin: 8rem 18rem 8rem 18rem;
+}
+/* Label */
+.require-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 1rem;
+}
+
+.form-name,
+.form-email,
+.form-message {
+  position: relative;
+  font-size: 1.7rem;
+}
+
+.form-name::before,
+.form-email::before,
+.form-message::before {
+  display: block;
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  content: "*";
+  color: red;
+  top: -0.6rem;
+  right: -2.2rem;
+}
+
+/* Input */
+#inputName,
+#inputEmail,
+#inputMsg {
+  margin-top: 2rem;
+  font-size: 1.6rem;
+  font-style: italic;
+  border-radius: 0;
+  border: 1px solid #dddddd;
+  width: 100%;
+  background-color: transparent;
+  padding: 1rem 2rem;
+  padding-left: 25px;
+  line-height: 5rem;
+  font-family: Jost;
+}
+
+/* Invalid input alert */
+.form-alert {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: red;
+}
+
+/* Submit Btn */
+div.submit {
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.submit-btn {
+  height: 5rem;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 3.2px;
+  padding: 0 6rem;
+  color: #fff;
+  background: #000;
+  border: none;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+.submit-btn:hover {
+  background-color: #be9c79;
+}
