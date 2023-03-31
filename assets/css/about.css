@@ -1,21 +1,21 @@
+/* Import Font Family from GG Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Jost&display=swap");
 
 body {
   font-family: Jost;
 }
 /* ABOUT US SECTION */
-.wrapper {
-  max-width: 1280px;
+/* Banner */
+.banner {
+  position: relative;
+  left: 0;
+  right: 0;
   margin: auto;
-}
-
-#banner {
   background-image: url("https://cdn.shopify.com/s/files/1/0660/1985/2535/files/collection.jpg?v=1662008268");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: var(--height_about);
-  width: 100%;
 }
 
 h1.about {
@@ -26,6 +26,7 @@ h1.about {
   font-size: 4.5rem;
   font-weight: 500;
   color: #fff;
+  overflow: hidden;
 }
 
 #banner > p {
@@ -35,6 +36,7 @@ h1.about {
   font-size: 1.5rem;
   font-weight: 300;
   color: #fff;
+  overflow: hidden;
 }
 
 .home > a {
@@ -57,20 +59,29 @@ h1.about {
 }
 
 /* About- Intro */
-#about-section {
+main {
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: auto;
+  align-content: center;
+}
+.about-section {
   margin: 6rem 0;
 }
 
 .intro {
-  margin-bottom: 6rem;
+  margin: 2rem 6rem 0 4rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: space-between;
-  gap: 6rem;
+  gap: 4rem;
+  max-width: 90%;
 }
 
 .text {
-  margin: 6rem 0 6rem 2rem;
+  margin: 6rem 0 6rem 0;
+  width: 90%;
 }
 
 .title {
@@ -101,8 +112,8 @@ h1.about {
 
 img.intro-img {
   aspect-ratio: 1/1;
-  width: 95%;
-  margin-left: 2rem;
+  width: 90%;
+  right: 0;
 }
 
 img.intro-img:hover {
@@ -126,7 +137,7 @@ p.content {
 }
 
 /* About- Core Values */
-#core-value {
+.core-value {
   background-image: url("https://cdn.shopify.com/s/files/1/0660/1985/2535/files/about3.jpg?v=1662008268");
   height: 48rem;
   max-height: 50rem;
@@ -203,17 +214,17 @@ p.value-content {
 #profile-slider {
   display: flex;
   max-width: 85%;
-  margin: 2rem 6rem 2rem 8rem;
+  margin: 2rem 4rem 2rem 6rem;
   justify-content: initial;
   gap: 2rem;
   overflow: hidden;
 }
 
 .mem-profile {
-  margin-left: 6rem;
+  margin-left: 4rem;
   overflow: hidden;
-  height: 50rem;
-  max-height: 60rem;
+  height: 40rem;
+  max-height: 50rem;
 }
 
 .mem-img {
@@ -224,9 +235,10 @@ p.value-content {
 }
 
 .mem-img > img {
-  max-height: 45rem;
-  width: 30rem;
-  height: 40rem;
+  max-height: 40rem;
+  width: 25rem;
+  height: 35rem;
+  overflow: hidden;
 }
 
 .mem-profile:hover {

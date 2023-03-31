@@ -23,7 +23,7 @@ function isInputValid() {
   !emailInput.value.includes(".") ||
   !emailInput.value.includes("@")
     ? (emailAlert.textContent =
-        "Email can not be empty and must have at least 10 letters with `@` or `.`!!")
+        "Email can not be empty and must have at least 10 letters with `@` and `.`!!")
     : (emailAlert.textContent = "");
 
   // Check if message is empty
@@ -32,9 +32,24 @@ function isInputValid() {
         "Let us know more about you by writing somethings... :)")
     : (msgAlert.textContent = "");
 
-  clientMsg.push({
-    client: nameInput.value,
-    email: emailInput.value,
-    message: msgInput.value,
-  });
+  if (
+    nameInput.value != "" &&
+    emailInput.value != "" &&
+    emailInput.value.length >= 10 &&
+    emailInput.value.includes(".") &&
+    emailInput.value.includes("@") &&
+    msgInput.value != ""
+  ) {
+    alert("Your form is submited successfully!!!");
+    clientMsg.push({
+      client: nameInput.value,
+      email: emailInput.value,
+      message: msgInput.value,
+    });
+    nameInput.value = "";
+    emailInput.value = "";
+    msgInput.value = "";
+  }
 }
+
+//show alert, save data & clear the input:
