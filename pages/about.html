@@ -7,22 +7,26 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/base.css" />
     <link rel="stylesheet" href="../assets/css/about.css" />
+    <link rel="stylesheet" href="../assets/css/header-footer.css" />
     <title>About</title>
   </head>
   <body>
+    <!-- Header -->
+    <header w3-include-html="./header.html"></header>
+
     <!-- Banner -->
-    <div id="banner">
-      <h1 class="about">About us</h1>
+    <div class="banner max_width">
+      <!-- <h1 class="about">About us</h1>
       <p>
         <span class="home"><a href="./home.html">Home</a></span>
         <i class="fa fa-angle-right"></i> About us
-      </p>
+      </p> -->
     </div>
     <main>
       <div class="wrapper">
         <div class="layout">
           <!-- SECTION 1: ABOUT US -->
-          <div id="about-section">
+          <div class="about-section max_width">
             <!-- Introduction -->
             <div id="about-intro">
               <div class="intro story">
@@ -37,14 +41,9 @@
                     course of his lifetime in ceramics. <br />
                     <br />
                     The stories behind each piece are as diverse as the pieces
-                    themselves, and are connected to the places he has visited
-                    (including his travels as an archaeologist in the Middle
-                    East), and the people he has known (the leading lights of
-                    world ceramics over the last half century). The most recent
-                    have been completed in the last few years. In their
-                    totality, this range of sometimes bizarre, sometimes
-                    beautiful pieces represents points along a journey through
-                    life.
+                    themselves.In their totality, this range of sometimes
+                    bizarre, sometimes beautiful pieces represents points along
+                    a journey through life.
                   </p>
                 </div>
                 <img
@@ -81,7 +80,7 @@
         </div>
       </div>
       <!-- Core Value -->
-      <div id="core-value"></div>
+      <div class="core-value max_width"></div>
 
       <!-- Core Members -->
       <div id="core-members">
@@ -216,6 +215,9 @@
           </div>
         </div>
       </div>
+
+      <!-- Footer -->
+      <footer w3-include-html="./footer.html"></footer>
     </main>
     <!-- Font Awesome for icons -->
     <script
@@ -224,6 +226,7 @@
     ></script>
 
     <!-- JS -->
+    <script src="../assets/js/loadPage.js"></script>
     <script src="../assets/js/about/renderEl.js"></script>
     <script src="../assets/js/about/slider.js"></script>
     <script src="../assets/js/about/formValidation.js"></script>
