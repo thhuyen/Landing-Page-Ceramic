@@ -40,7 +40,7 @@ coreValues.map((element, index) => {
   </p>
 </div>`;
 
-  render($("#core-value"), "div", null, null, valueHTML, null, null);
+  render($(".core-value"), "div", null, null, valueHTML, null, null);
 });
 
 //Profile-slider

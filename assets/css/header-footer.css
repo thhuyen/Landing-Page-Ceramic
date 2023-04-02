@@ -20,6 +20,14 @@ header {
   width: 170px;
   transform: translateX(-70px);
 }
+nav > a {
+  text-decoration: none;
+  color: #111;
+}
+
+nav > a:hover {
+  color: #be9c79;
+}
 .nav-item {
   display: inline-block;
   position: relative;
@@ -45,6 +53,14 @@ header {
 }
 .nav-item:hover:before {
   width: 100%;
+}
+.block-icons > a {
+  color: black;
+  text-decoration: none;
+}
+
+.block-icons > a:hover {
+  color: #be9c79;
 }
 .icon-header {
   font-size: 2rem;
@@ -116,20 +132,24 @@ img.footer-logo {
 
 .input-container input {
   padding: 0 2rem;
+  margin: auto 0 auto 0;
   font-size: 1.2rem;
   line-height: 3rem;
   height: 3rem;
-  width: 65%;
+  width: 80%;
   background: #f4f4f4;
   border: 0;
 }
 
 .input-container button {
+  display: flex;
+  margin: auto 0 auto 0;
+  left: 0;
   height: 3rem;
   width: 3rem;
   border: 0;
-  right: 0;
-  top: 0;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   color: #fff;
   background: #111;
