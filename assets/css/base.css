@@ -15,7 +15,7 @@ html {
   --bg_tooltip: rgba(0, 0, 0, 0.5);
 }
 .max_width {
-  width: 1450px;
+  width: 100%;
   margin: auto;
 }
 .icon {
@@ -51,5 +51,29 @@ html {
   to {
     opacity: 0;
     transform: translate(-50%, 20px);
+  }
+}
+
+/* Add Zoom Animation */
+.zoom-animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s;
+}
+
+@-webkit-keyframes animatezoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes animatezoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
   }
 }
