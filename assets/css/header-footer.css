@@ -48,6 +48,7 @@ header {
 }
 .icon-header {
   font-size: 2rem;
+  padding: 10px;
 }
 
 /* --------------footer------------- */
@@ -107,7 +108,7 @@ footer {
 }
 img.footer-logo {
   width: 160px;
-  height: ;
+  /* height: ; */
 }
 .input-container {
   margin-top: 2rem;

@@ -168,9 +168,7 @@ const carousel = [
     '//cdn.shopify.com/s/files/1/0660/1985/2535/files/instagram2.jpg?v=5951172637672660509',
     '//cdn.shopify.com/s/files/1/0660/1985/2535/files/instagram4.jpg?v=6820916875668538020',
     '//cdn.shopify.com/s/files/1/0660/1985/2535/files/instagram5.jpg?v=16229168583522440006',
-    '//cdn.shopify.com/s/files/1/0660/1985/2535/files/instagram6.jpg?v=13170386306182762289',
-    '//cdn.shopify.com/s/files/1/0660/1985/2535/files/instagram3.jpg?v=9285988590578980231',
-    
+    '//cdn.shopify.com/s/files/1/0660/1985/2535/files/instagram6.jpg?v=13170386306182762289',    
 ]
 
 // render slider
@@ -183,6 +181,13 @@ sliders.map((element, index) => {
         <button class="btn btn-slider">SHOP NOW</button>
     </div>`;
 
+    render($('.dots'), 
+            'i', 
+            index == 0 ? 'fa-solid fa-circle icon icon-dot' : 'fa-regular fa-circle icon icon-dot',
+            `dot-${index}`,
+            null,
+            {event: 'onclick', name: 'handleChangeSlide(this)'},
+            null);
 
     render($('#slider'),
             'div',
@@ -227,7 +232,7 @@ function renderCarouselItem(arr, start, end) {
         if(index >= start && index <= end)
             element.classList.add('active_block');
         else {
-            element.classList.remove('active_block')
+            element.classList.remove('active_block');
         }
         localStorage.setItem("leftItem", start.toString());
         localStorage.setItem("rightItem", end.toString());
