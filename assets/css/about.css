@@ -170,7 +170,7 @@ h3.value-title {
   font-weight: 300;
 }
 
-hr {
+hr.wider {
   width: 4rem;
   position: relative;
   left: calc(50% - 2rem);
@@ -186,7 +186,7 @@ p.value-content {
 
 /* About - Core Members */
 #core-members {
-  margin: 6rem;
+  margin: 6rem 6rem 0 6rem;
 }
 
 .team {
@@ -209,12 +209,14 @@ p.value-content {
 /* About - Core Mems - Profile slider */
 .slider-wrapper {
   position: relative;
+  min-height: 40rem;
 }
 
 #profile-slider {
   display: flex;
-  max-width: 85%;
-  margin: 2rem 4rem 2rem 6rem;
+  min-height: 50rem;
+  max-width: 90%;
+  margin: 4rem 4rem 0rem 4rem;
   justify-content: initial;
   gap: 2rem;
   overflow: hidden;
@@ -223,8 +225,7 @@ p.value-content {
 .mem-profile {
   margin-left: 4rem;
   overflow: hidden;
-  height: 40rem;
-  max-height: 50rem;
+  height: 50rem;
 }
 
 .mem-img {
@@ -235,7 +236,6 @@ p.value-content {
 }
 
 .mem-img > img {
-  max-height: 40rem;
   width: 25rem;
   height: 35rem;
   overflow: hidden;
@@ -270,7 +270,7 @@ p.value-content {
 
 .mem-info {
   text-align: center;
-  padding: 1rem 2rem 0 0;
+  padding: 1rem 2rem 1rem 0;
 }
 .mem-name {
   font-size: 2rem;
@@ -280,6 +280,7 @@ p.value-content {
 }
 .mem-title {
   font-size: 1rem;
+  margin-bottom: 1rem;
 }
 
 /* <!-- SECTION 2: CONTACT US --> */

@@ -1,4 +1,7 @@
-<link rel="stylesheet" href="../assets/css/header-footer.css">
+<!-- CSS Links -->
+<link rel="stylesheet" href="../assets/css/header-footer.css" />
+<link rel="stylesheet" href="../assets/css/base.css" />
+<link rel="stylesheet" href="../assets/css/login.css" />
 
 <div class="wrapper-header max_width">
     <nav>
@@ -22,11 +25,90 @@
     <a href="home.html">
         <img id="logo" src="//cdn.shopify.com/s/files/1/0660/1985/2535/files/logo.png?v=1662015130" alt="logo">
     </a>
+    <a href=""> <div class="nav-item">Pages</div> </a
+    ><a href="">
+      <div class="nav-item">Blogs</div>
+    </a>
+  </nav>
 
-    <div class="block-icons">
-        <i class="fa-solid fa-magnifying-glass icon icon-header"></i>
-        <i class="fa-regular fa-user icon icon-header"></i>
-        <i class="fa-regular fa-heart icon icon-header"></i>
-        <i class="ti-bag icon icon-header"></i>
+  <a href="home.html">
+    <img
+      id="logo"
+      src="//cdn.shopify.com/s/files/1/0660/1985/2535/files/logo.png?v=1662015130"
+      alt="logo"
+    />
+  </a>
+
+  <div class="block-icons">
+    <a href="#">
+      <i class="fa-solid fa-magnifying-glass icon icon-header"></i>
+    </a>
+    <a href="#" onclick="document.getElementById('id01').style.display='block'">
+      <i class="fa-regular fa-user icon icon-header"></i>
+    </a>
+    <a href="#">
+      <i class="fa-regular fa-heart icon icon-header"></i>
+    </a>
+    <a href="#">
+      <i class="fa-solid fa-cart-flatbed-suitcase icon icon-header"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Login -->
+<div id="id01" class="modal">
+  <form
+    class="login-modal zoom-animate max_width"
+    action="/action_page.php"
+    method="post"
+  >
+    <div class="imgcontainer">
+      <span
+        onclick="document.getElementById('id01').style.display='none'"
+        class="close"
+        title="Close Modal"
+        >&times;</span
+      >
+      <img
+        class="login-logo"
+        src="//cdn.shopify.com/s/files/1/0660/1985/2535/files/logo.png?v=1662015130"
+        alt="logo"
+      />
+      <hr class="short" />
+      <p class="greeting">Great to have you here!</p>
     </div>
+
+    <div class="container">
+      <input type="text" placeholder="Enter Username" name="uname" required />
+
+      <input
+        type="password"
+        placeholder="Enter Password"
+        name="psw"
+        type="text"
+        required
+      />
+      <div class="sub-options">
+        <span class="psw"><a href="#">Forgot your password?</a></span>
+        <div class="remember">
+          <input
+            class="checkbox"
+            type="checkbox"
+            checked="checked"
+            name="remember"
+          />
+          Remember me
+        </div>
+      </div>
+    </div>
+
+    <div class="container" style="background-color: #f1f1f1">
+      <button type="submit">Login</button>
+
+      <button type="button" class="register">
+        Don't have an account? <br />
+        <a href="#">Register Now!</a>
+      </button>
+    </div>
+  </form>
 </div>
