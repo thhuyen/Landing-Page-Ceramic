@@ -44,6 +44,7 @@
 .action {
     position: relative;
     display: inline-block;
+    animation: growUp ease-in .3s;
 }
 .icon-action {
     font-size: 2rem;

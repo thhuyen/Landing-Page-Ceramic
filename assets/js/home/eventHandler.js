@@ -34,15 +34,15 @@ const handleToNext = (icon_next) => {
 }
 
 const handleToPrev = (icon_prev) => {
+    
     let leftItem = +localStorage.getItem("leftItem") - 1;
     let rightItem = +localStorage.getItem("rightItem") - 1;
     
     if(leftItem >= 0)
         renderCarouselItem([...$$('.carousel-item')], leftItem, rightItem);
 }
-const saveInfor1 = (product) => {
-    storage(product.previousElementSibling.childNodes[1].src, product.innerText, product.nextElementSibling.nextElementSibling)
-}
-const saveInfor = (product) => {
-    storage(product.childNodes[1].src, product.nextElementSibling.innerText, product.nextElementSibling.nextElementSibling.nextElementSibling)
+
+// handle accept cookies button
+$('.btn-gotit').onclick = function() {
+    this.parentElement.style.display = 'none';
 }

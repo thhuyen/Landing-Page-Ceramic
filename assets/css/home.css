@@ -11,9 +11,8 @@
     background-position: center;
     background-size:cover;
     overflow-x: hidden;
-    transition: all ease-in-out 1s;
+    animation: fadeIn linear 1s;
 }
-
 .slider-text-wrapper {
     position: relative;
     top: 40%;
@@ -283,11 +282,11 @@ div.products-hotdeal {
     gap: 15px;
     position: relative;
 }
-
 .carousel-item {
     display: none;
     position: relative;
     overflow: hidden;
+    animation: fadeIn linear .5s;
 }
 .carousel-item:hover .img-carousel {
     transform: scale(1.1);
@@ -297,6 +296,7 @@ div.products-hotdeal {
 }
 .carousel-item:hover .overlay-carousel {
     opacity: 1;
+    animation: fadeIn linear .5s;
 }
 .img-carousel {
     width: 100%;
@@ -317,6 +317,7 @@ div.products-hotdeal {
     border-radius: 50%;
     background: white;
     z-index: 2;
+    cursor: pointer;
 }
 .icon-transfer:hover {
     color: white;
@@ -344,4 +345,40 @@ div.products-hotdeal {
 }
 .active_block {
     display: block;
+}
+/* ------------ box accept cookie -------- */
+#cookie {
+    width: 300px;
+    height: 230px;
+    background: black;
+    position: fixed;
+    right: 30px;
+    bottom: 10%;
+    z-index: 2;
+    padding: 30px;
+    line-height: 1.8;
+    text-align: center;
+}
+.content_box {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+.content_box-policy {
+    display: inline-block;
+    font-weight: 500;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+    margin: 25px 0;
+}
+.btn-gotit {
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 15px;
+    background: white;
+}
+.btn-gotit:hover {
+    color: white;
+    background: var(--primary_color);
 }
