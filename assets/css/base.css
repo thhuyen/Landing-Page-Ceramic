@@ -19,6 +19,10 @@ html {
   max-width: 100%;
   margin: auto;
 }
+.full_width {
+  width: 100%;
+  margin: auto;
+}
 .icon {
   cursor: pointer;
 }
