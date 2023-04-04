@@ -15,11 +15,15 @@ html {
   --bg_tooltip: rgba(0, 0, 0, 0.5);
 }
 .max_width {
+  width: 1450px;
+  max-width: 100%;
+  margin: auto;
+}
+.full_width {
   width: 100%;
   margin: auto;
 }
 .icon {
-  padding: 10px;
   cursor: pointer;
 }
 .btn {
@@ -33,26 +37,25 @@ html {
 .transition {
   transition: all ease-in 0.2s;
 }
-@keyframes grow {
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translate(-50%, 20px);
   }
   to {
     opacity: 1;
-    transform: translate(-50%, 0);
   }
 }
-@keyframes drop {
+@keyframes growUp {
   from {
-    opacity: 1;
-    transform: translate(-50%, 0);
+    opacity: 0;
+    transform: translateY(50%);
   }
   to {
-    opacity: 0;
-    transform: translate(-50%, 20px);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
+
 
 /* Add Zoom Animation */
 .zoom-animate {

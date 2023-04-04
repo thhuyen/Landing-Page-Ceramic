@@ -1,6 +1,8 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
+const apiProducts = 'http://localhost:3000/products';
+
 function render (parent, typeTag, className, id,  HTML, attribute, css) {
     const element = document.createElement(typeTag);
     if (className)
@@ -27,16 +29,13 @@ function setHTMLProduct(element) {
         <div class="discount_percent">-${element.discount_percent}%</div>` : ''}
     <div class="actions">
         <div class="action">
-            <i class="fa-solid fa-bag-shopping icon icon-action"></i>
-            <div class="tooltip">Add to Cart</div>
+            <i class="fa-solid fa-bag-shopping icon icon-action"></i> 
         </div>
         <div class="action">
-            <i class="fa-solid fa-magnifying-glass transition icon icon-action"></i>
-            <div class="tooltip">Quickiew</div>
+            <i class="fa-solid fa-magnifying-glass transition icon icon-action"></i> 
         </div>
         <div class="action">
             <i class="fa-regular fa-heart transition icon icon-action"></i>
-            <div class="tooltip">Add to Wishlist</div>
         </div>
     </div>`
     return HTML;

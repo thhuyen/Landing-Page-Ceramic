@@ -44,6 +44,7 @@
 .action {
     position: relative;
     display: inline-block;
+    animation: growUp ease-in .3s;
 }
 .icon-action {
     font-size: 2rem;
@@ -52,30 +53,9 @@
     background: white;
     border-radius: 50%;
 }
-.icon-action:hover .tooltip {
-    display: block;
-}
-.tooltip {
-    display: none;
-    visibility: visible;
-    width: 112px;
-    position: absolute;
+.icon-action:hover {
     color: white;
-    font-size: 1.2rem;
-    padding: 0 10px;
-    top: -70%;
-    left: -22%;
-    background: var(--bg_tooltip);
-    border-radius: 5px;
-}
-.tooltip::after {
-    position: absolute;
-    top: 100%;
-    left: 40%;
-    content: "";
-    border-width: 8px;
-    border-style: solid;
-    border-color: var(--bg_tooltip) transparent transparent transparent;
+    background: var(--primary_color);
 }
 .img-product {
     max-width: 100%;

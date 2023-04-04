@@ -1,27 +1,28 @@
 <!-- CSS Links -->
 <link rel="stylesheet" href="../assets/css/header-footer.css" />
-<link rel="stylesheet" href="../assets/css/base.css" />
 <link rel="stylesheet" href="../assets/css/login.css" />
 
 <div class="wrapper-header max_width">
-  <nav>
-    <a href="./home.html"><div class="nav-item">Home</div> </a>
-    <a href="#"><div class="nav-item">Shop</div></a>
-    <a href="./about.html">
-      <div class="nav-item">About us</div>
-    </a>
-    <a href=""> <div class="nav-item">Pages</div> </a
-    ><a href="">
-      <div class="nav-item">Blogs</div>
-    </a>
-  </nav>
-
+    <nav>
+        <a href="home.html">
+            <div class="nav-item remove_style_link">Home</div>
+        </a>
+        <a href="#">
+            <div class="nav-item remove_style_link">Shop</div>
+        </a>
+        <a href="#">
+            <div class="nav-item remove_style_link">Featured</div>
+        </a>
+        <a href="#">
+            <div class="nav-item remove_style_link">Pages</div>
+        </a>
+        <a href="about.html">
+            <div class="nav-item remove_style_link">About us</div>
+        </a>
+    </nav>
+    
   <a href="home.html">
-    <img
-      id="logo"
-      src="//cdn.shopify.com/s/files/1/0660/1985/2535/files/logo.png?v=1662015130"
-      alt="logo"
-    />
+    <img id="logo" src="//cdn.shopify.com/s/files/1/0660/1985/2535/files/logo.png?v=1662015130" alt="logo"/>
   </a>
 
   <div class="block-icons">
@@ -35,7 +36,7 @@
       <i class="fa-regular fa-heart icon icon-header"></i>
     </a>
     <a href="#">
-      <i class="fa-solid fa-cart-flatbed-suitcase icon icon-header"></i>
+      <i class="ti-bag icon icon-header"></i>
     </a>
   </div>
 </div>
@@ -43,7 +44,7 @@
 <!-- Login -->
 <div id="id01" class="modal">
   <form
-    class="login-modal zoom-animate max_width"
+    class="login-modal zoom-animate full_width"
     action="/action_page.php"
     method="post"
   >
@@ -88,9 +89,9 @@
     </div>
 
     <div class="container" style="background-color: #f1f1f1">
-      <button type="submit">Login</button>
+      <button type="submit" class="btn-login">Login</button>
 
-      <button type="button" class="register">
+      <button type="button" class="register btn-login">
         Don't have an account? <br />
         <a href="#">Register Now!</a>
       </button>

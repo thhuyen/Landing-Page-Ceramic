@@ -1,0 +1,128 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Smooth Disc",
+      "price": 19,
+      "discount_percent": 16,
+      "img": "//cdn.shopify.com/s/files/1/0660/1985/2535/products/8.1.jpg?v=1662001004",
+      "status": "new"
+    },
+    {
+      "id": "2",
+      "name": "Pattern Plate",
+      "price": 18,
+      "discount_percent": null,
+      "img": "//cdn.shopify.com/s/files/1/0660/1985/2535/products/9.1.jpg?v=1662001001",
+      "status": "new"
+    },
+    {
+      "id": "3",
+      "name": "Modern Cup",
+      "price": 18,
+      "discount_percent": 12,
+      "img": "//cdn.shopify.com/s/files/1/0660/1985/2535/products/7.1.jpg?v=1662001011",
+      "status": "new",
+      "rate": "high"
+    },
+    {
+      "id": "4",
+      "name": "Large Ceramic Vase",
+      "price": "23",
+      "discount_percent": "12",
+      "img": "//cdn.shopify.com/s/files/1/0660/1985/2535/products/13.1.jpg?v=1662000995",
+      "status": "new",
+      "rate": "high"
+    },
+    {
+      "id": "5",
+      "name": "Elephant-Shaped",
+      "price": 20,
+      "discount_percent": null,
+      "img": "//cdn.shopify.com/s/files/1/0660/1985/2535/products/12.1.jpg?v=1662000996",
+      "status": "new",
+      "rate": "high"
+    },
+    {
+      "id": "6",
+      "name": "Decorative Clocks",
+      "price": 16,
+      "discount_percent": null,
+      "img": "//cdn.shopify.com/s/files/1/0660/1985/2535/products/14.1.jpg?v=1662000993",
+      "status": "new",
+      "rate": "high"
+    },
+    {
+      "id": "7",
+      "name": "Decorative Ceramic Vase",
+      "price": 18,
+      "discount_percent": null,
+      "img": "//cdn.shopify.com/s/files/1/0660/1985/2535/products/11.1.jpg?v=1662000998",
+      "type": "best seller",
+      "status": "new",
+      "rate": "high"
+    },
+    {
+      "id": "8",
+      "name": "Decorative Ball",
+      "price": 18,
+      "discount_percent": null,
+      "img": "https://cdn.shopify.com/s/files/1/0660/1985/2535/products/10.1.jpg?v=1662000999",
+      "type": "best seller",
+      "status": "new",
+      "rate": "high"
+
+    },
+    {
+      "id": "9",
+      "name": "Bulb Vase",
+      "price": 21,
+      "discount_percent": null,
+      "img": "//cdn.shopify.com/s/files/1/0660/1985/2535/products/5.1.jpg?v=1662001020",
+      "type": "best seller"
+    },
+    {
+      "id": "10",
+      "name": "Bud Vase",
+      "price": 20,
+      "discount_percent": null,
+      "img": "//cdn.shopify.com/s/files/1/0660/1985/2535/products/6.1.jpg?v=1662001016",
+      "type": "best seller"
+    },
+    {
+      "id": "11",
+      "name": "Ceramic Planter Pot",
+      "price": 18,
+      "discount_percent": 12,
+      "img": "//cdn.shopify.com/s/files/1/0660/1985/2535/products/4.1.jpg?v=1662001013",
+      "type": "best seller",
+      "rate": "high"
+      
+    },
+    {
+      "id": "12",
+      "name": "Ceramic Teapot",
+      "price": 14,
+      "discount_percent": null,
+      "img": "//cdn.shopify.com/s/files/1/0660/1985/2535/products/3.1.jpg?v=1662001008",
+      "type": "best seller",
+      "rate": "high"
+    },
+    {
+      "id": "13",
+      "name": "Ceramic Bowl Vase",
+      "price": 14,
+      "discount_percent": null,
+      "img": "//cdn.shopify.com/s/files/1/0660/1985/2535/products/2.1.jpg?v=1662001007",
+      "type": "best seller"
+    },
+    {
+      "id": "14",
+      "name": "Blown Spray Vase",
+      "price": 19,
+      "discount_percent": 16,
+      "img": "//cdn.shopify.com/s/files/1/0660/1985/2535/products/1.1.jpg?v=1662001005",
+      "type": "best seller"
+    }
+  ]
+}
