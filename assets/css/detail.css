@@ -27,20 +27,15 @@
 .desc_product {
     line-height: 2;
 }
+span.discount_price,
+span.discount {
+    font-size: 1.8rem;
+}
 .name_product {
     font-size: 2rem;
 }
-.sale_price,
-.origin_price {
-    font-weight: 600;
-    font-size: 1.8rem;
-}
 span.origin_price {
-    text-decoration: line-through;
-    color: #aaa;
-}
-.sale_price {
-    color: var(--primary_color);
+    margin-right: 0;
 }
 .desc_detail {
     position: relative;
