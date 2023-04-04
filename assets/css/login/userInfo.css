@@ -1,0 +1,98 @@
+/* Import Font Family from GG Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Jost&display=swap");
+
+body {
+  font-family: Jost;
+}
+
+.user-wrapper {
+  min-height: 40vh;
+  margin: 3rem 6rem 0;
+  text-align: center;
+  padding: var(--height_header) 8rem;
+}
+
+.username-info,
+.order-info {
+  margin: 3rem 0;
+}
+/* Username */
+.username-info > p {
+  font-size: 1.5rem;
+}
+.username-confirmation {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.username-confirmation > span,
+.username {
+  font-size: 1.5rem;
+}
+
+.username-confirmation > span {
+  color: #888;
+}
+.username {
+  font-weight: bolder;
+  color: #000;
+}
+#signout-btn {
+  color: rgb(255, 135, 29);
+  background-color: transparent;
+  border: none;
+  font-size: 1.4rem;
+}
+signout-btn:hover {
+  opacity: 0.7;
+}
+/* Order status */
+h3.order-title,
+.order-status {
+  font-size: 1.5rem;
+}
+
+h3.order-title {
+  letter-spacing: 2px;
+}
+
+.order-status {
+  color: #888;
+}
+/* <!-- Optional buttons -- >  */
+.optional-btns {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+}
+.return {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+.return > a,
+.return > i {
+  color: rgb(255, 135, 29);
+  font-size: 1.5rem;
+}
+.return > a {
+  text-decoration: none;
+}
+.return > a:hover {
+  opacity: 0.6;
+}
+.continue-btn {
+  background-color: rgb(255, 135, 29);
+  padding: 1.2rem 1.5rem;
+  border: none;
+  border-radius: 0.3rem;
+}
+
+.continue-btn > a {
+  text-decoration: none;
+  font-size: 1.5rem;
+
+  color: #fff;
+}
