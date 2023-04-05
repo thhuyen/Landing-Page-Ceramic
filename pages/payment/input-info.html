@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../../assets/css/payment.css" />
+    <title>Payment</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- SECTION 1: Email & shipping form -->
+      <div class="section-1">
+        <header>
+          <!-- Logo & Title -->
+          <div class="header">
+            <img
+              class="logo-xs"
+              src="//cdn.shopify.com/s/files/1/0660/1985/2535/files/logo.png?v=1662015130"
+              alt="logo"
+            />
+            <h1>Caremi - Ceramics & Pottery</h1>
+          </div>
+        </header>
+        <!-- A path shows the process of ordering, shiping and completing order -->
+        <div class="path">
+          <a class="before" href="#"> Cart</a>
+          <i class="fa fa-angle-right"></i>
+          <a class="current" href="#">Information</a>
+          <i class="fa fa-angle-right"></i>
+          <a href="#">Shipping</a>
+          <i class="fa fa-angle-right"></i>
+          <a href="#">Payment</a>
+        </div>
+        <!-- Form -->
+        <form>
+          <!-- Email && Phone -->
+          <div class="form-layout">
+            <div class="contact">
+              <h3 class="sub-tit">Contact information</h3>
+              <div class="contact-info">
+                <input type="text" class="phone" placeholder="Phone" required />
+
+                <input
+                  type="text"
+                  class="email"
+                  placeholder="Email"
+                  name="email"
+                  required
+                />
+              </div>
+              <div class="notice">
+                <input type="checkbox" name="check" id="email-check" />
+                <span>Email me with news and offers</span>
+              </div>
+            </div>
+            <!-- Shipping Address -->
+            <div class="shipping-addr">
+              <h3 class="sub-tit">Shipping address</h3>
+              <div class="fullname">
+                <input
+                  type="text"
+                  class="fname"
+                  placeholder="First name"
+                  required
+                />
+                <input
+                  type="text"
+                  class="lname"
+                  placeholder="Last name"
+                  required
+                />
+              </div>
+              <input
+                type="text"
+                class="address"
+                placeholder="Address"
+                required
+              />
+              <br />
+              <input
+                type="text"
+                class="note"
+                placeholder="Note( optional: Apartment, suite, shipping methods, etc. ) "
+              />
+              <div class="notice">
+                <input type="checkbox" name="check" id="save-info" />
+                <span>Save this information for next time</span>
+              </div>
+            </div>
+            <!-- Optional buttons -->
+            <div class="optional-btns">
+              <div class="return">
+                <i class="fa-solid fa-chevron-left"></i>
+                <a href="#">Return to Cart</a>
+              </div>
+
+              <button type="submit" class="continue-btn">
+                <a href="./confirm-shipping.html">Continue to shipping</a>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- SECTION 2: Cart info -->
+      <div class="section-2">
+        <div class="header">
+          <div class="product-info">
+            <div class="product-wrap">
+              <div class="product-img">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0660/1985/2535/products/7.1_128x128.jpg?v=1662001011"
+                  alt="product"
+                />
+                <div class="product-quantity">1</div>
+              </div>
+              <span class="product-name"> Modern Cup </span>
+            </div>
+            <span class="price">$16.00</span>
+          </div>
+          <hr />
+          <div class="calculate-price">
+            <div class="fee">
+              <p>Subtotal</p>
+              <p>$16.00</p>
+            </div>
+            <div class="fee">
+              <p>Shipping</p>
+              <p class="text">Calculated at next step</p>
+            </div>
+            <div class="fee">
+              <div class="taxes">
+                <p>Estimated taxes</p>
+                <div class="tooltip">
+                  <i class="fa-regular fa-circle-question"></i>
+                  <span class="show-tooltip">
+                    The taxes and total will be confirmed via email after you
+                    order.
+                  </span>
+                </div>
+              </div>
+              <p>$1.60</p>
+            </div>
+          </div>
+          <hr />
+          <div class="total">
+            <span class="total-label">
+              <b>Total</b>
+            </span>
+            <p class="text">
+              USD<span class="total-price"><b> $17.60</b> </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Font Awesome for icons -->
+    <script
+      src="https://kit.fontawesome.com/842777e4e9.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -8,9 +8,8 @@ body {
 /* Banner */
 .banner {
   position: relative;
-  left: 0;
-  right: 0;
-  margin: auto;
+
+  padding-top: var(--height_header);
   background-image: url("https://cdn.shopify.com/s/files/1/0660/1985/2535/files/collection.jpg?v=1662008268");
   background-size: cover;
   background-position: center;
@@ -18,10 +17,14 @@ body {
   height: var(--height_about);
 }
 
+.path {
+  position: relative;
+  text-align: center;
+  top: 30%;
+}
 h1.about {
   position: relative;
-  top: 30%;
-  left: 40%;
+
   font-family: Jost;
   font-size: 4.5rem;
   font-weight: 500;
@@ -29,17 +32,13 @@ h1.about {
   overflow: hidden;
 }
 
-#banner > p {
-  position: relative;
-  top: 32%;
-  left: 42%;
+.path-detail {
   font-size: 1.5rem;
   font-weight: 300;
   color: #fff;
   overflow: hidden;
 }
-
-.home > a {
+a.home {
   top: 32%;
   left: 30%;
   text-decoration: none;
@@ -49,7 +48,7 @@ h1.about {
   color: #fff;
 }
 
-.home > a:hover {
+a.home:hover {
   cursor: pointer;
   color: #be9c79;
 }
