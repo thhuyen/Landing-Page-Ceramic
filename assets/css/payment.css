@@ -1,0 +1,331 @@
+/* Import Font Family from GG Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Jost&display=swap");
+
+body {
+  font-family: Jost;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 2.5rem auto 0 auto;
+  min-height: 100vh;
+}
+
+/* ---------------------------------- I. PAYMENT INFOMATION PAGE --------------------------- */
+/* <!-- SECTION 1: Email & shipping form --> */
+/* 1. Header */
+/* Logo & title */
+.section-1 {
+  padding: 0 3rem 0 8rem;
+  border-right: solid 1px #ccc;
+}
+.header {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.logo-xs {
+  margin-top: 2.5rem;
+  width: 8rem;
+}
+h1 {
+  margin: 0 auto 0 auto;
+}
+
+/* Path */
+.path > a {
+  font-size: 0.9rem;
+  color: #888;
+  font-weight: 100;
+  text-decoration: none;
+}
+a.before {
+  color: rgb(255, 135, 29);
+}
+a.current {
+  font-weight: 900;
+  color: #000;
+}
+.path > i {
+  margin: 0 0.5rem;
+  font-size: 0.6rem;
+}
+/* Form */
+.form-layout {
+  margin: 1rem auto 1rem auto;
+}
+
+/* All h3 sub titles */
+h3.sub-tit {
+  font-size: 1.4rem;
+  font-weight: lighter;
+  margin-bottom: 0.25rem;
+}
+
+/* All input */
+input {
+  line-height: 3rem;
+  border: solid #888 1px;
+  border-radius: 0.3rem;
+  box-sizing: border-box;
+  margin: 0.5rem 0;
+  padding-left: 0.5rem;
+  font-size: 1rem;
+}
+
+/* All notice/checkboxes */
+.notice {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+input#email-check,
+input#save-info {
+  font-size: 0.5rem;
+}
+/* Contact */
+.contact {
+  margin-bottom: 1.5rem;
+}
+
+.contact-info,
+.fullname {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  gap: 0.4rem;
+}
+input.phone,
+input.email,
+input.fname,
+input.lname {
+  width: 100%;
+}
+
+input.address,
+input.note {
+  width: 100%;
+}
+
+/* Address */
+.shipping-addr {
+  margin-bottom: 2rem;
+}
+
+/* <!-- Optional buttons -- >  */
+.optional-btns {
+  display: flex;
+  justify-content: space-between;
+}
+.return {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+.return > a,
+.return > i {
+  color: rgb(255, 135, 29);
+}
+.return > a {
+  text-decoration: none;
+  font-size: 1rem;
+}
+.return > a:hover {
+  opacity: 0.6;
+}
+.continue-btn {
+  background-color: rgb(255, 135, 29);
+  padding: 1.2rem 1.5rem;
+  border: none;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+}
+
+.continue-btn > a {
+  text-decoration: none;
+
+  color: #fff;
+}
+
+/* <!-- SECTION 2: Order summary --> */
+/* 1. Header */
+/* Logo & title */
+.section-2 {
+  padding: 3rem 8rem 0 3rem;
+}
+/* Product Info */
+.product-info {
+  display: flex;
+  justify-content: space-between;
+}
+.product-wrap {
+  display: flex;
+  gap: 1rem;
+}
+.product-img > img {
+  width: 6rem;
+  aspect-ratio: 1/1;
+  border-radius: 0.8rem;
+  background-position: center;
+}
+
+.product-img {
+  display: flex;
+}
+.product-quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.5rem;
+  transform: translate(-60%, -40%);
+
+  padding: 0.2rem;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  font-size: 0.8rem;
+  background-color: rgb(143, 143, 143);
+  color: #fff;
+}
+
+.product-name,
+.price {
+  font-size: 1.2rem;
+  align-self: center;
+}
+
+hr {
+  margin: 2rem 0;
+}
+
+/* Calculate Price */
+.fee,
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+p.text {
+  color: #888;
+  font-weight: lighter;
+}
+
+/* Taxes */
+.taxes {
+  display: flex;
+  gap: 0.5rem;
+}
+.tooltip {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.show-tooltip {
+  visibility: hidden;
+  width: 10rem;
+  padding: 0.4rem 0.8rem;
+  height: fit-content;
+  background-color: rgb(143, 143, 143);
+
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+
+  /* Position the tooltip */
+  position: absolute;
+  transform: translate(0.5rem, -3.5rem);
+  z-index: 1;
+}
+.tooltip:hover .show-tooltip {
+  visibility: visible;
+}
+
+.total-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.total-label,
+span.total-price {
+  font-size: 1.4rem;
+  /* margin: 0 0 2rem 0; */
+  color: #000;
+}
+
+/* ----------------------------------- II. PAYMENT SHIPPING PAGE --------------------------------- */
+
+/* 1.Contact & Address Confirmation */
+.contact-address {
+  width: 100%;
+  border: solid #ccc 1px;
+  border-radius: 0.5rem;
+  margin: 1.5rem 3rem 1.5rem 0;
+}
+
+/* Table row */
+.tr {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+  margin: 0 1.5rem;
+  color: #737373;
+  font-size: 0.9rem;
+}
+
+.border-bottom {
+  border-bottom: solid #ccc 1px;
+  border-width: 90%;
+}
+.row-wrapper {
+  display: flex;
+}
+
+.confirm {
+  margin: 0 2rem;
+  overflow: visible;
+  color: #000;
+}
+
+/* Edit btn */
+.edit > a {
+  color: rgb(255, 135, 29);
+}
+
+.edit > a:hover {
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+/* Shipping Method */
+.shipping-method {
+  margin: 1rem 0 1.5rem;
+}
+.standard {
+  margin: 1rem 0;
+  border: solid 1px rgb(255, 135, 29);
+  border-radius: 0.5rem;
+  background-color: rgb(251, 238, 232);
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 1.5rem;
+  font-size: 0.9rem;
+}
+
+/* ----------------------------------- II.FINAL  PAYMENT  PAGE --------------------------------- */
+
+/* Payment method */
+.payment-option {
+  margin: 1rem 0;
+  border: solid 1px #ccc;
+  border-radius: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+.payment-icon {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
