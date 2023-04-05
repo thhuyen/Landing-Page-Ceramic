@@ -134,11 +134,121 @@ span.origin_price {
 .btn-buy:hover {
     background: var(--primary_color);
 }
+
+/* ----------------- nested comments --------------- */
+.nested_comments {
+    width: 900px;
+    max-width: 100%;
+    height: 600px;
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 50px auto;
+    /* overflow-y: auto; */
+    padding: 0 20px;
+}
+.comment {
+    position: relative;
+    /* background: #ccc; */
+}
+.comment-child {
+    padding-left: 50px;
+    margin: 30px auto;
+}
+.avatar {
+    width: 50px;
+    height: 50px;
+    float: left;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.comment-right {
+    margin-left: 70px;
+    line-height: 1.5;
+}
+.comment-user_name {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+.comment-datetime {
+    color: grey;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-left: 20px;
+}
+.comment-content {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+.comment-reply {
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.icon-love_comment {
+    font-size: 1.4rem;
+}
+.leave_comment {
+    position: absolute;
+    left: 70px;
+    margin-top: 20px;
+}
+.input-leave_cmt {
+    min-width: 400px;
+    font-size: 1.3rem;
+    padding: 5px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid black;
+    border-radius: 5px;
+    outline: none;
+    background: transparent;
+}
+.btn-leave_cmt {
+    font-size: 1.3rem;
+    padding: 5px 10px;
+    background: white;
+    border: 1px solid var(--primary_color);
+    border-radius: 5px;
+    outline: none;
+}
+.btn-leave_cmt:hover {
+    color: white;
+    background: var(--primary_color);
+}
+.icon-delete_cmt {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.2rem;
+    padding: 10px;
+}
+.hide_cmts {
+    color: grey;
+    font-size: 1.3rem;
+    font-weight: 700;
+    transform: translateX(20%);
+    cursor: pointer;
+    padding: 10px;
+}
+
 /* ------------ related products ------------ */
+#comments,
 #products-related {
     text-align: center;
     margin-bottom: 50px;
+    margin-top: 150px;
 }
 div.products-related {
     margin-top: 50px;
+}
+
+/* ------------ class to toggle -------------- */
+.relative {
+    position: relative;
+}
+.more_bold {
+    color: red;
+    font-weight: 700;
 }

@@ -343,9 +343,7 @@ div.products-hotdeal {
 .icon-insta:hover {
     color: var(--primary_color);
 }
-.active_block {
-    display: block;
-}
+
 /* ------------ box accept cookie -------- */
 #cookie {
     width: 300px;
@@ -381,4 +379,9 @@ div.products-hotdeal {
 .btn-gotit:hover {
     color: white;
     background: var(--primary_color);
+}
+
+/* --------------- class to toggle ------------- */
+.active_block {
+    display: block;
 }
