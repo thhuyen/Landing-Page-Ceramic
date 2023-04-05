@@ -8,33 +8,20 @@
     <!-- FONT FAMILY -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&family=Roboto:wght@100;300&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&family=Roboto:wght@100;300&display=swap" rel="stylesheet" />
 
     <!-- FONT ICON -->
-    <link
-      rel="stylesheet"
-      href="../assets/font/themify-icons-font/themify-icons.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="../assets/font/themify-icons/themify-icons.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
 
     <!-- CSS -->
-
     <link rel="stylesheet" href="../assets/css/base.css" />
     <link rel="stylesheet" href="../assets/css/detail.css" />
     <link rel="stylesheet" href="../assets/css/product.css" />
 
     <title>Detail product</title>
-    <link
-      rel="icon"
-      href="https://cdn.shopify.com/s/files/1/0660/1985/2535/t/6/assets/favicon.png?v=166119719970759814491662518019"
-      type="image/x-icon"
-    />
+
+    <link rel="icon" href="https://cdn.shopify.com/s/files/1/0660/1985/2535/t/6/assets/favicon.png?v=166119719970759814491662518019" type="image/x-icon"/>
   </head>
 
   <body>
@@ -46,11 +33,28 @@
             <i class="ti-angle-right">&nbsp;</i> 
         </a> 
         <span class="current_page">Smooth Disc</span>
-
     </div>
 
     <!-- information product -->
     <section id="in4_product" class="max_width"></section>
+
+    <section id="comments">
+      <p class="title">COMMENTS</p>
+      <div class="nested_comments">
+        <div id="comment-parent" class="comment">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCI6D-EkL1058Fnk2RliFP17INDLXdmVG_0Q&usqp=CAU" alt="user_avatar" class="avatar">
+            <div class="comment-right comment-right-parent">
+                <span class="comment-user_name">Alexander</span>
+                <span class="comment-datetime">March 1, 2020</span>
+                <p class="comment-content">Things You Need To Know Using advanced edging technology and high-quality materials, our premium sunglasses have a luxurious look and feel with subtly curved lenses. These striking, sophisticated sunglasses offer timeless design updated with shiny gold metal accents at the temples for just a bit of bling. The wide frame...</p>
+                <span class="comment-reply" onclick="replyComment(this)">Reply &nbsp;&nbsp;&nbsp;</span>
+                <i class="fa-regular fa-heart icon icon-love_comment" onclick="handleLike(this)"></i>
+                <i class="ti-close icon icon-delete_cmt" onclick="handleDeleteCmt(this)"></i>
+            </div>
+        </div>            
+      </div>
+      </div>
+    </section>
 
     <section id="products-related" class="max_width">
       <p class="title">RELATED PRODUCTS</p>

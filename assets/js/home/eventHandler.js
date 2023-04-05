@@ -46,3 +46,4 @@ const handleToPrev = (icon_prev) => {
 $('.btn-gotit').onclick = function() {
     this.parentElement.style.display = 'none';
 }
+
