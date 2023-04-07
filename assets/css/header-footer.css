@@ -207,3 +207,17 @@ h3.sub-head::after {
   font-size: 1.8rem;
   color: #212529;
 }
+
+/* -------------- icon pull to head ----------------- */
+.icon-pulltohead {
+  position: fixed;
+  right: 20px;
+  bottom: 5%;
+  color: white;
+  font-size: 1.3rem;
+  background: var(--primary_color);
+  padding: 20px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ccc;
+  z-index: 1;
+}

@@ -46,3 +46,18 @@ function setHTMLProduct(element) {
     </div>`;
   return HTML;
 }
+
+
+
+window.onscroll = function() {
+    if (document.documentElement.scrollTop > 1400)
+    {
+        $('.icon-pulltohead').style.opacity= "1";
+    } else {
+        $('.icon-pulltohead').style.opacity= "0";
+    }
+};
+
+const scrollToTop = () => {
+    scrollTo(0,0);
+}
