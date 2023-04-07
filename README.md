@@ -12,7 +12,7 @@
 
 <!-- ABOUT THE PROJECT -->
 
-## List of requirements and done task
+## LIST OF REQUIREMENTS AND THE DONE TASKS
 ### Easy (35 points)
 - **Feel free to decide the content and structure of your website. (It should have top navigation bar and footer, and a carousel)**
   - Template design: https://caremi-store-demo.myshopify.com/ (item Home on header, topic "Home 2") 
