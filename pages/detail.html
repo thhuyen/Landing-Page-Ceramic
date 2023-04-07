@@ -41,17 +41,11 @@
     <section id="comments">
       <p class="title">COMMENTS</p>
       <div class="nested_comments">
-        <div id="comment-parent" class="comment">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCI6D-EkL1058Fnk2RliFP17INDLXdmVG_0Q&usqp=CAU" alt="user_avatar" class="avatar">
-            <div class="comment-right comment-right-parent">
-                <span class="comment-user_name">Alexander</span>
-                <span class="comment-datetime">March 1, 2020</span>
-                <p class="comment-content">Things You Need To Know Using advanced edging technology and high-quality materials, our premium sunglasses have a luxurious look and feel with subtly curved lenses. These striking, sophisticated sunglasses offer timeless design updated with shiny gold metal accents at the temples for just a bit of bling. The wide frame...</p>
-                <span class="comment-reply" onclick="replyComment(this)">Reply &nbsp;&nbsp;&nbsp;</span>
-                <i class="fa-regular fa-heart icon icon-love_comment" onclick="handleLike(this)"></i>
-                <i class="ti-close icon icon-delete_cmt" onclick="handleDeleteCmt(this)"></i>
-            </div>
-        </div>            
+        <div class="permanent_leavecmt">
+          <textarea id="permanent_inputleavecmt" class="input-leave_cmt" placeholder="Write something..." cols="50" rows="1"></textarea>
+          <button id="permanent_sendbtn" class="btn btn-leave_cmt transition">Send</button>
+          <button id="permanent_clearbtn" class="btn btn-leave_cmt transition">Clear</button>
+        </div>
       </div>
       </div>
     </section>

@@ -41,4 +41,51 @@ render($('#in4_product'), 'div', 'desc_product', null,
         </div>
         <button class="btn btn-add_cart transition">ADD TO CART</button>
     </div>
-    <button class="btn btn-buy transition">BUY IT NOW</button>`, null, null)
+    <button class="btn btn-buy transition">BUY IT NOW</button>`, null, null);
+
+// render comments
+const comments = JSON.parse(localStorage.getItem("comments"));
+
+if (comments) {
+    // create structure of comments
+    const createComments = (img, username, date, content) => {
+        return `<img src="${img}" alt="user_avatar" class="avatar">
+                <div class="comment-right comment-right-parent">
+                    <span class="comment-user_name">${username}</span>
+                    <span class="comment-datetime">${date}</span>
+                    <p class="comment-content">${content}</p>
+                    <span class="comment-reply" onclick="replyComment(this)">Reply &nbsp;&nbsp;&nbsp;</span>
+                    <i class="fa-regular fa-heart icon icon-love_comment" onclick="handleLike(this)"></i>
+                    <i class="ti-close icon icon-delete_cmt" onclick="handleDeleteCmt(this)"></i>
+                </div>`
+    }
+    
+    // render comment in level 1
+    comments.map(comment => {
+        if (comment.level === 1) {
+            render($('.nested_comments'), 'div' ,'comment-parent comment', comment.id , createComments(comment.avatar, comment.username, comment.date, comment.content), null, null);
+        }    
+    });
+    
+    // render all child comments
+    const handleCreateChildComments = (parent, child) => {
+        for (let i = 0; i < parent.length; i++) {
+            for (let j = 0; j < child.length; j++) {
+                if(child[j].nearest_parent === parent[i].id) {
+                    let className = child[j].level === 2 ? "comment comment-child comment-child-level2" : "comment comment-child comment-child-level3";
+                    render(parent[i], 'div', className, child[j].id, createComments(child[j].avatar, child[j].username, child[j].date, child[j].content), null, null);
+                }
+            }
+        }
+    }
+    
+    // filter comments with specific levels
+    const level2 = comments.filter(comment => comment.level === 2);
+    const level3 = comments.filter(comment => comment.level === 3);
+    
+    handleCreateChildComments([...$$('.comment-parent')], level2)
+    handleCreateChildComments([...$$('.comment-child-level2')], level3)
+}
+else {
+    localStorage.setItem("comments", JSON.stringify([]));
+}

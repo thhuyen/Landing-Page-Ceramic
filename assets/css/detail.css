@@ -163,6 +163,7 @@ span.origin_price {
 }
 .comment-right {
     margin-left: 70px;
+    margin-bottom: 30px;
     line-height: 1.5;
 }
 .comment-user_name {
@@ -187,6 +188,10 @@ span.origin_price {
 }
 .icon-love_comment {
     font-size: 1.4rem;
+}
+.permanent_leavecmt {
+    text-align: center;
+    margin-bottom: 30px;
 }
 .leave_comment {
     position: absolute;
