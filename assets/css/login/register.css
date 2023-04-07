@@ -1,0 +1,182 @@
+/* Import Font Family from GG Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Jost&display=swap");
+
+/*-------- I/ The Modal Box-------*/
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1;
+  left: 0;
+  top: var(--height_header);
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: var(--height_header);
+}
+.form-layout {
+  margin: 20% auto 30% auto;
+}
+/* Modal Content/Box */
+.register-modal {
+  background-color: #fefefe;
+  margin: 20%;
+  top: 10rem;
+  border: 1px solid #888;
+  max-width: 40rem;
+}
+
+/* Logo Img */
+.login-logo {
+  width: 8rem;
+}
+
+/* Full-width input fields */
+input#register-username,
+input#register-password {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 4rem 5rem 0 5rem;
+  position: relative;
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: -5rem;
+  top: -8rem;
+  color: #fff;
+  font-size: 35px;
+  font-weight: lighter;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+hr.short {
+  margin: 1.5rem auto 1rem auto;
+  width: 20%;
+  height: 1px;
+  color: #e8eced;
+}
+p.register-title {
+  color: #111;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 1.5rem auto 0.5rem auto;
+}
+p.greeting {
+  color: #111;
+  font-size: 1.2rem;
+  margin: 0 auto 1.5rem auto;
+}
+/* input form container */
+.container {
+  padding: 0 5rem 1rem 5rem;
+}
+
+/* Sub-options */
+.sub-options {
+  margin-bottom: 3rem;
+}
+/* Forget pass */
+span.psw {
+  float: left;
+  padding: 1rem 0;
+}
+span.psw > a {
+  text-decoration: none;
+  color: #c5c4c4;
+}
+
+span.psw > a:hover {
+  color: #be9c79;
+}
+
+.container > input {
+  padding: 1rem 1.2rem;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: rgb(223, 233, 245);
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+}
+
+/* Group of btns */
+/* Register buttons */
+.btn-register {
+  background-color: #000;
+  color: white;
+  padding: 1.3rem 2rem;
+  margin: 2rem auto 0 auto;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.btn-register:hover {
+  opacity: 0.8;
+  background: #be9c79;
+}
+/* Back to Login button */
+#backToLoginBtn {
+  background-color: #fefefe;
+  padding: 1.3rem 2rem;
+  margin: 2rem auto 1rem;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1rem;
+  color: #be9c79;
+}
+#backToLoginBtn:hover {
+  opacity: 0.8;
+  background: #ccc;
+}
+
+/* -------------------II/ The Register Page-------------------- */
+
+.register-wrapper {
+  margin: var(--height_header) auto 0 auto;
+  padding: 4rem;
+  text-align: center;
+}
+
+.register-title {
+  margin: 0 auto 1rem;
+  font-size: 2.5rem;
+  letter-spacing: 3px;
+}
+.form-wrapper {
+  text-align: center;
+  margin: 1rem auto 0;
+  width: 50vw;
+}
+.form-notification {
+  width: 45vw;
+  font-size: 1.5rem;
+  margin: 2rem auto;
+  color: coral;
+  font-style: italic;
+  text-decoration: underline;
+}

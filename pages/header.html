@@ -1,6 +1,7 @@
 <!-- CSS Links -->
 <link rel="stylesheet" href="../assets/css/header-footer.css" />
 <link rel="stylesheet" href="../assets/css/login/login.css" />
+<link rel="stylesheet" href="../assets/css/login/register.css" />
 
 <div class="wrapper-header max_width">
   <nav>
@@ -33,21 +34,22 @@
     <a href="#">
       <i class="fa-solid fa-magnifying-glass icon icon-header"></i>
     </a>
-    <a href="#" id="loginModel">
+    <a href="#" id="loginIconBtn">
       <i class="fa-regular fa-user icon icon-header"></i>
     </a>
     <a href="#">
       <i class="fa-regular fa-heart icon icon-header"></i>
     </a>
-    <a href="#">
+
+    <a href="#" id="cartIconBtn">
       <i class="ti-bag icon icon-header"></i>
     </a>
   </div>
 </div>
 
-<!-- Login -->
+<!-- Login /Trinh -->
 <div id="id01" class="modal">
-  <form class="login-modal zoom-animate full_width" id="form-submit">
+  <form class="login-modal zoom-animate full_width">
     <div class="imgcontainer">
       <span
         onclick="document.getElementById('id01').style.display='none'"
@@ -78,7 +80,6 @@
         placeholder="Enter Password"
         id="password"
         name="psw"
-        type="text"
         required
       />
       <div class="sub-options">
@@ -105,9 +106,13 @@
         Login
       </button>
 
-      <button type="button" class="register btn-login">
+      <button
+        type="button"
+        class="register btn-login"
+        onclick="window.location.href = '/pages/login/register.html'"
+      >
         Don't have an account? <br />
-        <a href="#">Register Now!</a>
+        <a id="registerBtn" href="#">Register Now!</a>
       </button>
     </div>
   </form>

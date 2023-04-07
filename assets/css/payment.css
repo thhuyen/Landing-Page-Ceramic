@@ -329,3 +329,14 @@ span.total-price {
   justify-content: center;
   margin: 1rem 0;
 }
+i.icon-card {
+  font-size: 3.5rem;
+  color: #888;
+}
+
+i.icon-not {
+  font-size: 1.3rem;
+
+  color: rgb(255, 135, 29);
+  transform: translate(-0.5rem, -0.5rem);
+}
