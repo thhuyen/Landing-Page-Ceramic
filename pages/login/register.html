@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="../../assets/css/base.css" />
+    <link rel="stylesheet" href="../../assets/css/login/login.css" />
+    <link rel="stylesheet" href="../../assets/css/header-footer.css" />
+    <link rel="stylesheet" href="../../assets/css/login/register.css" />
+
+    <!-- Font Icons -->
+
+    <link
+      rel="stylesheet"
+      href="../../assets/font/themify-icons/themify-icons.css"
+    />
+
+    <!-- add icon link -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="../../assets/img/x-icon/favicon.avif"
+    />
+    <title>Register Account</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header w3-include-html="./../header.html"></header>
+    <main>
+      <div class="register-wrapper">
+        <h1 class="register-title">REGISTER</h1>
+
+        <div class="form-wrapper">
+          <div id="register-error-msg" class="form-notification"></div>
+          <div class="container">
+            <input
+              type="text"
+              placeholder="Enter Username"
+              name="uname"
+              id="register-username"
+              required
+            />
+
+            <input
+              type="password"
+              placeholder="Enter Password"
+              id="register-password"
+              name="psw"
+              required
+            />
+          </div>
+
+          <div class="container">
+            <button type="submit" class="btn-register" id="btnRegister">
+              Register
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer w3-include-html="./../footer.html"></footer>
+    <!-- Font Awesome for icons -->
+    <script
+      src="https://kit.fontawesome.com/842777e4e9.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- JS Links -->
+    <script src="../../assets/js/loadPage.js"></script>
+    <script src="../../assets/js/login/login.js"></script>
+    <script src="../../assets/js/login/user.js"></script>
+    <script src="../../assets/js/register/register.js"></script>
+  </body>
+</html>

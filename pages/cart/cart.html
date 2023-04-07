@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="../../assets/css/base.css" />
+    <link rel="stylesheet" href="../../assets/css/login/login.css" />
+    <link rel="stylesheet" href="../../assets/css/header-footer.css" />
+    <link rel="stylesheet" href="./cart.css" />
+
+    <!-- Font Icons -->
+
+    <link
+      rel="stylesheet"
+      href="../../assets/font/themify-icons/themify-icons.css"
+    />
+
+    <!-- add icon link -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="../../assets/img/x-icon/favicon.avif"
+    />
+    <title>Your Cart</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header w3-include-html="../header.html"></header>
+    <main>
+      <div class="cart-wrapper">
+        <div class="cart-path">
+          <a href="../home.html" class="back-home">Home</a>
+          <i class="fa-solid fa-angle-right"></i>
+          <p class="current-page">Your Shopping Cart</p>
+        </div>
+
+        <!-- When Cart is empty -->
+        <div id="empty-cart">
+          <div class="img-cart-empty">
+            <img src="../../assets/img/cart/empty-bowl.png" alt="" />
+          </div>
+          <h3 class="empty-content">Your Cart is empty</h3>
+          <p class="empty-msg">
+            Look like you haven't added <br />
+            anything to your cart yet :(
+          </p>
+          <button class="homeBtn">
+            <a href="/pages/home.html">Go Shopping</a>
+          </button>
+        </div>
+
+        <!-- When Cart has orders -->
+        <div id="have-order">
+          <div class="product-list" id="cart-product-items">
+            <div role="row" class="table-title">
+              <div role="cell" class="title-name">PRODUCT NAME</div>
+              <div role="cell" class="title-price">PRICE</div>
+              <div role="cell" class="title-quantity">QUANTITY</div>
+              <div role="cell" class="title-total">TOTAL</div>
+              <div role="cell" class="title-option">OPTION</div>
+            </div>
+          </div>
+
+          <!-- CALCULATE TOTALS -->
+          <div id="cart-totals">
+            <div role="row" class="calTotals">
+              <div role="cell" class="title-total">CART TOTALS</div>
+              <div role="cell" class="info-total" id="cartTotal">$ 156</div>
+            </div>
+          </div>
+
+          <!-- OPTIONAL BUTTONS -->
+          <div class="optionalBtns">
+            <div>
+              <!-- Update Cart -->
+              <button id="btn-cart-update" class="cartBtn">
+                Update Your Cart
+              </button>
+            </div>
+            <div>
+              <!-- Done cart and continue to payment-->
+              <button id="btn-cart-done" class="cartBtn">
+                <a href="/pages/payment/input-info.html"
+                  >Process to Shipping & Payment</a
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer w3-include-html="../footer.html"></footer>
+    <!-- Font Awesome for icons -->
+    <script
+      src="https://kit.fontawesome.com/842777e4e9.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- JS Links -->
+    <script src="../../assets/js/loadPage.js"></script>
+    <script src="../../assets/js/login/login.js"></script>
+    <script src="../../assets/js/login/user.js"></script>
+    <script src="./cart.js"></script>
+    <script src="./eventHandler.js"></script>
+  </body>
+</html>

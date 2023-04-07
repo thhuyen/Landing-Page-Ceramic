@@ -1,6 +1,5 @@
 //Create user module to reusable to restrict/access to some private pages
 let user = (function () {
-
   let authenticateUserPassword;
   let userObj = {};
   let user = {};
@@ -69,5 +68,10 @@ let user = (function () {
     localStorage.setItem("listUsers", JSON.stringify(authenticateUserPassword));
     loadRegisterdUser();
   };
+
+  userObj.exist = function (username) {
+    return !!authenticateUserPassword[username];
+  };
+
   return userObj;
 })();

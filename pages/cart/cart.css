@@ -1,0 +1,286 @@
+/* Import Font Family from GG Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Jost&display=swap");
+.cart-wrapper {
+  margin: var(--height_header) 0 2rem;
+  /* padding: 0; */
+  text-align: center;
+}
+.cart-path {
+  background-color: #f6f6f6;
+  margin: 0 0 2rem;
+  padding: 1.5rem 13rem;
+  height: 2rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* When Cart has orders */
+#have-order {
+  display: none;
+  /* hidden as default */
+}
+a.back-home,
+p.current-page,
+.cart-path > i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+a.back-home {
+  color: #111;
+  text-decoration: none;
+}
+
+a.back-home:hover {
+  color: #be9c79;
+}
+
+p.current-page {
+  color: #be9c79;
+  font-weight: bolder;
+}
+
+/* Product List Table */
+.product-list {
+  margin: 2rem auto;
+  border: 1px solid #dee2e6;
+  width: 80%;
+}
+
+.product-item {
+  margin: 0;
+  padding: 0;
+  border-bottom: #dee2e6 solid 1px;
+}
+
+.table-title,
+.table-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr 1fr 1fr;
+}
+
+.table-title {
+  border-bottom: #dee2e6 solid 1px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.table-title > div {
+  border-right: #dee2e6 solid 1px;
+  padding: 1rem 3rem;
+  font-size: 1.3rem;
+}
+
+.table-content > div.prod {
+  padding: 1rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+/* Product name */
+.product-detail {
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 3rem;
+}
+
+a.item-name {
+  font-size: 1.2rem;
+  color: #111;
+  text-decoration: none;
+}
+
+a.item-name:hover {
+  color: #be9c79;
+}
+
+p.item-color {
+  text-align: left;
+  font-size: 1rem;
+  margin: 0.3rem;
+  color: #959595;
+}
+
+/* Product Price & Total */
+.prod.price,
+.prod.total {
+  color: #959595;
+}
+
+/* Product Quantity */
+.qtt {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 30%;
+  border: solid 2px #dee2e6;
+}
+.qtt-num {
+  grid-row: 1 / span 2;
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 1.2rem 0;
+  border-right: solid 2px #dee2e6;
+}
+
+#qtt-increase > i,
+#qtt-decrease > i {
+  font-size: 1rem;
+}
+
+#qtt-increase > i:hover,
+#qtt-decrease > i:hover {
+  font-size: 1rem;
+  color: #be9c79;
+}
+
+#qtt-increase,
+#qtt-decrease {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#qtt-increase:hover,
+#qtt-decrease:hover {
+  cursor: pointer;
+  background-color: #dee2e6;
+}
+
+#qtt-increase {
+  border-bottom: solid 2px #dee2e6;
+}
+
+/* Close button */
+.prod.option > i {
+  font-size: 1.6rem;
+  color: #111;
+}
+
+.prod.option > i:hover {
+  color: #be9c79;
+}
+
+/* CALCULATE TOTALS */
+#cart-totals {
+  margin: 2rem auto;
+  border: 2px solid #be9c79;
+  width: 80%;
+}
+.calTotals {
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+}
+
+.calTotals > .title-total {
+  padding: 2rem 0;
+  font-size: 1.3rem;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  border-right: 2px solid #be9c79;
+}
+
+.calTotals > .info-total {
+  padding: 2rem 0;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  letter-spacing: 2px;
+}
+
+/* Optional Buttons */
+.optionalBtns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  margin: 3rem 0 5rem;
+}
+
+.cartBtn {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+  padding: 1.5rem 3rem;
+  width: 60%;
+  border: none;
+}
+
+button#btn-cart-update {
+  background-color: #111;
+}
+
+button#btn-cart-update:hover {
+  cursor: pointer;
+  background-color: #be9c79;
+  opacity: 0.5;
+}
+
+button#btn-cart-done {
+  background-color: #be9c79;
+}
+
+button#btn-cart-done > a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+  padding: 1.5rem 3rem;
+}
+button#btn-cart-done:hover {
+  cursor: pointer;
+  background-color: #111;
+  opacity: 0.5;
+  border: none;
+}
+
+/* When cart is empty */
+#empty-cart {
+  height: 80vh;
+}
+
+.img-cart-empty > img {
+  aspect-ratio: 1/1;
+  height: 50vh;
+}
+
+h3.empty-content {
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #be9c79;
+  margin-bottom: 1rem;
+}
+
+p.empty-msg {
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  font-weight: lighter;
+  color: #959595;
+  margin-bottom: 2rem;
+}
+
+button.homeBtn {
+  background-color: #be9c79;
+  width: 15%;
+  padding: 1rem 0;
+  border: none;
+}
+
+button.homeBtn > a {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+  color: #fff;
+}
+
+button.homeBtn:hover {
+  opacity: 0.7;
+}

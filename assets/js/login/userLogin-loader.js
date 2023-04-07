@@ -18,4 +18,5 @@
     alert("log out success");
     window.location.href = "/pages/home.html";
   });
+  
 })();
