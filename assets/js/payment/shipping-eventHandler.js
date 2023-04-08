@@ -12,11 +12,18 @@ const loadPaymentInfo = function () {
 };
 loadPaymentInfo();
 
+//Buy It Now
+//const productBought = JSON.parse(localStorage.getItem("productBought"));
+
 (function () {
   let shippingContainer = document.getElementById("shipping-container");
   let priceWrapper = document.getElementById("shipIncludedPrice-wrapping");
   let subtotal = Math.round(shoppingCart.totalCart());
+
   let sum = subtotal + subtotal * 0.1;
+//Buy it 
+  //let sum = (subtotal + subtotal * 0.1) || (+productBought.total + +productBought.total*0.1);
+
   let currentCartList = shoppingCart.listCart();
 
   //   Render each item in Cart
@@ -57,7 +64,9 @@ loadPaymentInfo();
     <b>Total</b>
   </p>
   <p class="text">
-    USD<span class="total-price"><b> $ ${sum + 19.63}</b> </span>
+
+    USD<span class="total-price"><b> $ ${(sum + 19.63).toFixed(2)}</b> </span>
+
   </p>
 </div>`;
 })();

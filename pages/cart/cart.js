@@ -21,6 +21,7 @@ let shoppingCart = (function () {
     }
   }
 
+
   // save info that user input in payment process
   function savePaymentInfo() {
     localStorage.setItem("paymentInfo", JSON.stringify(paymentInfo));
@@ -41,6 +42,7 @@ let shoppingCart = (function () {
   let obj = {};
 
   // Update payment info of user when receiving user's input
+
   obj.updatePaymentInfo = function (
     phone,
     email,
@@ -59,6 +61,7 @@ let shoppingCart = (function () {
     };
     savePaymentInfo();
   };
+
 
   // Remove payment info of user
   obj.removePaymentInfo = function () {

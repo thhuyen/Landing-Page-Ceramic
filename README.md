@@ -20,6 +20,7 @@
   - Template design: https://caremi-store-demo.myshopify.com/ (item "Home" on header, topic "Home 2")
   - Type of web: eCommerce about ceramic product
 
+
 - \*_Basically a land page to sell your product. Suggestion topics: hobby, eCommerce, pet store, technology products, etc_
 
   - Status: Done.
@@ -33,10 +34,12 @@
 - _The website must contain at least 5 pages which cover relatively enough information about the topic. For example, about yourself, or about your companies etc._
   - Our website contains `06` main pages: `Registeration / Login -> Home -> About us -> Detail of product -> Cart -> Payment`
 - _Feel free to use any kinds of data (JSON file) or generating themselves using [Mockaroo](https://www.mockaroo.com/) or any sites that you are familiar with._
+
   - Folder product_json contains product.json file which is fake database of products.
   - To run website with all of the product's images, please run **npm i** in the terminal.
 
 ### Medium (20 points)
+
 
 - _A list of product items in one of a page (10 points)._
   - A list of product items is in Homepage > Section `OUR BEST SELLER` or `HOT DEAL` (home.htm)
@@ -46,6 +49,7 @@
   - Can also click on the item name of selected item in `cart.html`, it will redirect to `detail.html`
 
 ### Hard (15 points)
+
 
 - _A notification to tell the users to accept the page cookies (3 points)._
 
@@ -57,6 +61,7 @@
   - We have an `user module` in `user.js`, using local storage to keep track of user (log in, log out, username has existed or not, etc...)
 - _If the user has not logged in yet, they cannot access to a certain pages. Make some of the pages private. (3 points)._
   - So far we have some private pages/section that user must log in to see it, namely:
+
     - Cart Page: `/pages/cart/cart.html`,
     - Payment pages: `/pages/payment/input-info.html`, `/pages/payment/confirm-shipping.html`, `/pages/payment/final-payment.html`
     - Login/ Account Page: `pages/login/userInfo.html` , must login to see the account info and total number of selected items in Cart
@@ -65,6 +70,7 @@
 ## Explaination for each page:
 
 ### 1. **The global files**
+
 
 - header.html: contains header html
 - footer.html: contains footer html
@@ -93,6 +99,7 @@
   - user.js
   - cart.js
 - The same method to make slider / carousel / tabs: I will find all items to find which is display (having active_block). Then, I remove it and add className='active_block' for current item.
+
   **Detail of product - Huyen (detail.html)**
 - The layout includes: header + directed bar + product's information + nested comments + related products + footer.
 - Links: fontawesome (icon), themify (icon), font-family from Google Fonts, CSS.
@@ -147,6 +154,7 @@
   - If the block containing all comments is over 400px, the overflow will be hidden, then you can see a text to view more replies or hide them.
 
   **Code**: rows of 46-91 in render.js file (assets/js/detail/render.js) and rows of 50-207 in eventHandler.js (assets/js/detail/eventHandler.js). More details I described in these files.
+
 
 #### 2.2: Trinh tasks:
 
@@ -228,3 +236,4 @@
  2.2.5: **FOOTER**
 
 ##### _pages/footer.html_ 
+

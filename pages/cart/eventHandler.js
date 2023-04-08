@@ -5,11 +5,13 @@ if (!user.isAuthenticate()) {
 }
 
 // Increase / decrease quantity of a selected item
+
 // button (+)
 let add1 = (id) => {
   shoppingCart.addItemtoCart(id);
   window.location.reload();
 };
+
 
 //button (-)
 let minus1 = (id) => {
@@ -31,6 +33,7 @@ let seeDetail = (img, name, price, id) => {
   localStorage.setItem("productImg", img);
   localStorage.setItem("productName", name);
   localStorage.setItem("productPrice", price);
+
   window.location.href = "/pages/detail.html";
 };
 
