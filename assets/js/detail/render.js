@@ -62,7 +62,7 @@ if (comments) {
     }
     
     // render comment in level 1
-    comments.map(comment => {
+    comments.forEach(comment => {
         if (comment.level === 1) {
             render($('.nested_comments'), 'div' ,'comment-parent comment', comment.id , createComments(comment.avatar, comment.username, comment.date, comment.content), null, null);
         }    
