@@ -1,23 +1,4 @@
-
-$(".increase_volume").onclick = function () {
-  $(".volume").innerText = +$(".volume").innerText + 1;
-};
-$(".decrease_volume").onclick = function () {
-  let volume = +$(".volume").innerText;
-  if (volume > 1) $(".volume").innerText = volume - 1;
-};
-
-var products = [];
-fetch(apiProducts)
-  .then((response) => response.json())
-  .then((ps) => {
-    products = ps;
-  })
-  .catch((error) => {
-    throw new Error(error);
-  });
-
-//   Add to Cart - Trinh
+//----------- Add to Cart - Trinh ----------
 $(".btn-add_cart").onclick = function () {
 
   const id = localStorage.getItem("selectId");
@@ -34,15 +15,27 @@ $(".btn-add_cart").onclick = function () {
   alert("Item is added successfully!!");
 };
 
-$('.increase_volume').onclick =  () => {
-    $('.volume').innerText = +$('.volume').innerText + 1;
-}
-$('.decrease_volume').onclick = () => {
-    let volume = +$('.volume').innerText;
-    if (volume > 1)
-        $('.volume').innerText = volume - 1;
-}
+var products = [];
+    fetch(apiProducts)
+    .then((response) => response.json())
+    .then((ps) => {
+        products = ps;
+    })
+    .catch((error) => {
+        throw new Error(error);
+});
+// -------------------------------------
 
+// --------------- Huyen ---------------
+// increase or descrease volume of product
+$(".increase_volume").onclick = function () {
+    $(".volume").innerText = +$(".volume").innerText + 1;
+  };
+  $(".decrease_volume").onclick = function () {
+    let volume = +$(".volume").innerText;
+    if (volume > 1) $(".volume").innerText = volume - 1;
+  };
+  
 // create random id
 const createIdGenerator = () => {
     const S4 = () => {
@@ -80,11 +73,11 @@ switch(date.getMonth() + 1) {
     default: month = 'Dec';
 }
 
+// after replying or sending, localStorage will update
 const updateCmtArr = newComment => {
     localStorage.setItem("comments", JSON.stringify([...comments, newComment]));
     location.reload();
 }
-
 
 // handle press button clear
 $('#permanent_clearbtn').onclick = () => {
@@ -103,7 +96,7 @@ $('#permanent_sendbtn').onclick = () => {
         nearest_parent: null
     }
     
-    // variable comments render.js (detail folder), line 47
+    // variable comments in render.js (detail folder), line 47
     if(comments) {
         updateCmtArr(newComment)
     }
@@ -113,7 +106,8 @@ $('#permanent_sendbtn').onclick = () => {
 const replyComment = (reply) => {
     const data = $$('.leave_comment');
     
-    // check if there's no input to write comment so that create a new one
+    // check if there's no any input to write comment so that create a new one
+    // if it exists, no creating new one
     if(!data.length) {
         const input = 
         `<textarea class="input-leave_cmt input-leave_cmt-reply" placeholder="Write something..." cols="50" rows="1"></textarea>
@@ -144,10 +138,7 @@ const handleComment = button => {
         parent = parent.parentElement;
         count++;
     }
-    // const hide_rep = `<p class="hide_cmts">________ &nbsp; &nbsp; Hide replies <i class="ti-angle-down"></i></p>`
-    // render($('.comment-right-parent'), 'p', 'hide_cmts', null, hide_rep, null, null );
 
-    console.log(count);
     // create new comments with some constraints
     const content_cmt = $('.input-leave_cmt-reply');
  
@@ -181,23 +172,27 @@ const handleLike = icon_heart => {
     icon_heart.classList.toggle('more_bold');
 }
 
-// handle delete comment
-const handleDeleteCmt = icon_delete => {
-    if (confirm("Are you sure to delete this comment?")) {
-        const cmt = comments.filter(cmt => cmt.id === icon_delete.parentElement.parentElement.id);
-        const cmt_childs = comments.filter(cmt => cmt.nearest_parent);
-
-        const newCmts = []
-        console.log(cmt_childs);
-        for (let child of cmt_childs) {
-            if(child.nearest_parent === cmt.id) {
-                console.log(child);
-            }
-        }
-        
-        console.log(newCmts);
-        // localStorage.setItem("comments", JSON.stringify([...newCmts]));
-        // location.reload();
-    }
+const hideCmts = () => {
+    $('.nested_comments').style.height = '400px';
+    $('.nested_comments').style.overflowY = 'hidden';
+    $('.hide_cmts').style.display = 'none';
+    $('.show_cmts').style.display = 'block';
 }
 
+const showCmts = () => {
+    $('.nested_comments').style.height = 'max-content';
+    $('.nested_comments').style.overflowY = 'visible';
+    $('.show_cmts').style.display = 'none';
+    $('.hide_cmts').style.display = 'block';
+}
+if ($('.nested_comments').clientHeight > 400) {
+    hideCmts();
+}
+
+$('.show_cmts').onclick = () => {
+    showCmts();
+}
+
+$('.hide_cmts').onclick = () => {
+    hideCmts();
+}

@@ -21,9 +21,7 @@ const handleChangeTabs = (button) => {
   findActive([...$$(".btn-bestsl")], "active_color", "");
   button.classList.add("active_color");
   findActive([...$$(".products-main")], "active_grid", "");
-  $$(".products-main")[+button.className.slice(26, 27)].classList.add(
-    "active_grid"
-  );
+  $$(".products-main")[+button.className.slice(26, 27)].classList.add("active_grid");
 };
 
 const handleToNext = (icon_next) => {
@@ -46,6 +44,7 @@ const handleToPrev = (icon_prev) => {
 $(".btn-gotit").onclick = function () {
   this.parentElement.style.display = "none";
 };
+
 
 $(".btn-gotit").onclick = function () {
   this.parentElement.style.display = "none";
@@ -80,3 +79,4 @@ function addingToCart(id) {
   console.log(item.id);
   alert("Item is added successfully!!");
 }
+

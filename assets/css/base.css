@@ -1,12 +1,35 @@
+/* Import Font Family from GG Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Jost&display=swap");
+
 * {
   font-size: 67.5%;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 10px;
+
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgb(149, 147, 147);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 html {
   scroll-behavior: smooth;
-  font-family: "Open Sans", sans-serif;
+  
+}
+body {
+  font-family: Jost;
 }
 :root {
   --height_header: 85px;
