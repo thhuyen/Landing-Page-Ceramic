@@ -3,14 +3,17 @@ let shoppingCart = (function () {
   let cart = [];
   let paymentInfo = {};
 
-  function Item(id, name, price, img, status, quantity) {
-    return { id, name, price, img, status, quantity: quantity || 1 };
+
+  function Item(id, name, price, img, quantity) {
+    return { id, name, price, img, quantity: quantity || 1 };
   }
 
+  // save info of Cart to local storage
   function saveCart() {
     localStorage.setItem("shoppingCart", JSON.stringify(cart));
   }
 
+  // get info of Cart from local storage
   function loadCart() {
     cart = JSON.parse(localStorage.getItem("shoppingCart"));
     if (cart === null) {
@@ -18,10 +21,12 @@ let shoppingCart = (function () {
     }
   }
 
+  // save info that user input in payment process
   function savePaymentInfo() {
     localStorage.setItem("paymentInfo", JSON.stringify(paymentInfo));
   }
 
+  // get user payment info from local storage
   function loadPaymentInfo() {
     paymentInfo = JSON.parse(localStorage.getItem("paymentInfo"));
     if (paymentInfo === null) {
@@ -35,6 +40,7 @@ let shoppingCart = (function () {
   // Public methods and properties
   let obj = {};
 
+  // Update payment info of user when receiving user's input
   obj.updatePaymentInfo = function (
     phone,
     email,
@@ -54,6 +60,7 @@ let shoppingCart = (function () {
     savePaymentInfo();
   };
 
+  // Remove payment info of user
   obj.removePaymentInfo = function () {
     paymentInfo = {};
     savePaymentInfo();
@@ -75,7 +82,7 @@ let shoppingCart = (function () {
         return;
       }
     }
-    let item = new Item(id, name, price, img, status);
+    let item = new Item(id, name, price, img);
     cart.push(item);
     saveCart();
   };
@@ -163,6 +170,7 @@ let shoppingCart = (function () {
     return cartCopy;
   };
 
+  // Get user Payment info
   obj.getPaymentInfo = function () {
     return {
       ...paymentInfo,

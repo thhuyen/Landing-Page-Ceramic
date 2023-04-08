@@ -30,8 +30,11 @@ setTimeout(function () {
       alert("" + error);
     }
   }
-  let cartIconBtn = document.getElementById("cartIconBtn");
 
+  // Enable only logged-in users to access the Cart Page.
+  // If not, redirect users to Login Modal Box
+
+  let cartIconBtn = document.getElementById("cartIconBtn");
   cartIconBtn.addEventListener("click", (event) => {
     event.preventDefault();
     if (user.isAuthenticate()) {

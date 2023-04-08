@@ -8,7 +8,7 @@ if (!user.isAuthenticate()) {
   let container = document.getElementById("product-container");
   let priceWrapper = document.getElementById("price-wrapper");
   let subtotal = Math.round(shoppingCart.totalCart());
-  let tax = subtotal * 0.1;
+  let tax = (subtotal * 0.1).toFixed(2);
   let sum = subtotal + tax;
   let currentCartList = shoppingCart.listCart();
 
@@ -74,6 +74,8 @@ submitBtn.addEventListener("click", (e) => {
   e.preventDefault();
   continueToShipping();
 });
+
+// Get info from user input to next step of payment
 function loadPaymentInfoData() {
   const paymentInfo = shoppingCart.getPaymentInfo();
   console.log(shoppingCart.getPaymentInfo());
@@ -83,6 +85,7 @@ function loadPaymentInfoData() {
   document.getElementById("pm-address").value = paymentInfo.address;
 }
 loadPaymentInfoData();
+
 function continueToShipping() {
   let phone = document.getElementById("pm-phone").value;
   let email = document.getElementById("pm-email").value;
