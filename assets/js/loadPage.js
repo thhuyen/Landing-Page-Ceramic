@@ -1,3 +1,12 @@
+/*
+  NAB Innovation Center Vietnam
+  Program: WeCamp batch 2
+  Assessment: Assignment 1
+  Authors: Thanh Huyen
+  Created  date: 25/03/2023 (e.g. 31/07/2023)
+  Last modified: 25/03/2023 (e.g. 05/08/2023)
+  Acknowledgement: https://www.w3schools.com/howto/howto_html_include.asp
+*/
 function addHTML() {
     var el, i, domEl, fileName, xmlHttp;
     
