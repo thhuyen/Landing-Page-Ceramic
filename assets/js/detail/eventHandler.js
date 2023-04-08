@@ -1,22 +1,3 @@
-
-$(".increase_volume").onclick = function () {
-  $(".volume").innerText = +$(".volume").innerText + 1;
-};
-$(".decrease_volume").onclick = function () {
-  let volume = +$(".volume").innerText;
-  if (volume > 1) $(".volume").innerText = volume - 1;
-};
-
-var products = [];
-fetch(apiProducts)
-  .then((response) => response.json())
-  .then((ps) => {
-    products = ps;
-  })
-  .catch((error) => {
-    throw new Error(error);
-  });
-
 //   Add to Cart - Trinh
 $(".btn-add_cart").onclick = function () {
   var r = Math.floor(Math.random() * products.length);
@@ -43,7 +24,28 @@ $('.decrease_volume').onclick = () => {
     if (volume > 1)
         $('.volume').innerText = volume - 1;
 }
+// -------------------------------------
 
+// --------------- Huyen ---------------
+// increase or descrease volume of product
+$(".increase_volume").onclick = function () {
+    $(".volume").innerText = +$(".volume").innerText + 1;
+  };
+  $(".decrease_volume").onclick = function () {
+    let volume = +$(".volume").innerText;
+    if (volume > 1) $(".volume").innerText = volume - 1;
+  };
+  
+  var products = [];
+  fetch(apiProducts)
+    .then((response) => response.json())
+    .then((ps) => {
+      products = ps;
+    })
+    .catch((error) => {
+      throw new Error(error);
+    });
+  
 // create random id
 const createIdGenerator = () => {
     const S4 = () => {
@@ -81,11 +83,11 @@ switch(date.getMonth() + 1) {
     default: month = 'Dec';
 }
 
+// after replying or sending, localStorage will update
 const updateCmtArr = newComment => {
     localStorage.setItem("comments", JSON.stringify([...comments, newComment]));
     location.reload();
 }
-
 
 // handle press button clear
 $('#permanent_clearbtn').onclick = () => {
@@ -145,10 +147,7 @@ const handleComment = button => {
         parent = parent.parentElement;
         count++;
     }
-    // const hide_rep = `<p class="hide_cmts">________ &nbsp; &nbsp; Hide replies <i class="ti-angle-down"></i></p>`
-    // render($('.comment-right-parent'), 'p', 'hide_cmts', null, hide_rep, null, null );
 
-    console.log(count);
     // create new comments with some constraints
     const content_cmt = $('.input-leave_cmt-reply');
  
@@ -182,23 +181,27 @@ const handleLike = icon_heart => {
     icon_heart.classList.toggle('more_bold');
 }
 
-// handle delete comment
-const handleDeleteCmt = icon_delete => {
-    if (confirm("Are you sure to delete this comment?")) {
-        const cmt = comments.filter(cmt => cmt.id === icon_delete.parentElement.parentElement.id);
-        const cmt_childs = comments.filter(cmt => cmt.nearest_parent);
-
-        const newCmts = []
-        console.log(cmt_childs);
-        for (let child of cmt_childs) {
-            if(child.nearest_parent === cmt.id) {
-                console.log(child);
-            }
-        }
-        
-        console.log(newCmts);
-        // localStorage.setItem("comments", JSON.stringify([...newCmts]));
-        // location.reload();
-    }
+const hideCmts = () => {
+    $('.nested_comments').style.height = '400px';
+    $('.nested_comments').style.overflowY = 'hidden';
+    $('.hide_cmts').style.display = 'none';
+    $('.show_cmts').style.display = 'block';
 }
 
+const showCmts = () => {
+    $('.nested_comments').style.height = 'max-content';
+    $('.nested_comments').style.overflowY = 'visible';
+    $('.show_cmts').style.display = 'none';
+    $('.hide_cmts').style.display = 'block';
+}
+if ($('.nested_comments').clientHeight > 400) {
+    hideCmts();
+}
+
+$('.show_cmts').onclick = () => {
+    showCmts();
+}
+
+$('.hide_cmts').onclick = () => {
+    hideCmts();
+}
