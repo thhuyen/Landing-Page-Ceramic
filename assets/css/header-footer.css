@@ -208,6 +208,44 @@ h3.sub-head::after {
   color: #212529;
 }
 
+
+/* ------------ box accept cookie -------- */
+#cookie {
+  width: 300px;
+  height: 230px;
+  background: black;
+  position: fixed;
+  left: 30px;
+  bottom: 10%;
+  z-index: 20;
+  padding: 30px;
+  line-height: 1.8;
+  text-align: center;
+}
+.content_box {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+.content_box-policy {
+  display: inline-block;
+  font-weight: 500;
+  border-bottom: 1px solid white;
+  padding-bottom: 10px;
+  margin: 25px 0;
+}
+.btn-gotit {
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 15px;
+  background: white;
+}
+.btn-gotit:hover {
+  color: white;
+  background: var(--primary_color);
+}
+
 /* -------------- icon pull to head ----------------- */
 .icon-pulltohead {
   position: fixed;

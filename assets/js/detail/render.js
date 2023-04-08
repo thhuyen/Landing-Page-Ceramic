@@ -12,15 +12,15 @@ fetch(apiProducts)
 
 // img product 
 render($('#in4_product'), 'img', 'img-slider' ,null, null, null);
-$('.img-slider').src = localStorage.getItem("productImg");
+$('.img-slider').src = localStorage.getItem("productImg") ? localStorage.getItem("productImg") : '//cdn.shopify.com/s/files/1/0660/1985/2535/products/7.1.jpg?v=1662001011';
 
 // information product
 render($('#in4_product'), 'div', 'desc_product', null, 
-    `<h2 class="name_product">${localStorage.getItem("productName")}</h2>
+    `<h2 class="name_product">${localStorage.getItem("productName") ? localStorage.getItem("productName") : 'Modern Cup'}</h2>
     ${localStorage.getItem("productDiscount") ? 
-        `<span class="price origin_price discount">${localStorage.getItem("productPrice")} USD</span>
-        <span class="price discount_price"> &nbsp; ${localStorage.getItem("productDiscount")} USD</span>` : 
-        `<span class="price discount_price"> &nbsp; ${localStorage.getItem("productPrice")} USD</span>` }
+        `<span class="price origin_price discount">${localStorage.getItem("productPrice") ? localStorage.getItem("productPrice") : '18.00'} USD</span>
+        <span class="price discount_price"> &nbsp; ${localStorage.getItem("productDiscount") ? localStorage.getItem("productDiscount") : '16.00'} USD</span>` : 
+        `<span class="price discount_price"> &nbsp; ${localStorage.getItem("productPrice") ? localStorage.getItem("productPrice") : '16.00'} USD</span>` }
     <p class="desc_detail">
         Things You Need To Know Using advanced edging technology and high-quality materials, our premium sunglasses have a luxurious look and feel with subtly curved lenses. These striking, sophisticated sunglasses offer timeless design updated with shiny gold metal accents at the temples for just a bit of bling. The wide frame...
     </p>
@@ -56,7 +56,6 @@ if (comments) {
                     <p class="comment-content">${content}</p>
                     <span class="comment-reply" onclick="replyComment(this)">Reply &nbsp;&nbsp;&nbsp;</span>
                     <i class="fa-regular fa-heart icon icon-love_comment" onclick="handleLike(this)"></i>
-                    <i class="ti-close icon icon-delete_cmt" onclick="handleDeleteCmt(this)"></i>
                 </div>`
     }
     
@@ -69,8 +68,8 @@ if (comments) {
     
     // render all child comments
     const handleCreateChildComments = (parent, child) => {
-        for (let i = 0; i < parent.length; i++) {
-            for (let j = 0; j < child.length; j++) {
+        for (let i in parent) {
+            for (let j in child) {
                 if(child[j].nearest_parent === parent[i].id) {
                     let className = child[j].level === 2 ? "comment comment-child comment-child-level2" : "comment comment-child comment-child-level3";
                     render(parent[i], 'div', className, child[j].id, createComments(child[j].avatar, child[j].username, child[j].date, child[j].content), null, null);
@@ -88,4 +87,8 @@ if (comments) {
 }
 else {
     localStorage.setItem("comments", JSON.stringify([]));
+    location.reload();
 }
+
+// render current page
+$('.current_page').textContent = localStorage.getItem("productName") ? localStorage.getItem("productName") : 'Mordern Cup';
