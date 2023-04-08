@@ -54,7 +54,9 @@ sliders.map((element, index) => {
         <h3 class="slider-text slider-text-first">${element.text1}</h3>
         <h3 class="slider-text slider-text-second">${element.text2}</h3>
         <h3 class="slider-text slider-text-third">${element.text3}</h3>
-        <button class="btn btn-slider">SHOP NOW</button>
+        <a href ="#best_seller">
+            <button class="btn btn-slider">SHOP NOW</button>
+        </a>
     </div>`;
 
     render($('.dots'), 

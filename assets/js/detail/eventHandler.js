@@ -1,4 +1,4 @@
-//   Add to Cart - Trinh
+//----------- Add to Cart - Trinh ----------
 $(".btn-add_cart").onclick = function () {
   var r = Math.floor(Math.random() * products.length);
 
@@ -16,14 +16,15 @@ $(".btn-add_cart").onclick = function () {
   alert("Item add successfully");
 };
 
-$('.increase_volume').onclick =  () => {
-    $('.volume').innerText = +$('.volume').innerText + 1;
-}
-$('.decrease_volume').onclick = () => {
-    let volume = +$('.volume').innerText;
-    if (volume > 1)
-        $('.volume').innerText = volume - 1;
-}
+var products = [];
+    fetch(apiProducts)
+    .then((response) => response.json())
+    .then((ps) => {
+        products = ps;
+    })
+    .catch((error) => {
+        throw new Error(error);
+});
 // -------------------------------------
 
 // --------------- Huyen ---------------
@@ -35,16 +36,6 @@ $(".increase_volume").onclick = function () {
     let volume = +$(".volume").innerText;
     if (volume > 1) $(".volume").innerText = volume - 1;
   };
-  
-  var products = [];
-  fetch(apiProducts)
-    .then((response) => response.json())
-    .then((ps) => {
-      products = ps;
-    })
-    .catch((error) => {
-      throw new Error(error);
-    });
   
 // create random id
 const createIdGenerator = () => {
@@ -106,7 +97,7 @@ $('#permanent_sendbtn').onclick = () => {
         nearest_parent: null
     }
     
-    // variable comments render.js (detail folder), line 47
+    // variable comments in render.js (detail folder), line 47
     if(comments) {
         updateCmtArr(newComment)
     }
@@ -116,7 +107,8 @@ $('#permanent_sendbtn').onclick = () => {
 const replyComment = (reply) => {
     const data = $$('.leave_comment');
     
-    // check if there's no input to write comment so that create a new one
+    // check if there's no any input to write comment so that create a new one
+    // if it exists, no creating new one
     if(!data.length) {
         const input = 
         `<textarea class="input-leave_cmt input-leave_cmt-reply" placeholder="Write something..." cols="50" rows="1"></textarea>
