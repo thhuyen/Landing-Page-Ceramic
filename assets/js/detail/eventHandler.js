@@ -19,20 +19,19 @@ fetch(apiProducts)
 
 //   Add to Cart - Trinh
 $(".btn-add_cart").onclick = function () {
-  var r = Math.floor(Math.random() * products.length);
 
   const id = localStorage.getItem("selectId");
   if (!id) {
-    alert("not select item yet");
+    alert("You haven't selected any items yet!!");
     return;
   }
-  var item = products.find((product) => product.id === id);
+  let item = products.find((product) => product.id === id);
   if (!item) {
-    console.error("item not existed");
+    console.error("Item is not existed!!");
     return;
   }
   shoppingCart.addItemToCart({ ...item, quantity: 1 });
-  alert("Item add successfully");
+  alert("Item is added successfully!!");
 };
 
 $('.increase_volume').onclick =  () => {

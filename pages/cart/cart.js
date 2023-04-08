@@ -1,6 +1,7 @@
 let shoppingCart = (function () {
   // Private methods and properties
   let cart = [];
+  let paymentInfo = {};
 
   function Item(id, name, price, img, status, quantity) {
     return { id, name, price, img, status, quantity: quantity || 1 };
@@ -13,15 +14,50 @@ let shoppingCart = (function () {
   function loadCart() {
     cart = JSON.parse(localStorage.getItem("shoppingCart"));
     if (cart === null) {
-      cart = [];
+      cart = {};
+    }
+  }
+
+  function savePaymentInfo() {
+    localStorage.setItem("paymentInfo", JSON.stringify(paymentInfo));
+  }
+
+  function loadPaymentInfo() {
+    paymentInfo = JSON.parse(localStorage.getItem("paymentInfo"));
+    if (paymentInfo === null) {
+      paymentInfo = [];
     }
   }
 
   loadCart();
+  loadPaymentInfo();
 
   // Public methods and properties
   let obj = {};
 
+  obj.updatePaymentInfo = function (
+    phone,
+    email,
+    firstname,
+    lastname,
+    address,
+    note
+  ) {
+    paymentInfo = {
+      phone,
+      email,
+      firstname,
+      lastname,
+      address,
+      note,
+    };
+    savePaymentInfo();
+  };
+
+  obj.removePaymentInfo = function () {
+    paymentInfo = {};
+    savePaymentInfo();
+  };
   // Add item to Cart
   obj.addItemToCart = function ({
     id,
@@ -45,9 +81,9 @@ let shoppingCart = (function () {
   };
 
   // Set quantity to update Cart
-  obj.setCountForItem = function (name, quantity) {
+  obj.setQttForItem = function (id, quantity) {
     for (let i in cart) {
-      if (cart[i].name === name) {
+      if (cart[i].id == id) {
         cart[i].quantity = quantity;
         break;
       }
@@ -55,10 +91,20 @@ let shoppingCart = (function () {
     saveCart();
   };
 
-  // Remove Item form Cart
+  // Add 1 in quantity of selected items
+  obj.addItemtoCart = function (id) {
+    for (let i in cart) {
+      if (cart[i].id == id) {
+        cart[i].quantity++;
+        break;
+      }
+    }
+    saveCart();
+  };
 
-  // Removes one item
-  obj.removeItemFromCart = function (id) {
+  // Remove Item fromm Cart
+  // Remove (decrease) 1 item from quantity.
+  obj.removeItemFromQuantity = function (id) {
     for (let i in cart) {
       if (cart[i].id == id) {
         cart[i].quantity--;
@@ -71,20 +117,14 @@ let shoppingCart = (function () {
     saveCart();
   };
 
-  // removes all item name
-  obj.removeItemFromCartAll = function (id) {
+  // removes a row of selected item in the (X) button
+  obj.removeItemRow = function (id) {
     for (let i in cart) {
       if (cart[i].id == id) {
         cart.splice(i, 1);
         break;
       }
     }
-    saveCart();
-  };
-
-  // Delete all items
-  obj.clearCart = function () {
-    cart = [];
     saveCart();
   };
 
@@ -121,6 +161,12 @@ let shoppingCart = (function () {
       cartCopy.push(itemCopy);
     }
     return cartCopy;
+  };
+
+  obj.getPaymentInfo = function () {
+    return {
+      ...paymentInfo,
+    };
   };
 
   return obj;

@@ -80,6 +80,15 @@ input {
   align-items: center;
   font-size: 0.9rem;
 }
+#pm-info-error-msg1,
+#pm-info-error-msg2 {
+  margin: 0 0 1.5rem;
+  font-style: italic;
+  color: rgb(255, 135, 29);
+  font-size: 0.8rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
 
 input#email-check,
 input#save-info {
@@ -119,19 +128,23 @@ input.note {
   display: flex;
   justify-content: space-between;
 }
-.return {
+.return,
+.backHome {
   display: flex;
   gap: 0.4rem;
   align-items: center;
 }
 .return > a,
+.backHome > a,
 .return > i {
   color: rgb(255, 135, 29);
 }
+.backHome > a,
 .return > a {
   text-decoration: none;
   font-size: 1rem;
 }
+.backHome > a:hover,
 .return > a:hover {
   opacity: 0.6;
 }
@@ -141,22 +154,21 @@ input.note {
   border: none;
   border-radius: 0.3rem;
   font-size: 1rem;
-}
-
-.continue-btn > a {
-  text-decoration: none;
-
   color: #fff;
+}
+.continue-btn:hover {
+  opacity: 0.5;
 }
 
 /* <!-- SECTION 2: Order summary --> */
 /* 1. Header */
 /* Logo & title */
-.section-2 {
+#info-section-2 {
   padding: 3rem 8rem 0 3rem;
 }
 /* Product Info */
-.product-info {
+
+#product-info {
   display: flex;
   justify-content: space-between;
 }
@@ -165,7 +177,7 @@ input.note {
   gap: 1rem;
 }
 .product-img > img {
-  width: 6rem;
+  width: 4rem;
   aspect-ratio: 1/1;
   border-radius: 0.8rem;
   background-position: center;
@@ -196,7 +208,7 @@ input.note {
 }
 
 hr {
-  margin: 2rem 0;
+  margin: 1.5rem 0;
 }
 
 /* Calculate Price */
@@ -206,10 +218,15 @@ hr {
   justify-content: space-between;
   align-items: center;
 }
+.fee > p {
+  margin: 0.5rem 0;
+}
 
 p.text {
   color: #888;
   font-weight: lighter;
+  line-height: 1rem;
+  margin: 0;
 }
 
 /* Taxes */
@@ -313,6 +330,18 @@ span.total-price {
   font-size: 0.9rem;
 }
 
+.shipping-section-2 {
+  margin: 3rem 6rem 3rem 3rem;
+}
+
+#shipping-container {
+}
+
+.shipping-product-info {
+  display: flex;
+  justify-content: space-between;
+}
+
 /* ----------------------------------- II.FINAL  PAYMENT  PAGE --------------------------------- */
 
 /* Payment method */
@@ -339,4 +368,13 @@ i.icon-not {
 
   color: rgb(255, 135, 29);
   transform: translate(-0.5rem, -0.5rem);
+}
+
+.final-section-2 {
+  margin: 3rem 6rem 3rem 3rem;
+}
+
+.shipping-product-info {
+  display: flex;
+  justify-content: space-between;
 }

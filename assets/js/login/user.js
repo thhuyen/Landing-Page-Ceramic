@@ -1,4 +1,4 @@
-//Create user module to reusable to restrict/access to some private pages
+//Create an user module to reusable to restrict/access to some private pages
 let user = (function () {
   let authenticateUserPassword;
   let userObj = {};

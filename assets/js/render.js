@@ -34,7 +34,7 @@ function setHTMLProduct(element) {
         : ""
     }
     <div class="actions">
-        <div class="action">
+        <div class="action" onclick="addingToCart(${element.id})">
             <i class="fa-solid fa-bag-shopping icon icon-action"></i> 
         </div>
         <div class="action">
@@ -47,17 +47,14 @@ function setHTMLProduct(element) {
   return HTML;
 }
 
-
-
-window.onscroll = function() {
-    if (document.documentElement.scrollTop > 1400)
-    {
-        $('.icon-pulltohead').style.opacity= "1";
-    } else {
-        $('.icon-pulltohead').style.opacity= "0";
-    }
+window.onscroll = function () {
+  if (document.documentElement.scrollTop > 1400) {
+    $(".icon-pulltohead").style.opacity = "1";
+  } else {
+    $(".icon-pulltohead").style.opacity = "0";
+  }
 };
 
 const scrollToTop = () => {
-    scrollTo(0,0);
-}
+  scrollTo(0, 0);
+};
