@@ -15,8 +15,19 @@
   usernameConfirm.innerText = currentUser.username;
   signoutBtn.addEventListener("click", (event) => {
     user.logout();
-    alert("log out success");
+    alert("Log out successfully!!");
     window.location.href = "/pages/home.html";
   });
-  
+})();
+
+(function () {
+  // Optional render for total items in cart
+  let cartQtt = document.querySelector("#totalItemsInCart");
+  console.log(cartQtt);
+  let numOfItemsInCart = shoppingCart.countCart();
+  numOfItemsInCart == 0
+    ? (cartQtt.innerHTML = `<p class="order-status">You haven't placed any orders yet.</p>`)
+    : (cartQtt.innerHTML = `<p class="order-status">Your lovely cart has been filled with ${numOfItemsInCart} items.</p>`);
+
+  //
 })();

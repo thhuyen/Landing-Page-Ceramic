@@ -206,6 +206,7 @@ p.value-content {
 }
 
 /* About - Core Mems - Profile slider */
+
 .slider-wrapper {
   position: relative;
   min-height: 40rem;
@@ -254,7 +255,7 @@ p.value-content {
   background-color: transparent;
   position: absolute;
   top: calc(50% - 2rem);
-  transform: translateX(42%);
+  transform: translateX(20%);
   gap: 3rem;
 }
 

@@ -34,19 +34,26 @@
           <a href="#">Payment</a>
         </div>
         <!-- Form -->
-        <form>
+        <form action="">
           <!-- Email && Phone -->
           <div class="form-layout">
             <div class="contact">
               <h3 class="sub-tit">Contact information</h3>
               <div class="contact-info">
-                <input type="text" class="phone" placeholder="Phone" required />
+                <input
+                  type="text"
+                  class="phone"
+                  placeholder="Phone"
+                  id="pm-phone"
+                  required
+                />
 
                 <input
                   type="text"
                   class="email"
                   placeholder="Email"
                   name="email"
+                  id="pm-email"
                   required
                 />
               </div>
@@ -54,6 +61,8 @@
                 <input type="checkbox" name="check" id="email-check" />
                 <span>Email me with news and offers</span>
               </div>
+
+              <div id="pm-info-error-msg1"></div>
             </div>
             <!-- Shipping Address -->
             <div class="shipping-addr">
@@ -63,6 +72,7 @@
                   type="text"
                   class="fname"
                   placeholder="First name"
+                  id="pm-name"
                   required
                 />
                 <input
@@ -76,6 +86,7 @@
                 type="text"
                 class="address"
                 placeholder="Address"
+                id="pm-address"
                 required
               />
               <br />
@@ -88,16 +99,17 @@
                 <input type="checkbox" name="check" id="save-info" />
                 <span>Save this information for next time</span>
               </div>
+              <div id="pm-info-error-msg2"></div>
             </div>
             <!-- Optional buttons -->
             <div class="optional-btns">
               <div class="return">
                 <i class="fa-solid fa-chevron-left"></i>
-                <a href="#">Return to Cart</a>
+                <a href="/pages/cart/cart.html">Return to Cart</a>
               </div>
 
-              <button type="submit" class="continue-btn">
-                <a href="./confirm-shipping.html">Continue to shipping</a>
+              <button type="submit" class="continue-btn" id="submitInfoCart">
+                Continue to shipping
               </button>
             </div>
           </div>
@@ -105,54 +117,10 @@
       </div>
 
       <!-- SECTION 2: Cart info -->
-      <div class="section-2">
+      <div id="info-section-2">
         <div class="header">
-          <div class="product-info">
-            <div class="product-wrap">
-              <div class="product-img">
-                <img
-                  src="https://cdn.shopify.com/s/files/1/0660/1985/2535/products/7.1_128x128.jpg?v=1662001011"
-                  alt="product"
-                />
-                <div class="product-quantity">1</div>
-              </div>
-              <span class="product-name"> Modern Cup </span>
-            </div>
-            <span class="price">$16.00</span>
-          </div>
-          <hr />
-          <div class="calculate-price">
-            <div class="fee">
-              <p>Subtotal</p>
-              <p>$16.00</p>
-            </div>
-            <div class="fee">
-              <p>Shipping</p>
-              <p class="text">Calculated at next step</p>
-            </div>
-            <div class="fee">
-              <div class="taxes">
-                <p>Estimated taxes</p>
-                <div class="tooltip">
-                  <i class="fa-regular fa-circle-question"></i>
-                  <span class="show-tooltip">
-                    The taxes and total will be confirmed via email after you
-                    order.
-                  </span>
-                </div>
-              </div>
-              <p>$1.60</p>
-            </div>
-          </div>
-          <hr />
-          <div class="total">
-            <span class="total-label">
-              <b>Total</b>
-            </span>
-            <p class="text">
-              USD<span class="total-price"><b> $17.60</b> </span>
-            </p>
-          </div>
+          <div id="product-container"></div>
+          <div id="price-wrapper"></div>
         </div>
       </div>
     </div>
@@ -161,5 +129,8 @@
       src="https://kit.fontawesome.com/842777e4e9.js"
       crossorigin="anonymous"
     ></script>
+    <script src="../../assets/js/login/user.js"></script>
+    <script src="../cart/cart.js"></script>
+    <script src="../../assets/js/payment/info-eventHandler.js"></script>
   </body>
 </html>

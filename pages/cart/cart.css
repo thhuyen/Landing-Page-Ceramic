@@ -202,13 +202,9 @@ p.item-color {
 }
 
 .cartBtn {
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #fff;
-  padding: 1.5rem 3rem;
   width: 60%;
   border: none;
+  padding: 1.5rem 3rem;
 }
 
 button#btn-cart-update {
@@ -225,13 +221,13 @@ button#btn-cart-done {
   background-color: #be9c79;
 }
 
+button#btn-cart-update > a,
 button#btn-cart-done > a {
   text-decoration: none;
   font-size: 1.2rem;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #fff;
-  padding: 1.5rem 3rem;
 }
 button#btn-cart-done:hover {
   cursor: pointer;

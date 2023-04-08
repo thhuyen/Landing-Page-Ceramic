@@ -45,3 +45,38 @@ $(".btn-gotit").onclick = function () {
   this.parentElement.style.display = "none";
 };
 
+
+$(".btn-gotit").onclick = function () {
+  this.parentElement.style.display = "none";
+};
+
+//handle add to cart button from product list - Trinh:
+let products = [];
+fetch(apiProducts)
+  .then((response) => response.json())
+  .then((ps) => {
+    products = ps;
+  })
+  .catch((error) => {
+    throw new Error(error);
+  });
+
+function addingToCart(id) {
+  if (!id) {
+    id = localStorage.getItem("selectId");
+  }
+
+  if (!id) {
+    alert("You haven't selected any items yet!!");
+    return;
+  }
+  let item = products.find((product) => product.id == id);
+  if (!item) {
+    console.error("Item is not existed!!");
+    return;
+  }
+  shoppingCart.addItemToCart({ ...item, quantity: 1 });
+  console.log(item.id);
+  alert("Item is added successfully!!");
+}
+

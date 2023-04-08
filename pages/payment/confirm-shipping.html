@@ -43,12 +43,12 @@
                 <div class="tr border-bottom">
                   <div class="row-wrapper">
                     <div role="cell" class="email label">Contact</div>
-                    <div role="cell" class="email confirm">
+                    <div role="cell" class="email confirm" id="email">
                       trinhpn96@gmail.com
                     </div>
                   </div>
                   <div role="cell" class="edit">
-                    <a href="./payment-info.html">Edit</a>
+                    <a href="./input-info.html">Edit</a>
                   </div>
                 </div>
               </div>
@@ -57,12 +57,10 @@
                 <div class="tr">
                   <div class="row-wrapper">
                     <div role="cell" class="addr label">Ship to</div>
-                    <div role="cell" class="addr confirm">
-                      216 HRJK, 23 FFF, HCMC AL 35005, United States
-                    </div>
+                    <div role="cell" class="addr confirm" id="shipto"></div>
                   </div>
                   <div role="cell" class="edit">
-                    <a href="./payment-info.html">Edit</a>
+                    <a href="./input-info.html">Edit</a>
                   </div>
                 </div>
               </div>
@@ -85,8 +83,8 @@
                 <a href="./input-info.html">Return to Information</a>
               </div>
 
-              <button type="submit" class="continue-btn">
-                <a href="./final-payment.html">Continue to Payment</a>
+              <button type="submit" class="continue-btn" id="shippingSubmitBtn">
+                Continue to Payment
               </button>
             </div>
           </div>
@@ -94,41 +92,10 @@
       </div>
 
       <!-- SECTION 2: Cart info -->
-      <div class="section-2">
+      <div class="shipping-section-2">
         <div class="header">
-          <div class="product-info">
-            <div class="product-wrap">
-              <div class="product-img">
-                <img
-                  src="https://cdn.shopify.com/s/files/1/0660/1985/2535/products/7.1_128x128.jpg?v=1662001011"
-                  alt="product"
-                />
-                <div class="product-quantity">1</div>
-              </div>
-              <span class="product-name"> Modern Cup </span>
-            </div>
-            <span class="price">$16.00</span>
-          </div>
-          <hr />
-          <div class="calculate-price">
-            <div class="fee">
-              <p>Subtotal</p>
-              <p>$16.00</p>
-            </div>
-            <div class="fee">
-              <p>Shipping</p>
-              <p>$19.63</p>
-            </div>
-          </div>
-          <hr />
-          <div class="total">
-            <p class="total-label">
-              <b>Total</b>
-            </p>
-            <p class="text">
-              USD<span class="total-price"><b> $35.65</b> </span>
-            </p>
-          </div>
+          <div id="shipping-container"></div>
+          <div id="shipIncludedPrice-wrapping"></div>
         </div>
       </div>
     </div>
@@ -137,5 +104,9 @@
       src="https://kit.fontawesome.com/842777e4e9.js"
       crossorigin="anonymous"
     ></script>
+    <script src="../../assets/js/login/user.js"></script>
+
+    <script src="../cart/cart.js"></script>
+    <script src="../../assets/js/payment/shipping-eventHandler.js"></script>
   </body>
 </html>

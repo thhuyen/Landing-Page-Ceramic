@@ -1,24 +1,41 @@
-//use setTimeout to run cart after render header element
-// var add1 = (id) => {
-//   shoppingCart.addItemToCart({
-//     id: id,
-//     quantity: 1,
-//   });
-// };
-
+// Restrict that only user logged in to see this page
 if (!user.isAuthenticate()) {
-  alert("must login to view this page");
+  alert("You must login to view this page !!");
   window.location.href = "/pages/home.html";
 }
 
-var minus1 = (id) => {
-  shoppingCart.removeItemFromCart(id);
+// Increase / decrease quantity of a selected item
+// button +
+let add1 = (id) => {
+  shoppingCart.addItemtoCart(id);
   window.location.reload();
 };
 
-var minusall = (id) => {
-  shoppingCart.removeItemFromCartAll(id);
+//button -
+let minus1 = (id) => {
+  shoppingCart.removeItemFromQuantity(id);
   window.location.reload();
+};
+
+//button (X)
+let minusall = (id) => {
+  shoppingCart.removeItemRow(id);
+  window.location.reload();
+};
+
+// set Quantity changed by conteneditable
+let numQtt = () => {
+  setTimeout(() => console.log(e), 100);
+};
+
+let seeDetail = (img, name, price, id) => {
+  console.log(img, name, id);
+  localStorage.setItem("selectId", id);
+  localStorage.setItem("productImg", img);
+  localStorage.setItem("productName", name);
+  localStorage.setItem("productPrice", price);
+
+  window.location.href = "/pages/detail.html";
 };
 
 // Render Cart items
@@ -56,20 +73,20 @@ function renderCart() {
                 alt="product-img"
               />
               <div class="product-name">
-                <a href="#" class="item-name">${item.name}</a>
+                <a style="cursor:pointer" onclick="seeDetail('${item.img}','${
+      item.name
+    }',${item.price},${item.id})" class="item-name">${item.name}</a>
                 <p class="item-color">${item.status}</p>
               </div>
             </div>
             <div role="cell" class="prod price">$${item.price}</div>
             <div role="cell" class="prod quantity">
               <div class="qtt">
-                <div class="qtt-num" contenteditable="true">${
-                  item.quantity
-                }</div>
+                <div class="qtt-num" >${item.quantity}</div>
                 <div id="qtt-increase" id="add1" onclick="add1(${item.id})">
                 <i class="fa-solid fa-sort-up"></i>
               </div>
-              <div id="qtt-decrease  id="minus1"" onclick="minus1(${item.id})">
+              <div id="qtt-decrease" id="minus1" onclick="minus1(${item.id})">
                 <i class="fa-solid fa-sort-down"></i>
               </div>
               </div>
@@ -100,7 +117,6 @@ setTimeout(function () {
       document.getElementById("id01").style.display = "block";
     }
   });
-
   renderCart();
 
   document.getElementById(
