@@ -118,6 +118,7 @@ span.origin_price {
     font-weight: 600;
     padding: 20px 120px;
     border: none;
+    outline: none;
 }
 .btn-add_cart {
     background: var(--primary_color);
