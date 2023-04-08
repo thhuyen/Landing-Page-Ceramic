@@ -4,13 +4,17 @@ if (!user.isAuthenticate()) {
   window.location.href = "/pages/home.html";
 }
 
+let container = document.getElementById("product-container");
+let currentCartList = shoppingCart.listCart();
+const productBought = JSON.parse(localStorage.getItem("productBought"));
+
 (function () {
-  let container = document.getElementById("product-container");
   let priceWrapper = document.getElementById("price-wrapper");
   let subtotal = Math.round(shoppingCart.totalCart());
-  let tax = subtotal * 0.1;
-  let sum = subtotal + tax;
-  let currentCartList = shoppingCart.listCart();
+  let tax = (subtotal || +productBought.price) * 0.1;
+  let sum = (subtotal || +productBought.price*+productBought.quantity) + tax;
+  productBought.total = sum;
+  localStorage.setItem("productBought",JSON.stringify(productBought));
 
   //   Render each item in Cart
   currentCartList.forEach((item) => {
@@ -37,7 +41,7 @@ if (!user.isAuthenticate()) {
   priceWrapper.innerHTML = `<div class="calculate-price">
 <div class="fee">
   <p>Subtotal</p>
-  <p>$ ${subtotal}</p>
+  <p>$ ${subtotal || (+productBought.price * +productBought.quantity).toFixed(2)}</p>
 </div>
 <div class="fee">
   <p>Shipping</p>
@@ -54,7 +58,7 @@ if (!user.isAuthenticate()) {
       </span>
     </div>
   </div>
-  <p>$ ${tax}</p>
+  <p>$ ${tax.toFixed(2)}</p>
 </div>
 </div>
 <hr />
@@ -63,7 +67,7 @@ if (!user.isAuthenticate()) {
   <b>Total</b>
 </span>
 <p class="text">
-  USD<span class="total-price"><b> $ ${sum}</b> </span>
+  USD<span class="total-price"><b> $ ${sum.toFixed(2)}</b> </span>
 </p>
 </div>`;
 })();
@@ -77,10 +81,14 @@ submitBtn.addEventListener("click", (e) => {
 function loadPaymentInfoData() {
   const paymentInfo = shoppingCart.getPaymentInfo();
   console.log(shoppingCart.getPaymentInfo());
-  document.getElementById("pm-phone").value = paymentInfo.phone;
-  document.getElementById("pm-email").value = paymentInfo.email;
-  document.getElementById("pm-name").value = paymentInfo.firstname;
-  document.getElementById("pm-address").value = paymentInfo.address;
+  if (paymentInfo.phone)
+    document.getElementById("pm-phone").value = paymentInfo.phone;
+  if (paymentInfo.email)
+    document.getElementById("pm-email").value = paymentInfo.email;
+  if (paymentInfo.firstname)
+    document.getElementById("pm-name").value = paymentInfo.firstname;
+  if (paymentInfo.address)
+    document.getElementById("pm-address").value = paymentInfo.address;
 }
 loadPaymentInfoData();
 function continueToShipping() {
@@ -127,4 +135,25 @@ function continueToShipping() {
     console.log(error);
     alert("" + error);
   }
+}
+
+// handle load data when no visiting cart page
+if(!currentCartList.length) {
+  let div = document.createElement("div");
+    div.innerHTML = `<div class="item${Math.random()}">
+    <div id="product-info">
+     <div class="product-wrap ">
+      <div class="product-img">
+      <img
+        src=${productBought.img}
+        alt="product"
+      />
+      <div class="product-quantity">${productBought.quantity}</div>
+      </div>
+      <span class="product-name"> ${productBought.name} </span>
+      </div>
+      <span class="price">$ ${productBought.price}</span></div>
+                <hr />
+`;
+    container.appendChild(div);
 }

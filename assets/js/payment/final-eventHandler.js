@@ -4,6 +4,9 @@ if (!user.isAuthenticate()) {
   window.location.href = "/pages/home.html";
 }
 
+
+const productBought = JSON.parse(localStorage.getItem("productBought"));
+
 (function () {
   // save & load the payment info of user inputed before 
   const loadPaymentInfo = function () {
@@ -17,7 +20,7 @@ if (!user.isAuthenticate()) {
   let finalContainer = document.getElementById("final-container");
   let priceWrapper = document.getElementById("finalPrice-wrapping");
   let subtotal = Math.round(shoppingCart.totalCart());
-  let sum = subtotal + subtotal * 0.1;
+  let sum = (subtotal + subtotal * 0.1) || (+productBought.total + +productBought.total*0.1);
   let currentCartList = shoppingCart.listCart();
 
   //   Render each item in Cart
@@ -58,7 +61,7 @@ if (!user.isAuthenticate()) {
       <b>Total</b>
     </p>
     <p class="text">
-      USD<span class="total-price"><b> $ ${sum + 19.63}</b> </span>
+      USD<span class="total-price"><b> $ ${(sum + 19.63).toFixed(2)}</b> </span>
     </p>
   </div>`;
 })();
