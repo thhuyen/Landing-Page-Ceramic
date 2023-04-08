@@ -32,7 +32,7 @@
   - To run website with all of the product's images, please run **npm i** in the terminal.
   
 #### Explaination for each page:
-- **The global files**
+- **The global files** <br>
   - header.html: contains header html
   - footer.html: contains footer html
   - loadPage.js: source code to add html from a page to another page
@@ -40,8 +40,8 @@
   - render.js: source code to render new element to DOM. We will use it when needing render something maybe increasing volume in the future like products, sliders,..
   
   
-- **The local files**:
-  -**Home**
+- **The local files** <br>
+  -**Home - Huyen (home.html)** 
   - The layout includes: header + slider + 3 tabs product + input to get customer's email + carousel of social media + footer.
   - Links: fontawesome (icon), themify (icon), font-family from Google Fonts, CSS.
   - Files: 
@@ -58,7 +58,7 @@
     - cart.js
   - The same method to make slider / carousel / tabs: I will find all items to find which is display (having active_block). Then, I remove it and add className='active_block' for current item.
   
-  -**Detail of product**
+  -**Detail of product - Huyen (detail.html)**
   - The layout includes: header + directed bar + product's information + nested comments + related products + footer.
   - Links: fontawesome (icon), themify (icon), font-family from Google Fonts, CSS.
   - Files: 
