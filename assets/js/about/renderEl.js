@@ -31,7 +31,7 @@ function render(parent, typeTag, className, id, HTML, attribute, css) {
 
 // render coreValues
 coreValues.map((element, index) => {
-  let valueHTML = `<div key=${index} class="value ${element.title}">
+  let valueHTML = ` <div key=${index} class="value ${element.title}">
   <i class="fa-value ${element.icon}"></i>
   <h3 class="value-title">${element.title}</h3>
   <hr />

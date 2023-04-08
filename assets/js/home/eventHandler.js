@@ -21,7 +21,9 @@ const handleChangeTabs = (button) => {
   findActive([...$$(".btn-bestsl")], "active_color", "");
   button.classList.add("active_color");
   findActive([...$$(".products-main")], "active_grid", "");
-  $$(".products-main")[+button.className.slice(26, 27)].classList.add("active_grid");
+  $$(".products-main")[+button.className.slice(26, 27)].classList.add(
+    "active_grid"
+  );
 };
 
 const handleToNext = (icon_next) => {
