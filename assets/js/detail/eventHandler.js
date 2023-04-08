@@ -188,6 +188,7 @@ const handleLike = icon_heart => {
     icon_heart.classList.toggle('more_bold');
 }
 
+// hide and view more replies
 const hideCmts = () => {
     $('.nested_comments').style.height = '400px';
     $('.nested_comments').style.overflowY = 'hidden';
@@ -211,4 +212,22 @@ $('.show_cmts').onclick = () => {
 
 $('.hide_cmts').onclick = () => {
     hideCmts();
+}
+
+const goToPayment = () => {
+    if (!user.isAuthenticate()) {
+        alert("You must login to continue!");
+        $("#id01").style.display = "block";
+    }
+    else {
+        const productBought = {
+            img: $('.img-slider').src,
+            name: $('.name_product').textContent.trim(),
+            price: $('.discount_price').textContent.trim().slice(1,6), 
+            quantity: +$('.volume').textContent.trim(),
+        }
+        // console.log(productBought);
+        localStorage.setItem("productBought", JSON.stringify(productBought));
+        window.location.href = '../../../pages/payment/input-info.html';
+    }
 }

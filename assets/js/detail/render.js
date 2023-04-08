@@ -12,15 +12,15 @@ fetch(apiProducts)
 
 // img product 
 render($('#in4_product'), 'img', 'img-slider' ,null, null, null);
-$('.img-slider').src = localStorage.getItem("productImg") ? localStorage.getItem("productImg") : '//cdn.shopify.com/s/files/1/0660/1985/2535/products/7.1.jpg?v=1662001011';
+$('.img-slider').src = localStorage.getItem("productImg") || '//cdn.shopify.com/s/files/1/0660/1985/2535/products/7.1.jpg?v=1662001011';
 
 // information product
 render($('#in4_product'), 'div', 'desc_product', null, 
-    `<h2 class="name_product">${localStorage.getItem("productName") ? localStorage.getItem("productName") : 'Modern Cup'}</h2>
+    `<h2 class="name_product">${localStorage.getItem("productName") || 'Modern Cup'}</h2>
     ${localStorage.getItem("productDiscount") ? 
-        `<span class="price origin_price discount">${localStorage.getItem("productPrice") ? localStorage.getItem("productPrice") : '18.00'} USD</span>
-        <span class="price discount_price"> &nbsp; ${localStorage.getItem("productDiscount") ? localStorage.getItem("productDiscount") : '16.00'} USD</span>` : 
-        `<span class="price discount_price"> &nbsp; ${localStorage.getItem("productPrice") ? localStorage.getItem("productPrice") : '16.00'} USD</span>` }
+        `<span class="price origin_price discount">${localStorage.getItem("productPrice") || '18.00'} USD</span>
+        <span class="price discount_price"> &nbsp; ${localStorage.getItem("productDiscount") || '16.00'} USD</span>` : 
+        `<span class="price discount_price"> &nbsp; ${localStorage.getItem("productPrice") || '18.00'} USD</span>` }
     <p class="desc_detail">
         Things You Need To Know Using advanced edging technology and high-quality materials, our premium sunglasses have a luxurious look and feel with subtly curved lenses. These striking, sophisticated sunglasses offer timeless design updated with shiny gold metal accents at the temples for just a bit of bling. The wide frame...
     </p>
@@ -41,9 +41,7 @@ render($('#in4_product'), 'div', 'desc_product', null,
         </div>
         <button class="btn btn-add_cart transition">ADD TO CART</button>
     </div>
-    <a href="../../../pages/payment/input-info.html">
-        <button class="btn btn-buy transition">BUY IT NOW</button>
-    </a>`, null, null);
+    <button class="btn btn-buy transition" onclick="goToPayment()">BUY IT NOW</button>`, null, null);
 
 // render comments
 const comments = JSON.parse(localStorage.getItem("comments"));
