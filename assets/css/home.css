@@ -34,11 +34,9 @@
     font-size: 1.2rem;
 }
 .slider-text-second {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 7rem;
 }
 .slider-text-third {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.5rem;
 }
 .btn-slider {
@@ -180,7 +178,6 @@
 }
 .banner-text-first {
     font-size: 4rem;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     letter-spacing: 2px;
 }
 .banner-text-second {
@@ -256,7 +253,6 @@ div.products-hotdeal {
     flex-grow: 1;
     color: white;
     font-size: 1.3rem;
-    font-family: 'Roboto', sans-serif;
     font-weight: 600;
     letter-spacing: 2px;
     padding: 10px 20px;

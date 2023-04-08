@@ -1,3 +1,6 @@
+/* Import Font Family from GG Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Jost&display=swap");
+
 * {
   font-size: 67.5%;
   padding: 0;
@@ -23,7 +26,10 @@
 }
 html {
   scroll-behavior: smooth;
-  font-family: "Open Sans", sans-serif;
+  
+}
+body {
+  font-family: Jost;
 }
 :root {
   --height_header: 85px;

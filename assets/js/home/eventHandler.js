@@ -45,12 +45,3 @@ $(".btn-gotit").onclick = function () {
   this.parentElement.style.display = "none";
 };
 
-let cartIconBtn = document.getElementById("cartIconBtn");
-// add event to show Cart page when click cart Icon
-
-
-$('.btn-gotit').onclick = function() {
-    this.parentElement.style.display = 'none';
-}
- 
-
