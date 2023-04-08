@@ -48,7 +48,7 @@ fetch (apiProducts)
     .catch (error => {throw new Error(error)})
     
 // render slider
-sliders.map((element, index) => {
+sliders.forEach((element, index) => {
       sliderHTML = 
     `<div class="slider-text-wrapper ${index % 2 == 0 ? "slider-text-wrapper-left" : "slider-text-wrapper-center"}">
         <h3 class="slider-text slider-text-first">${element.text1}</h3>
@@ -77,7 +77,7 @@ sliders.map((element, index) => {
 })
 
 // append carousels 
-carousel.map((element) => {
+carousel.forEach((element) => {
         let HTML =  `<img class="img-carousel" src="${element}">
                         <div class="overlay-carousel">
                             <a href=""><i class="fa-brands fa-instagram icon icon-insta transition"></i></a>
@@ -86,7 +86,7 @@ carousel.map((element) => {
 
 // render carousel
 function renderCarouselItem(arr, start, end) {
-    arr.map((element, index) => {
+    arr.forEach((element, index) => {
         if(index >= start && index <= end)
             element.classList.add('active_block');
         else {

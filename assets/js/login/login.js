@@ -24,7 +24,7 @@ setTimeout(function () {
     let password = document.getElementById("password").value;
     try {
       user.authenticate(username, password);
-      window.location.href = "/pages/login/userInfo.html";
+      location.reload();
     } catch (error) {
       console.log(error);
       alert("" + error);

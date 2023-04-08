@@ -86,40 +86,55 @@ $('#permanent_clearbtn').onclick = () => {
 
 // handle press send on top
 $('#permanent_sendbtn').onclick = () => {
-    const newComment = {
-        id: createIdGenerator(),
-        avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCI6D-EkL1058Fnk2RliFP17INDLXdmVG_0Q&usqp=CAU',
-        content: $('#permanent_inputleavecmt').value ,
-        date: month + ' ' + date.getDate() + ', ' + date.getFullYear(),
-        username: "Alexander",
-        level: 1,
-        nearest_parent: null
+    // check whether user logs in
+    if (!user.isAuthenticate()) {
+        alert("You must login to do this!");
+        $("#id01").style.display = "block";
     }
-    
-    // variable comments in render.js (detail folder), line 47
-    if(comments) {
-        updateCmtArr(newComment)
+    else {
+        const user = JSON.parse(localStorage.getItem("user"));
+        const newComment = {
+            id: createIdGenerator(),
+            avatar: 'https://cdn-icons-png.flaticon.com/512/149/149071.png',
+            content: $('#permanent_inputleavecmt').value ,
+            date: month + ' ' + date.getDate() + ', ' + date.getFullYear(),
+            username: user.username ? user.username : 'Anonymous',
+            level: 1,
+            nearest_parent: null
+        }
+        
+        // variable comments in render.js (detail folder), line 47
+        if(comments) {
+            updateCmtArr(newComment)
+        }
     }
 }
 
 // handle when clicking reply text
 const replyComment = (reply) => {
-    const data = $$('.leave_comment');
+    // check whether user logs in
+    if (!user.isAuthenticate()) {
+        alert("You must login to do this!");
+        $("#id01").style.display = "block";
+    }
+    else {
+        const data = $$('.leave_comment');
+        
+        // check if there's no any input to write comment so that create a new one
+        // if it exists, no creating new one
+        if(!data.length) {
+            const input = 
+            `<textarea class="input-leave_cmt input-leave_cmt-reply" placeholder="Write something..." cols="50" rows="1"></textarea>
+            <button class="btn btn-leave_cmt transition" onclick="handleComment(this)">Send</button>
+            <button class="btn btn-leave_cmt transition" onclick="handleCancel(this)">Cancel</button>`;
+            render(reply.parentElement, 'div', "leave_comment", null, input, null, null);  
     
-    // check if there's no any input to write comment so that create a new one
-    // if it exists, no creating new one
-    if(!data.length) {
-        const input = 
-        `<textarea class="input-leave_cmt input-leave_cmt-reply" placeholder="Write something..." cols="50" rows="1"></textarea>
-        <button class="btn btn-leave_cmt transition" onclick="handleComment(this)">Send</button>
-        <button class="btn btn-leave_cmt transition" onclick="handleCancel(this)">Cancel</button>`;
-        render(reply.parentElement, 'div', "leave_comment", null, input, null, null);  
-
-        // make the line space between 2 elements, because the box to write comment has absolute position, 
-        // it's overided by below element which is created after that
-        render(reply.parentElement, 'div', null, 'space_cmt', null, null);    
-        $('#space_cmt').style.height = '50px';
-    } 
+            // make the line space between 2 elements, because the box to write comment has absolute position, 
+            // it's overided by below element which is created after that
+            render(reply.parentElement, 'div', null, 'space_cmt', null, null);    
+            $('#space_cmt').style.height = '50px';
+        } 
+    }
 }
 
 // handle cancel button
@@ -130,7 +145,7 @@ const handleCancel = button => {
 
 
 // handle send button
-const handleComment = button => {
+const handleComment = button => {     
     let parent = button.parentElement;
     let count = 0;
     // count how many level from element standing
@@ -144,12 +159,13 @@ const handleComment = button => {
  
     // check if input comment is empty => no permit to send
     if (content_cmt.value) {
+        const user = JSON.parse(localStorage.getItem("user"));
         const newComment = {
             id: createIdGenerator(),
-            avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCI6D-EkL1058Fnk2RliFP17INDLXdmVG_0Q&usqp=CAU',
+            avatar: 'https://cdn-icons-png.flaticon.com/512/149/149071.png',
             content: content_cmt.value,
             date: month + ' ' + date.getDate() + ', ' + date.getFullYear(),
-            username: "Alexander"
+            username: user.username ? user.username : 'Anonymous',
         }
 
         if(count < 3) {
