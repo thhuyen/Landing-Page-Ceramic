@@ -70,4 +70,4 @@
     - user.js
     - cart.js
   - The same method to make slider / carousel / tabs: I will find all items to find which is display (having active_block). Then, I remove it and add className='active_block' for current item.
-  
+ 
