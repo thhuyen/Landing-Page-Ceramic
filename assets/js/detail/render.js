@@ -41,7 +41,9 @@ render($('#in4_product'), 'div', 'desc_product', null,
         </div>
         <button class="btn btn-add_cart transition">ADD TO CART</button>
     </div>
-    <button class="btn btn-buy transition">BUY IT NOW</button>`, null, null);
+    <a href="../../../pages/payment/input-info.html">
+        <button class="btn btn-buy transition">BUY IT NOW</button>
+    </a>`, null, null);
 
 // render comments
 const comments = JSON.parse(localStorage.getItem("comments"));

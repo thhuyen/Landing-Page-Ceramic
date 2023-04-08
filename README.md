@@ -13,14 +13,12 @@
 
 ## LIST OF REQUIREMENTS AND THE DONE TASKS
 
-
-### Easy (35 points)
-
-- *Feel free to decide the content and structure of your website. (It should have top navigation bar and footer, and a carousel)*
-  - Template design: https://caremi-store-demo.myshopify.com/ (item Home on header, topic "Home 2")
+### Easy (35 points) - **Trinh + Huyen**
+- **Feel free to decide the content and structure of your website. (It should have top navigation bar and footer, and a carousel)**
+  - Template design: https://caremi-store-demo.myshopify.com/ (item "Home" on header, topic "Home 2") 
   - Type of web: eCommerce about ceramic product
 
-- *Basically a land page to sell your product. Suggestion topics: hobby, eCommerce, pet store, technology products, etc*
+- **Basically a land page to sell your product. Suggestion topics: hobby, eCommerce, pet store, technology products, etc*
   - Status: Done. 
 
 - *A page must contain a form to collect input from visitors, i.e. comments, queries etc.*
@@ -71,8 +69,7 @@
   - render.js: source code to render new element to DOM. We will use it when needing render something maybe increasing volume in the future like products, sliders,..
 
 - **The local files** <br>
-  -**Home - Huyen (home.html)** 
-
+  **Home - Huyen (home.html)** 
   - The layout includes: header + slider + 3 tabs product + input to get customer's email + carousel of social media + footer.
   - Links: fontawesome (icon), themify (icon), font-family from Google Fonts, CSS.
   - Files:
@@ -108,7 +105,7 @@
   - `userLogin-loader.js`: for log out function, render user info about account, and optional render based on the status of Cart.
 
   
-  -**Detail of product - Huyen (detail.html)**
+  **Detail of product - Huyen (detail.html)**
   - The layout includes: header + directed bar + product's information + nested comments + related products + footer.
   - Links: fontawesome (icon), themify (icon), font-family from Google Fonts, CSS.
   - Files: 
@@ -126,7 +123,7 @@
 
 ### Medium (20 points) - **Huyen**
 - A list of product items in one of a page (10 points).
-  - It's in home page (home.htmt)
+  - It's in home page (home.html)
 - Click in one of the item in that list, it would redirect to a detailed page of that product. (10 points).
   - The flow from home.html to detail.html
 
@@ -156,6 +153,7 @@
     - After sending, the page will reload to update new data to render they on screen.
     - The alignments among these comments depend on position CSS. The child will depend on the nearest parent which has position. That's why there are many parent have position, all comments still locate rightly. 
     - The child comment will be in div.className = "comment-right".
+    - If the block containing all comments is over 400px, the overflow will be hidden, then you can see a text to view more replies or hide them.
  
   **Code**: rows of 46-91 in render.js file (assets/js/detail/render.js) and rows of 50-207 in eventHandler.js (assets/js/detail/eventHandler.js). More details I described in these files.
  
