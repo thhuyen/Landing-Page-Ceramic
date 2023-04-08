@@ -1,4 +1,15 @@
 //----------- Add to Cart - Trinh ----------
+let products = [];
+fetch(apiProducts)
+  .then((response) => response.json())
+  .then((ps) => {
+    products = ps;
+  })
+  .catch((error) => {
+    throw new Error(error);
+  });
+
+// Add event add to cart for products 
 $(".btn-add_cart").onclick = function () {
 
   const id = localStorage.getItem("selectId");
@@ -14,77 +25,93 @@ $(".btn-add_cart").onclick = function () {
   shoppingCart.addItemToCart({ ...item, quantity: 1 });
   alert("Item is added successfully!!");
 };
-
-var products = [];
-    fetch(apiProducts)
-    .then((response) => response.json())
-    .then((ps) => {
-        products = ps;
-    })
-    .catch((error) => {
-        throw new Error(error);
-});
 // -------------------------------------
 
 // --------------- Huyen ---------------
 // increase or descrease volume of product
 $(".increase_volume").onclick = function () {
-    $(".volume").innerText = +$(".volume").innerText + 1;
-  };
-  $(".decrease_volume").onclick = function () {
-    let volume = +$(".volume").innerText;
-    if (volume > 1) $(".volume").innerText = volume - 1;
-  };
-  
+  $(".volume").innerText = +$(".volume").innerText + 1;
+};
+$(".decrease_volume").onclick = function () {
+  let volume = +$(".volume").innerText;
+  if (volume > 1) $(".volume").innerText = volume - 1;
+};
+
 // create random id
 const createIdGenerator = () => {
-    const S4 = () => {
-       return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
-    };
-    return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
-}
+  const S4 = () => {
+    return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+  };
+  return (
+    S4() +
+    S4() +
+    "-" +
+    S4() +
+    "-" +
+    S4() +
+    "-" +
+    S4() +
+    "-" +
+    S4() +
+    S4() +
+    S4()
+  );
+};
 
 // set date for comments
-const date = new Date;
+const date = new Date();
 let month;
-switch(date.getMonth() + 1) {
-    case 1: month = 'Jan'; 
-        break;
-    case 2: month = 'Feb';
-        break;
-    case 3: month = 'March'
-        break;
-    case 4: month = 'April';
-        break;
-    case 5: month = 'May';
-        break;
-    case 6: month = 'June';
-        break;
-    case 7: month = 'July'
-        break;
-    case 8: month = 'Aug';
-        break;
-    case 9: month = 'Sep';
-        break;
-    case 10: month = 'Oct';
-        break;
-    case 11: month = 'Nov';
-        break;
-    default: month = 'Dec';
+switch (date.getMonth() + 1) {
+  case 1:
+    month = "Jan";
+    break;
+  case 2:
+    month = "Feb";
+    break;
+  case 3:
+    month = "March";
+    break;
+  case 4:
+    month = "April";
+    break;
+  case 5:
+    month = "May";
+    break;
+  case 6:
+    month = "June";
+    break;
+  case 7:
+    month = "July";
+    break;
+  case 8:
+    month = "Aug";
+    break;
+  case 9:
+    month = "Sep";
+    break;
+  case 10:
+    month = "Oct";
+    break;
+  case 11:
+    month = "Nov";
+    break;
+  default:
+    month = "Dec";
 }
 
 // after replying or sending, localStorage will update
-const updateCmtArr = newComment => {
-    localStorage.setItem("comments", JSON.stringify([...comments, newComment]));
-    location.reload();
-}
+const updateCmtArr = (newComment) => {
+  localStorage.setItem("comments", JSON.stringify([...comments, newComment]));
+  location.reload();
+};
 
 // handle press button clear
-$('#permanent_clearbtn').onclick = () => {
-    $('#permanent_inputleavecmt').value = '';
-}
+$("#permanent_clearbtn").onclick = () => {
+  $("#permanent_inputleavecmt").value = "";
+};
 
 // handle press send on top
+
 $('#permanent_sendbtn').onclick = () => {
     // check whether user logs in
     if (!user.isAuthenticate()) {
@@ -137,14 +164,17 @@ const replyComment = (reply) => {
     }
 }
 
-// handle cancel button
-const handleCancel = button => {
-    button.parentElement.parentElement.removeChild(button.parentElement.nextElementSibling);       
-    button.parentElement.parentElement.removeChild(button.parentElement);       
-}
 
+// handle cancel button
+const handleCancel = (button) => {
+  button.parentElement.parentElement.removeChild(
+    button.parentElement.nextElementSibling
+  );
+  button.parentElement.parentElement.removeChild(button.parentElement);
+};
 
 // handle send button
+
 const handleComment = button => {     
     let parent = button.parentElement;
     let count = 0;
@@ -179,36 +209,40 @@ const handleComment = button => {
         }
 
         updateCmtArr(newComment);
+
     }
-   
-}
+
+    updateCmtArr(newComment);
+  }
+};
 
 // handle like comment
-const handleLike = icon_heart => {
-    icon_heart.classList.toggle('more_bold');
-}
+const handleLike = (icon_heart) => {
+  icon_heart.classList.toggle("more_bold");
+};
 
 // hide and view more replies
 const hideCmts = () => {
-    $('.nested_comments').style.height = '400px';
-    $('.nested_comments').style.overflowY = 'hidden';
-    $('.hide_cmts').style.display = 'none';
-    $('.show_cmts').style.display = 'block';
-}
+  $(".nested_comments").style.height = "400px";
+  $(".nested_comments").style.overflowY = "hidden";
+  $(".hide_cmts").style.display = "none";
+  $(".show_cmts").style.display = "block";
+};
 
 const showCmts = () => {
-    $('.nested_comments').style.height = 'max-content';
-    $('.nested_comments').style.overflowY = 'visible';
-    $('.show_cmts').style.display = 'none';
-    $('.hide_cmts').style.display = 'block';
-}
-if ($('.nested_comments').clientHeight > 400) {
-    hideCmts();
+  $(".nested_comments").style.height = "max-content";
+  $(".nested_comments").style.overflowY = "visible";
+  $(".show_cmts").style.display = "none";
+  $(".hide_cmts").style.display = "block";
+};
+if ($(".nested_comments").clientHeight > 400) {
+  hideCmts();
 }
 
-$('.show_cmts').onclick = () => {
-    showCmts();
-}
+$(".show_cmts").onclick = () => {
+  showCmts();
+};
+
 
 $('.hide_cmts').onclick = () => {
     hideCmts();
@@ -231,3 +265,4 @@ const goToPayment = () => {
         window.location.href = '../../../pages/payment/input-info.html';
     }
 }
+
