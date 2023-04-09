@@ -41,7 +41,7 @@
 ### Medium (20 points) - **Huyen**
 
 - _A list of product items in one of a page (10 points)._
-  - A list of product items is in Homepage > Section `OUR BEST SELLER` or `HOT DEAL` (home.htm)
+  - A list of product items is in Homepage > Section `OUR BEST SELLER` or `HOT DEAL` (home.html)
   - Can also found a list of _selected items_ add in Cart in `Cart` and `Payment` page.
 - _Click in one of the item in that list, it would redirect to a detailed page of that product. (10 points)._
   - Click on any product from the list in `home.html`, it will redirect to `detail.html`
