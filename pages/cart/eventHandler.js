@@ -3,7 +3,8 @@ if (!user.isAuthenticate()) {
   alert("You must login to view this page !!");
   window.location.href = "/pages/home.html";
 }
-
+if (localStorage.removeItem("productBought"))
+  localStorage.removeItem("productBought");
 // Increase / decrease quantity of a selected item
 
 // button (+)
