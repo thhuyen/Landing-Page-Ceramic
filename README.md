@@ -144,7 +144,7 @@ _**A nested comment such as like this: For users to upload their comment (since 
     - id: created automatically.
     - avatar: default url: 'https://cdn-icons-png.flaticon.com/512/149/149071.png'.
     - date: set current date according to data returned from Date function of Javascript.
-    - username: default name: username from login action.
+    - username: username from login action, if it cannot get username, 'Anonymous' string will replace.
     - level: depend on creating new comment or replying comment.
     - nearest_parent: comments in level 2 and level 3 will have this property, it is nearest parent's id. For example: The id of comment in level 2 is '01', all its childs also have nearest_parent '01'.
   - After sending, the page will reload to update new data to render they on screen.
