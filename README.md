@@ -29,7 +29,7 @@
 
   - It mainly displays on
     - "**About us**" page : `Contact Form` 
-    - "**Payment**" page / Info - section: (it's a private page, you need to register an account or use the admin account - username & password is both `admin` to access to the page ) a form collecting user's phone, email, address, name, etc.
+    - "**Payment**" page / Info - section: (it's a private page, you need to register an account or **use the admin account** - username & password is both `admin` to access to the page ) a form collecting user's phone, email, address, name, etc.
 
 - _The website must contain at least 5 pages which cover relatively enough information about the topic. For example, about yourself, or about your companies etc._
   - Our website contains `06` main pages: `Registeration / Login -> Home -> About us -> Detail of product -> Cart -> Payment`
@@ -169,9 +169,9 @@ _**A nested comment such as like this: For users to upload their comment (since 
 - **Related files:** :
   - `login.js`: used as an event-handler for icons/buttons in header that will navigate or relates to the login function.
   - `user.js`: (this module I have rewrite based on the idea of shoppingCart module in `cart.js` to reusable and keep track of user accounts) Create an user reusable module to :
+    - _create an admin account to login as default (username & password: **"admin"**)_
     - using the local storage to keep track of user list: check if user logged in or not, to login/ logout the account, check existed account, get the current account, register an account
     - restrict/access to some private pages
-    - create an admin account to login as default (username & password: "admin")
   - `userLogin-loader.js`: used mainly for `userInfo.html` page, to log out function, render user info about account, and _optional render based on the status of Cart._ As the quantity of selected items in Cart will be display in this page, we need to include the `cart.js` to use the `shoppingCart.countCart()` method to get the total quantity of items in the shoppingCart module.
 
 ##### _Register Page (pages/login/register.html)_:
@@ -230,7 +230,4 @@ _**A nested comment such as like this: For users to upload their comment (since 
 
 ##### _pages/footer.html_ 
 
-## ENCOUNTERED BUGS
-**From Trinh:**
-- Function adding Item to Cart (.addItemToCart() in `cart.js`) which enable user to add item from product list in both Home page (`home.html`) and product detail page (`detail.html`): It still work well in my laptop (macOS) but it doesn't work in Huyen's laptop (Window). Huyen encountered the bugs that the cart page is still render, but she couldn't add item to cart from both Home page and detail page.
-![Getting Started](./assets/img/bug1.jpg)
+
