@@ -43,8 +43,11 @@
             Look like you haven't added <br />
             anything to your cart yet :(
           </p>
-          <button class="homeBtn">
-            <a href="/pages/home.html">Go Shopping</a>
+          <button
+            class="homeBtn"
+            onclick="window.location.href='/pages/home.html'"
+          >
+            Go Shopping
           </button>
         </div>
 
@@ -72,16 +75,23 @@
           <div class="optionalBtns">
             <div>
               <!-- Update Cart -->
-              <button id="btn-cart-update" class="cartBtn">
-                <a href="/pages/home.html">Continue shopping </a>
-              </button>
+
+              <button
+                id="btn-cart-update"
+                class="cartBtn"
+                onclick="window.location.href='/pages/home.html'"
+              >
+                Continue shopping
+
             </div>
             <div>
               <!-- Done cart and continue to payment-->
-              <button id="btn-cart-done" class="cartBtn">
-                <a href="/pages/payment/input-info.html"
-                  >Process to Shipping & Payment</a
-                >
+              <button
+                id="btn-cart-done"
+                class="cartBtn"
+                onclick="window.location.href='/pages/payment/input-info.html'"
+              >
+                Process to Shipping & Payment
               </button>
             </div>
           </div>

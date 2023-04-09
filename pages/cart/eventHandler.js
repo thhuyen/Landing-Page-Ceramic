@@ -5,13 +5,15 @@ if (!user.isAuthenticate()) {
 }
 
 // Increase / decrease quantity of a selected item
-// button +
+
+// button (+)
 let add1 = (id) => {
   shoppingCart.addItemtoCart(id);
   window.location.reload();
 };
 
-//button -
+
+//button (-)
 let minus1 = (id) => {
   shoppingCart.removeItemFromQuantity(id);
   window.location.reload();
@@ -23,11 +25,8 @@ let minusall = (id) => {
   window.location.reload();
 };
 
-// set Quantity changed by conteneditable
-let numQtt = () => {
-  setTimeout(() => console.log(e), 100);
-};
-
+// function to click on the item Name
+// and it will redirect to the detail product pages with full info of item
 let seeDetail = (img, name, price, id) => {
   console.log(img, name, id);
   localStorage.setItem("selectId", id);
@@ -48,12 +47,10 @@ function renderCart() {
   if (!cart.length) {
     cartWtOrders.style.display = "none";
   }
-
   if (!items) {
     return;
   }
-
-  // render ordered items in cart
+  // render selected items in cart
   cart.forEach((item) => {
     defaultEmptyContent.style.display = "none";
     cartWtOrders.style.display = "block";
@@ -105,10 +102,9 @@ function renderCart() {
   });
 }
 
+// using setTimeout to add event to show Cart page when click cart icon in header.
 setTimeout(function () {
   let cartIconBtn = document.getElementById("cartIconBtn");
-  // add event to show Cart page when click cart Icon
-
   cartIconBtn.addEventListener("click", (event) => {
     event.preventDefault();
     if (user.isAuthenticate()) {
