@@ -223,7 +223,7 @@ const goToPayment = () => {
         const productBought = {
             img: $('.img-slider').src,
             name: $('.name_product').textContent.trim(),
-            price: $('.discount_price').textContent.trim().slice(0,6), 
+            price: $('.discount_price').textContent.trim().slice(1,6), 
             quantity: +$('.volume').textContent.trim(),
         }
         // console.log(productBought);

@@ -7,6 +7,8 @@ if (!user.isAuthenticate()) {
 
 const productBought = JSON.parse(localStorage.getItem("productBought"));
 
+let currentCartList = shoppingCart.listCart();
+let finalContainer = document.getElementById("final-container");
 (function () {
   // save & load the payment info of user inputed before 
   const loadPaymentInfo = function () {
@@ -17,11 +19,9 @@ const productBought = JSON.parse(localStorage.getItem("productBought"));
   };
   loadPaymentInfo();
 
-  let finalContainer = document.getElementById("final-container");
   let priceWrapper = document.getElementById("finalPrice-wrapping");
   let subtotal = Math.round(shoppingCart.totalCart());
   let sum = (subtotal + subtotal * 0.1) || (+productBought.total + +productBought.total*0.1);
-  let currentCartList = shoppingCart.listCart();
 
   //   Render each item in Cart
   currentCartList.forEach((item) => {
@@ -65,3 +65,24 @@ const productBought = JSON.parse(localStorage.getItem("productBought"));
     </p>
   </div>`;
 })();
+
+// handle load data when no visiting cart page
+if(!currentCartList.length && productBought) {
+  let div = document.createElement("div");
+    div.innerHTML = `<div class="item${Math.random()}">
+    <div id="product-info">
+     <div class="product-wrap ">
+      <div class="product-img">
+      <img
+        src=${productBought.img}
+        alt="product"
+      />
+      <div class="product-quantity">${productBought.quantity}</div>
+      </div>
+      <span class="product-name"> ${productBought.name} </span>
+      </div>
+      <span class="price">$ ${productBought.price}</span></div>
+                <hr />
+`;
+finalContainer.appendChild(div);
+}

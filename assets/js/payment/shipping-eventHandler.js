@@ -13,12 +13,12 @@ const loadPaymentInfo = function () {
 loadPaymentInfo();
 
 const productBought = JSON.parse(localStorage.getItem("productBought"));
+let currentCartList = shoppingCart.listCart();
+let shippingContainer = document.getElementById("shipping-container");
 (function () {
-  let shippingContainer = document.getElementById("shipping-container");
   let priceWrapper = document.getElementById("shipIncludedPrice-wrapping");
   let subtotal = Math.round(shoppingCart.totalCart());
   let sum = (subtotal + subtotal * 0.1) || (+productBought.total + +productBought.total*0.1);
-  let currentCartList = shoppingCart.listCart();
 
   //   Render each item in Cart
   currentCartList.forEach((item) => {
@@ -68,3 +68,24 @@ submitBtn.addEventListener("click", (event) => {
   event.preventDefault();
   window.location.href = "/pages/payment/final-payment.html";
 });
+
+// handle load data when no visiting cart page
+if(!currentCartList.length && productBought) {
+  let div = document.createElement("div");
+    div.innerHTML = `<div class="item${Math.random()}">
+    <div id="product-info">
+     <div class="product-wrap ">
+      <div class="product-img">
+      <img
+        src=${productBought.img}
+        alt="product"
+      />
+      <div class="product-quantity">${productBought.quantity}</div>
+      </div>
+      <span class="product-name"> ${productBought.name} </span>
+      </div>
+      <span class="price">$ ${productBought.price}</span></div>
+                <hr />
+`;
+shippingContainer.appendChild(div);
+}
