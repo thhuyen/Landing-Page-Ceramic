@@ -38,8 +38,7 @@
   - Folder product_json contains product.json file which is fake database of products.
   - To run website with all of the product's images, please run _**cd assets/product_json**_ => _**npm i**_ => _**npm start**_ in the terminal.
 
-### Medium (20 points)
-
+### Medium (20 points) - **Huyen**
 
 - _A list of product items in one of a page (10 points)._
   - A list of product items is in Homepage > Section `OUR BEST SELLER` or `HOT DEAL` (home.htm)
@@ -48,8 +47,7 @@
   - Click on any product from the list in `home.html`, it will redirect to `detail.html`
   - Can also click on the item name of selected item in `cart.html`, it will redirect to `detail.html`
 
-### Hard (15 points)
-
+### Hard (15 points) - **Trinh + Huyen**
 
 - _A notification to tell the users to accept the page cookies (3 points)._
 
