@@ -12,19 +12,13 @@ const loadPaymentInfo = function () {
 };
 loadPaymentInfo();
 
-//Buy It Now
-//const productBought = JSON.parse(localStorage.getItem("productBought"));
-
+const productBought = JSON.parse(localStorage.getItem("productBought"));
+let currentCartList = shoppingCart.listCart();
+let shippingContainer = document.getElementById("shipping-container");
 (function () {
-  let shippingContainer = document.getElementById("shipping-container");
   let priceWrapper = document.getElementById("shipIncludedPrice-wrapping");
   let subtotal = Math.round(shoppingCart.totalCart());
-
-  let sum = subtotal + subtotal * 0.1;
-//Buy it 
-  //let sum = (subtotal + subtotal * 0.1) || (+productBought.total + +productBought.total*0.1);
-
-  let currentCartList = shoppingCart.listCart();
+  let sum = (subtotal + subtotal * 0.1) || (+productBought.total + +productBought.total*0.1);
 
   //   Render each item in Cart
   currentCartList.forEach((item) => {
@@ -51,7 +45,7 @@ loadPaymentInfo();
   priceWrapper.innerHTML = `<div class="calculate-price">
   <div class="fee">
     <p>Subtotal (Tax included)</p>
-    <p>$ ${sum}</p>
+    <p>$ ${sum.toFixed(2)}</p>
   </div>
   <div class="fee">
     <p>Shipping</p>
@@ -64,9 +58,7 @@ loadPaymentInfo();
     <b>Total</b>
   </p>
   <p class="text">
-
     USD<span class="total-price"><b> $ ${(sum + 19.63).toFixed(2)}</b> </span>
-
   </p>
 </div>`;
 })();
@@ -76,3 +68,24 @@ submitBtn.addEventListener("click", (event) => {
   event.preventDefault();
   window.location.href = "/pages/payment/final-payment.html";
 });
+
+// handle load data when no visiting cart page
+if(!currentCartList.length && productBought) {
+  let div = document.createElement("div");
+    div.innerHTML = `<div class="item${Math.random()}">
+    <div id="product-info">
+     <div class="product-wrap ">
+      <div class="product-img">
+      <img
+        src=${productBought.img}
+        alt="product"
+      />
+      <div class="product-quantity">${productBought.quantity}</div>
+      </div>
+      <span class="product-name"> ${productBought.name} </span>
+      </div>
+      <span class="price">$ ${productBought.price}</span></div>
+                <hr />
+`;
+shippingContainer.appendChild(div);
+}
