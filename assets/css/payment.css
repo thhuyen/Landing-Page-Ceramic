@@ -135,19 +135,21 @@ input.note {
   align-items: center;
 }
 .return > a,
-.backHome > a,
+.backHome,
 .return > i {
   color: rgb(255, 135, 29);
 }
-.backHome > a,
+.backHome,
 .return > a {
   text-decoration: none;
   font-size: 1rem;
 }
-.backHome > a:hover,
+.backHome:hover,
 .return > a:hover {
+  cursor: pointer;
   opacity: 0.6;
 }
+
 .continue-btn {
   background-color: rgb(255, 135, 29);
   padding: 1.2rem 1.5rem;
@@ -157,6 +159,7 @@ input.note {
   color: #fff;
 }
 .continue-btn:hover {
+  cursor: pointer;
   opacity: 0.5;
 }
 

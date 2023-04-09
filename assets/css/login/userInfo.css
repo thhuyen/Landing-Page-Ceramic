@@ -72,27 +72,22 @@ h3.order-title {
   gap: 0.4rem;
   align-items: center;
 }
-.return > a,
+.return > p,
 .return > i {
   color: rgb(255, 135, 29);
   font-size: 1.5rem;
 }
-.return > a {
-  text-decoration: none;
-}
-.return > a:hover {
+
+.return:hover,
+.continue-btn:hover {
   opacity: 0.6;
+  cursor: pointer;
 }
 .continue-btn {
   background-color: rgb(255, 135, 29);
   padding: 1.2rem 1.5rem;
   border: none;
   border-radius: 0.3rem;
-}
-
-.continue-btn > a {
-  text-decoration: none;
   font-size: 1.5rem;
-
   color: #fff;
 }

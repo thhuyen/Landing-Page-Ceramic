@@ -230,3 +230,7 @@ _**A nested comment such as like this: For users to upload their comment (since 
 
 ##### _pages/footer.html_ 
 
+## ENCOUNTERED BUGS
+**From Trinh:**
+- Function adding Item to Cart (.addItemToCart() in `cart.js`) which enable user to add item from product list in both Home page (`home.html`) and product detail page (`detail.html`): It still work well in my laptop (macOS) but it doesn't work in Huyen's laptop (Window). Huyen encountered the bugs that the cart page is still render, but she couldn't add item to cart from both Home page and detail page.
+![Getting Started](./assets/img/bug1.jpg)

@@ -11,6 +11,12 @@
     
     <link rel="stylesheet" href="../../assets/font/themify-icons/themify-icons.css"/>
 
+     <!-- add icon link -->
+     <link
+     rel="icon"
+     type="image/png"
+     href="../../assets/img/x-icon/favicon.avif"
+   />
     <title>User account information</title>
 </head>
 <body>
@@ -20,11 +26,11 @@
     <div class="user-wrapper">
     <div id="account">
         <div class="username-info">
-           <p id="username-2">/p> 
+           <p id="username-2">username</p> 
         <div class="username-confirmation">
             <span>(not 
 
-                <span id="username" class="username"></span> ?
+                <span id="username" class="username">username</span> ?
 
                 <button class="signout" id="signout-btn"> Log out</button>).
             </span>
@@ -36,14 +42,14 @@
         
         </div>
  <!-- Optional buttons -->
- <div class="optional-btns">
-    <div class="return">
+ <div class="optional-btns" >
+    <div class="return" onclick="window.location.href='/pages/home.html'">
       <i class="fa-solid fa-chevron-left"></i>
-      <a href="./../home.html">Home</a>
+      <p>Home</p>
     </div>
 
-    <button type="submit" class="continue-btn">
-      <a href="../cart/cart.html">Visit your Cart</a>
+    <button type="submit" class="continue-btn" onclick="window.location.href='../cart/cart.html'">
+     Visit your Cart
     </button>
   </div>
     </div>
@@ -59,10 +65,11 @@
   src="https://kit.fontawesome.com/842777e4e9.js"
   crossorigin="anonymous"></script>
 <!-- JS Links -->
-    <script src="../../assets/js/loadPage.js"></script>
-    <script src="../../assets/js/login/user.js"></script>
-
-    <script src="../../assets/js/login/login.js"></script>
+<script src="../cart/cart.js"></script>
+<script src="../../assets/js/login/user.js"></script>
+<script src="../../assets/js/loadPage.js"></script>
+<script src="../../assets/js/login/userLogin-loader.js"></script>
+<script src="../../assets/js/login/login.js"></script>
 
 
 
