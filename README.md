@@ -36,7 +36,7 @@
 - _Feel free to use any kinds of data (JSON file) or generating themselves using [Mockaroo](https://www.mockaroo.com/) or any sites that you are familiar with._
 
   - Folder product_json contains product.json file which is fake database of products.
-  - To run website with all of the product's images, please run **npm i** in the terminal.
+  - To run website with all of the product's images, please run _**cd assets/product_json**_ => _**npm i**_ => _**npm start**_ in the terminal.
 
 ### Medium (20 points)
 
@@ -113,6 +113,7 @@ _**Detail of product (`detail.html`)**_
   - `user.js`
   - `cart.js`
 - The image, name and price of product will be saved to localStorage when clicking the item from `home.html`. These values will be pass to detail.html and render it to screen.
+- When clicking "BUY IT NOW" button, data will appear at `payment` file.
 
 _**A list of product items in one of a page (10 points)**_
   - It's in home page (`home.html`)
