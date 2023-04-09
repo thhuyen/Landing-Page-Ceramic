@@ -80,7 +80,7 @@
 
 #### 2.1 Huyen tasks
 
-_**Home**_
+_**Home (home.html)**_
 - Goal: Display general information about topic.
 - The layout includes: header + slider + 3 tabs product + input to get customer's email + carousel of social media + footer.
 - Links: fontawesome (icon), themify (icon), font-family from Google Fonts, CSS.
