@@ -73,7 +73,7 @@ function renderCart() {
                 <a style="cursor:pointer" onclick="seeDetail('${item.img}','${
       item.name
     }',${item.price},${item.id})" class="item-name">${item.name}</a>
-                <p class="item-color">${item.status}</p>
+                
               </div>
             </div>
             <div role="cell" class="prod price">$${item.price}</div>
