@@ -18,8 +18,29 @@ let shippingContainer = document.getElementById("shipping-container");
 (function () {
   let priceWrapper = document.getElementById("shipIncludedPrice-wrapping");
   let subtotal = Math.round(shoppingCart.totalCart());
-  let sum = (subtotal + subtotal * 0.1) || (+productBought.total + +productBought.total*0.1);
+  let sum = productBought ? (+productBought.total) : (subtotal + subtotal * 0.1);
 
+  // handle load data when no visiting cart page
+if(productBought) {
+  let div = document.createElement("div");
+    div.innerHTML = `<div class="item${Math.random()}">
+    <div id="product-info">
+     <div class="product-wrap ">
+      <div class="product-img">
+      <img
+        src=${productBought.img}
+        alt="product"
+      />
+      <div class="product-quantity">${productBought.quantity}</div>
+      </div>
+      <span class="product-name"> ${productBought.name} </span>
+      </div>
+      <span class="price">$ ${productBought.price}</span></div>
+                <hr />
+`;
+shippingContainer.appendChild(div);
+}
+else {
   //   Render each item in Cart
   currentCartList.forEach((item) => {
     let div = document.createElement("div");
@@ -40,6 +61,8 @@ let shippingContainer = document.getElementById("shipping-container");
             <hr />`;
     shippingContainer.appendChild(div);
   });
+
+}
 
   //Render fee & total price
   priceWrapper.innerHTML = `<div class="calculate-price">
@@ -69,23 +92,3 @@ submitBtn.addEventListener("click", (event) => {
   window.location.href = "/pages/payment/final-payment.html";
 });
 
-// handle load data when no visiting cart page
-if(!currentCartList.length && productBought) {
-  let div = document.createElement("div");
-    div.innerHTML = `<div class="item${Math.random()}">
-    <div id="product-info">
-     <div class="product-wrap ">
-      <div class="product-img">
-      <img
-        src=${productBought.img}
-        alt="product"
-      />
-      <div class="product-quantity">${productBought.quantity}</div>
-      </div>
-      <span class="product-name"> ${productBought.name} </span>
-      </div>
-      <span class="price">$ ${productBought.price}</span></div>
-                <hr />
-`;
-shippingContainer.appendChild(div);
-}
