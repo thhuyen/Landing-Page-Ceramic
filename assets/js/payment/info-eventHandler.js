@@ -11,14 +11,35 @@ const productBought = JSON.parse(localStorage.getItem("productBought"));
 (function () {
   let priceWrapper = document.getElementById("price-wrapper");
   let subtotal = Math.round(shoppingCart.totalCart());
-  let tax = (subtotal || +productBought.price) * 0.1;
-  let sum = (subtotal || +productBought.price*+productBought.quantity) + tax;
+  let tax = productBought ? +productBought.price* 0.1 : subtotal *0.1;
+  let sum = productBought ? (+productBought.price*+productBought.quantity + tax ): (subtotal + tax);
   if (productBought) {
     productBought.total = sum;
     localStorage.setItem("productBought",JSON.stringify(productBought));
   }
 
+  // handle load data when no visiting cart page
+if(productBought) {
+  let div = document.createElement("div");
+    div.innerHTML = `<div class="item${Math.random()}">
+    <div id="product-info">
+     <div class="product-wrap ">
+      <div class="product-img">
+      <img
+        src=${productBought.img}
+        alt="product"
+      />
+      <div class="product-quantity">${productBought.quantity}</div>
+      </div>
+      <span class="product-name"> ${productBought.name} </span>
+      </div>
+      <span class="price">$ ${productBought.price}</span></div>
+                <hr />
+`;
+    container.appendChild(div);
+}
   //   Render each item in Cart
+else {
   currentCartList.forEach((item) => {
     let div = document.createElement("div");
     div.innerHTML = `<div class="item${item.id}">
@@ -39,11 +60,12 @@ const productBought = JSON.parse(localStorage.getItem("productBought"));
     container.appendChild(div);
   });
 
+}
   //Render fee & total price
   priceWrapper.innerHTML = `<div class="calculate-price">
 <div class="fee">
   <p>Subtotal</p>
-  <p>$ ${subtotal || (+productBought.price * +productBought.quantity).toFixed(2)}</p>
+  <p>$ ${productBought ? (+productBought.price * productBought.quantity).toFixed(2) : subtotal.toFixed(2)}</p>
 </div>
 <div class="fee">
   <p>Shipping</p>
@@ -139,23 +161,3 @@ function continueToShipping() {
   }
 }
 
-// handle load data when no visiting cart page
-if(!currentCartList.length && productBought) {
-  let div = document.createElement("div");
-    div.innerHTML = `<div class="item${Math.random()}">
-    <div id="product-info">
-     <div class="product-wrap ">
-      <div class="product-img">
-      <img
-        src=${productBought.img}
-        alt="product"
-      />
-      <div class="product-quantity">${productBought.quantity}</div>
-      </div>
-      <span class="product-name"> ${productBought.name} </span>
-      </div>
-      <span class="price">$ ${productBought.price}</span></div>
-                <hr />
-`;
-    container.appendChild(div);
-}
