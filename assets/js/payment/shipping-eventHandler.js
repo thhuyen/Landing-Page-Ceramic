@@ -45,7 +45,7 @@ const productBought = JSON.parse(localStorage.getItem("productBought"));
   priceWrapper.innerHTML = `<div class="calculate-price">
   <div class="fee">
     <p>Subtotal (Tax included)</p>
-    <p>$ ${sum}</p>
+    <p>$ ${sum.toFixed(2)}</p>
   </div>
   <div class="fee">
     <p>Shipping</p>

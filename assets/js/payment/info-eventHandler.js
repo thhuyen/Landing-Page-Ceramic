@@ -13,8 +13,10 @@ const productBought = JSON.parse(localStorage.getItem("productBought"));
   let subtotal = Math.round(shoppingCart.totalCart());
   let tax = (subtotal || +productBought.price) * 0.1;
   let sum = (subtotal || +productBought.price*+productBought.quantity) + tax;
-  productBought.total = sum;
-  localStorage.setItem("productBought",JSON.stringify(productBought));
+  if (productBought) {
+    productBought.total = sum;
+    localStorage.setItem("productBought",JSON.stringify(productBought));
+  }
 
   //   Render each item in Cart
   currentCartList.forEach((item) => {
@@ -138,7 +140,7 @@ function continueToShipping() {
 }
 
 // handle load data when no visiting cart page
-if(!currentCartList.length) {
+if(!currentCartList.length && productBought) {
   let div = document.createElement("div");
     div.innerHTML = `<div class="item${Math.random()}">
     <div id="product-info">
