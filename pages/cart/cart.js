@@ -3,7 +3,6 @@ let shoppingCart = (function () {
   let cart = [];
   let paymentInfo = {};
 
-
   function Item(id, name, price, img, quantity) {
     return { id, name, price, img, quantity: quantity || 1 };
   }
@@ -17,10 +16,9 @@ let shoppingCart = (function () {
   function loadCart() {
     cart = JSON.parse(localStorage.getItem("shoppingCart"));
     if (cart === null) {
-      cart = {};
+      cart = [];
     }
   }
-
 
   // save info that user input in payment process
   function savePaymentInfo() {
@@ -31,7 +29,7 @@ let shoppingCart = (function () {
   function loadPaymentInfo() {
     paymentInfo = JSON.parse(localStorage.getItem("paymentInfo"));
     if (paymentInfo === null) {
-      paymentInfo = [];
+      paymentInfo = {};
     }
   }
 
@@ -61,7 +59,6 @@ let shoppingCart = (function () {
     };
     savePaymentInfo();
   };
-
 
   // Remove payment info of user
   obj.removePaymentInfo = function () {
