@@ -94,7 +94,7 @@ _**Home (home.html)**_
   - `login.js`
   - `user.js`
   - `cart.js`
-- The same method to make slider / carousel / tabs: I will find all items to find which is display (having active_block). Then, I remove it and add className='active_block' for current item.
+- The same method to make slider / carousel / tabs: I will find all items to find an item which has block display (having active_block). Then, I remove it and add className='active_block' for current item.
 
 _**Detail of product (`detail.html`)**_
 - Goal: Display some information about product which is clicked from home.html (price, name, image url) and comments for that product, suggest some related product.
@@ -112,18 +112,17 @@ _**Detail of product (`detail.html`)**_
   - `user.js`
   - `cart.js`
 - The image, name and price of product will be saved to localStorage when clicking the item from `home.html`. These values will be pass to detail.html and render it to screen.
-- When clicking "BUY IT NOW" button, data will appear at `payment` file, I updated code basing on Ms. Trinh's code (add some contraints and conditions to make it run correctly in both cases: load data from detail.html and from cart.html)
+- When clicking "BUY IT NOW" button, data will appear at `payment` file, I updated code basing on Ms. Trinh's code (add some contraints and conditions to make it run correctly in both cases: load data from `detail.html` and from `cart.html`)
 
 _**A list of product items in one of a page (10 points)**_
   - It's in home page (`home.html`)
 - _Click in one of the item in that list, it would redirect to a detailed page of that product. (10 points)_
-  - When clicking one product in `home.html`, the data includes image url, name, price, discount will be saved to localStorage to set it for some fields in `detail.html`.
+  - When clicking one product in `home.html`, the data including image url, name, price, discount will be saved to localStorage to set it for some fields in `detail.html`.
   
 _**A notification to tell the users to accept the page cookies**_
   - There's a box to ask user to accept cookies, but I don't know what exactly to get. So I display it on screen and it will disappear when user clicks button "ACCEPT COOKIES", no handling to get data.
   
-_**A nested comment such as like this: For users to upload their comment (since this does not have database, you could use dynamic array or use browser storage instead, please choose a best way to do this with best performance) (7 points)**_ <br>
-  **Some general information about this part:**
+_**A nested comment: Some general information about this part:**_
   1. The input on top of comment block always creates new comment in level 1. The button clear to delete all data on input.
   
      ![image](https://user-images.githubusercontent.com/97439051/230710181-cff35148-68aa-4146-b2d5-c072aef80f38.png)
