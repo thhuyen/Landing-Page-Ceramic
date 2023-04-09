@@ -81,7 +81,7 @@
 #### 2.1 Huyen tasks
 
 _**Home**_
-
+- Goal: Display general information about topic.
 - The layout includes: header + slider + 3 tabs product + input to get customer's email + carousel of social media + footer.
 - Links: fontawesome (icon), themify (icon), font-family from Google Fonts, CSS.
 - Files:
@@ -99,6 +99,7 @@ _**Home**_
 - The same method to make slider / carousel / tabs: I will find all items to find which is display (having active_block). Then, I remove it and add className='active_block' for current item.
 
 _**Detail of product (`detail.html`)**_
+- Goal: Display some information about product which is clicked from home.html (price, name, image url) and comments for that product, suggest some related product.
 - The layout includes: header + directed bar + product's information + nested comments + related products + footer.
 - Links: fontawesome (icon), themify (icon), font-family from Google Fonts, CSS.
 - Files:
@@ -113,7 +114,7 @@ _**Detail of product (`detail.html`)**_
   - `user.js`
   - `cart.js`
 - The image, name and price of product will be saved to localStorage when clicking the item from `home.html`. These values will be pass to detail.html and render it to screen.
-- When clicking "BUY IT NOW" button, data will appear at `payment` file.
+- When clicking "BUY IT NOW" button, data will appear at `payment` file, I updated code basing on Ms. Trinh's code (add some contraints and conditions to make it run correctly in both cases: load data from detail.html and from cart.html)
 
 _**A list of product items in one of a page (10 points)**_
   - It's in home page (`home.html`)
@@ -126,9 +127,13 @@ _**A notification to tell the users to accept the page cookies**_
 _**A nested comment such as like this: For users to upload their comment (since this does not have database, you could use dynamic array or use browser storage instead, please choose a best way to do this with best performance) (7 points)**_ <br>
   **Some general information about this part:**
   1. The input on top of comment block always creates new comment in level 1. The button clear to delete all data on input.
+  
      ![image](https://user-images.githubusercontent.com/97439051/230710181-cff35148-68aa-4146-b2d5-c072aef80f38.png)
+     
   2. The max child level is 3, means that replying comments in level 1 will create comments in level 2, similar with level 2 to level 3. But if you reply comments in level 3, they still are comments in level 3 instead of level 4.
+  
      ![image](https://user-images.githubusercontent.com/97439051/230710378-0f55a086-58f1-4601-8d19-2748c6281576.png)
+     
   3. After sending a comment, the page must reload once to set latest data to interface.
   4. Beacause we don't have database, something are setten by default.
   5. The constraint that requires to login if user want to leave comment.
