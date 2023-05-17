@@ -6,7 +6,7 @@
 - **Program**: WeCamp batch 2
 - **Assessment**: Assignment 1
 - **Authors**: Thanh Huyen & Trinh Pham
-- **Created date**: 07/04/2022
+- **Created date**: 07/04/2023
 - **Last modified**: 09/04/2023
 
 <!-- ABOUT THE PROJECT -->
